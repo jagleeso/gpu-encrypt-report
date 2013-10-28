@@ -1,0 +1,1 @@
+../../android4.2.2_opencl_stability/src/stress_test.sh

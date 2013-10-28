@@ -1,0 +1,1151 @@
+Install        : empty_kernel => libs/armeabi-v7a/empty_kernel
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14974954923044 ns
+    CL_PROFILING_COMMAND_END = 14974954954044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14974954069044 ns
+    CL_PROFILING_COMMAND_END = 14974954069044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14974955686044 ns
+    CL_PROFILING_COMMAND_END = 14974955686044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975070657044 ns
+    CL_PROFILING_COMMAND_END = 14975070687044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975069863044 ns
+    CL_PROFILING_COMMAND_END = 14975069863044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975071206044 ns
+    CL_PROFILING_COMMAND_END = 14975071236044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975210104044 ns
+    CL_PROFILING_COMMAND_END = 14975210135044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975209219044 ns
+    CL_PROFILING_COMMAND_END = 14975209250044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975210867044 ns
+    CL_PROFILING_COMMAND_END = 14975210867044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975323335044 ns
+    CL_PROFILING_COMMAND_END = 14975323365044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975322480044 ns
+    CL_PROFILING_COMMAND_END = 14975322480044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975323884044 ns
+    CL_PROFILING_COMMAND_END = 14975323915044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975460066044 ns
+    CL_PROFILING_COMMAND_END = 14975460066044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975459364044 ns
+    CL_PROFILING_COMMAND_END = 14975459395044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975460615044 ns
+    CL_PROFILING_COMMAND_END = 14975460646044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975575036044 ns
+    CL_PROFILING_COMMAND_END = 14975575067044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975574151044 ns
+    CL_PROFILING_COMMAND_END = 14975574182044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975575799044 ns
+    CL_PROFILING_COMMAND_END = 14975575799044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975794539044 ns
+    CL_PROFILING_COMMAND_END = 14975794600044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975793226044 ns
+    CL_PROFILING_COMMAND_END = 14975793257044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975795637044 ns
+    CL_PROFILING_COMMAND_END = 14975795699044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975928065044 ns
+    CL_PROFILING_COMMAND_END = 14975928126044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975927028044 ns
+    CL_PROFILING_COMMAND_END = 14975927058044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14975928920044 ns
+    CL_PROFILING_COMMAND_END = 14975928950044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976123182044 ns
+    CL_PROFILING_COMMAND_END = 14976123182044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976121931044 ns
+    CL_PROFILING_COMMAND_END = 14976121961044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976123976044 ns
+    CL_PROFILING_COMMAND_END = 14976123976044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976292265044 ns
+    CL_PROFILING_COMMAND_END = 14976292295044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976291746044 ns
+    CL_PROFILING_COMMAND_END = 14976291777044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976292692044 ns
+    CL_PROFILING_COMMAND_END = 14976292692044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976421427044 ns
+    CL_PROFILING_COMMAND_END = 14976421458044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976420298044 ns
+    CL_PROFILING_COMMAND_END = 14976420328044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976422312044 ns
+    CL_PROFILING_COMMAND_END = 14976422343044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976586451044 ns
+    CL_PROFILING_COMMAND_END = 14976586512044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976585657044 ns
+    CL_PROFILING_COMMAND_END = 14976585718044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976586848044 ns
+    CL_PROFILING_COMMAND_END = 14976586878044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976722877044 ns
+    CL_PROFILING_COMMAND_END = 14976722938044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976721961044 ns
+    CL_PROFILING_COMMAND_END = 14976722022044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976723396044 ns
+    CL_PROFILING_COMMAND_END = 14976723457044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976874227044 ns
+    CL_PROFILING_COMMAND_END = 14976874288044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976873281044 ns
+    CL_PROFILING_COMMAND_END = 14976873342044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976874990044 ns
+    CL_PROFILING_COMMAND_END = 14976875051044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976994752044 ns
+    CL_PROFILING_COMMAND_END = 14976994813044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976993745044 ns
+    CL_PROFILING_COMMAND_END = 14976993837044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14976995546044 ns
+    CL_PROFILING_COMMAND_END = 14976995607044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977223960044 ns
+    CL_PROFILING_COMMAND_END = 14977223991044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977223045044 ns
+    CL_PROFILING_COMMAND_END = 14977223136044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977224327044 ns
+    CL_PROFILING_COMMAND_END = 14977224357044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977342532044 ns
+    CL_PROFILING_COMMAND_END = 14977342593044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977341922044 ns
+    CL_PROFILING_COMMAND_END = 14977342013044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977343112044 ns
+    CL_PROFILING_COMMAND_END = 14977343173044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977524433044 ns
+    CL_PROFILING_COMMAND_END = 14977524464044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977523365044 ns
+    CL_PROFILING_COMMAND_END = 14977523396044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977524983044 ns
+    CL_PROFILING_COMMAND_END = 14977525013044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977671175044 ns
+    CL_PROFILING_COMMAND_END = 14977671236044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977670229044 ns
+    CL_PROFILING_COMMAND_END = 14977670321044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977671755044 ns
+    CL_PROFILING_COMMAND_END = 14977671816044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977790815044 ns
+    CL_PROFILING_COMMAND_END = 14977790876044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977789808044 ns
+    CL_PROFILING_COMMAND_END = 14977789900044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977791578044 ns
+    CL_PROFILING_COMMAND_END = 14977791670044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977955503044 ns
+    CL_PROFILING_COMMAND_END = 14977955564044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977954862044 ns
+    CL_PROFILING_COMMAND_END = 14977954923044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14977955991044 ns
+    CL_PROFILING_COMMAND_END = 14977956053044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14978086527044 ns
+    CL_PROFILING_COMMAND_END = 14978086588044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14978085215044 ns
+    CL_PROFILING_COMMAND_END = 14978085306044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14978087382044 ns
+    CL_PROFILING_COMMAND_END = 14978087443044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14978220359044 ns
+    CL_PROFILING_COMMAND_END = 14978220451044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14978218467044 ns
+    CL_PROFILING_COMMAND_END = 14978218558044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14978221732044 ns
+    CL_PROFILING_COMMAND_END = 14978221793044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14978397743044 ns
+    CL_PROFILING_COMMAND_END = 14978397804044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14978396767044 ns
+    CL_PROFILING_COMMAND_END = 14978396828044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14978398537044 ns
+    CL_PROFILING_COMMAND_END = 14978398598044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
+Loaded library name:/system/lib/libllvm-a3xx.so
+SUCCESS: clGetDeviceIDs, status=0
+SUCCESS: clCreateContext, status=0
+SUCCESS: clCreateCommandQueue, status=0
+SUCCESS: clCreateProgramWithSource, status=0
+SUCCESS: clBuildProgram, status=0
+input string: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+Reading an array input[1079574528] (0.000000K) of '1's ...
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clCreateBuffer, status=0
+SUCCESS: clEnqueueWriteBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clCreateKernel, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clSetKernelArg, status=0
+SUCCESS: clEnqueueNDRangeKernel, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+Reading an array output[1079574528] (0.000000K) of '2's ...
+SUCCESS: clEnqueueReadBuffer, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+SUCCESS: clGetEventProfilingInfo, status=0
+output string: 
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+SUCCESS: clGetDeviceInfo, status=0
+The max allocateable memory size is 49214
+The size of global device memory is 49286
+The time to complete kernel execution was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14978523335044 ns
+    CL_PROFILING_COMMAND_END = 14978523396044 ns
+The time to complete CPU-to-GPU input array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14978522358044 ns
+    CL_PROFILING_COMMAND_END = 14978522419044 ns
+The time to complete GPU-to-CPU output array copy was 0.000001 ms
+    CL_PROFILING_COMMAND_START = 14978523915044 ns
+    CL_PROFILING_COMMAND_END = 14978523976044 ns
+SUCCESS: clReleaseKernel, status=0
+SUCCESS: clReleaseProgram, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseMemObject, status=0
+SUCCESS: clReleaseCommandQueue, status=0
+SUCCESS: clReleaseContext, status=0
+
