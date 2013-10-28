@@ -20,3 +20,6 @@ sample_cpu_gpu_communication.100_datapoints.txt
 sample_empty_kernel.25_times.txt
 - To protect against overestimates of kernel runtime, measure the time to 
   invoke an OpenCL program that does nothing (empty_kernel)
+
+sample_opencl_aes_sizes.txt
+- Measure the time it takes to run the OpenCL AES kernel on different sizes of input
