@@ -1,0 +1,22 @@
+cpu gpu communication
+- [D] plot
+- [D] summary stats
+- conclusion: it costs nothing (see LWN post)
+
+aes encrypt speed vs size
+- [D] plot
+- [D] summary stats (bytes / ms)
+- issues with device restart limited size tested to 8192 (refer to afterwards)
+
+empty kernel
+- [D] summary stats (mean = average _overestimate_ for aes)
+
+issues with device restart
+- disabling OpenGL
+  - tried kernel flags (MSM_KSGL)
+    - any flags that disabled OpenGL also disabled OpenCL
+  - resorted to removing OpenGL shared libraries
+    - resulted in android processes not starting (good)
+    - still ran into issues with device restart on long running kernels
+      - tried several different OpenCL kernels, to see if GPU hang detection does something obvious (e.g. hang is determined by memory accesses not changing)
+        - flip entire output buffer between '1' and '2', and read entire input buffer

@@ -1,4 +1,20 @@
 plot_time_vs_bytes() {
+
+
+
+    declare -a labels=()
+    while getopts l: flag; do
+        case $flag in
+        l)
+            labels=("${labels[@]}" "$OPTARG")
+            ;;
+        ?)
+            exit;
+            ;;
+        esac
+    done
+    shift $(( OPTIND - 1 ));
+
     local file="$1"
     local title="$2"
     shift 2
@@ -31,15 +47,16 @@ plot_time_vs_bytes() {
     for j in $(seq 0 $((num_lines-1))); do
         echo cat $file \| perl -lne  "${extractors[j]}" \> "${tmpfiles[j]}"
         cat $file | perl -lne  "${extractors[j]}" > "${tmpfiles[j]}"
-        echo '============'
-        cat $file | perl -lne  "${extractors[j]}" 
-        echo '============'
     done
 
     plotit() {
         local i=$1
         # lt rgb 'red' 
-        echo "'${tmpfiles[i]}' title '${line_titles[i]}' with linespoints pointtype 31 lt rgb '${colors[i]}'"
+        plot_str="'${tmpfiles[i]}' using 2:1 title '${line_titles[i]}' with linespoints pointtype 31 lt rgb '${colors[i]}'"
+        if [ ${#labels[@]} != 0 ]; then
+            plot_str="$plot_str, '${tmpfiles[i]}' u 2:1:${labels[i]} with labels offset 3,1 notitle"
+        fi
+        echo "$plot_str"
     }
     to_plot=$(plotit 0)
     for i in $(seq 1 $((num_lines-1))); do
@@ -54,8 +71,8 @@ plot_time_vs_bytes() {
 # set size 0.45, 0.35
     gnuplot <<EOF
 set title "$title"
-set xlabel "Input size (bytes)"
-set ylabel "Time (ms)"
+set xlabel "Time (ms)"
+set ylabel "Input size (bytes)"
 set ytics border in scale 1,0.5 nomirror norotate  offset character 0, 0, 0
 set term postscript eps 10 solid
 set size 1, 1
@@ -72,3 +89,39 @@ set yrange [GPVAL_DATA_Y_MIN:GPVAL_DATA_Y_MAX]
 
 EOF
 }
+
+extract_cpu_to_gpu_points='
+if (/^The time to complete CPU-to-GPU input array copy was ([^ ]+) ms/) { 
+    $time = $1;
+    print "$bytes $time";
+} elsif (/^Reading an array input\[(\d+)\]/) {
+    $bytes = $1;
+}
+'
+
+extract_gpu_to_cpu_points='
+if (/^The time to complete GPU-to-CPU output array copy was ([^ ]+) ms/) { 
+    $time = $1;
+    print "$bytes $time";
+} elsif (/^Reading an array input\[(\d+)\]/) {
+    $bytes = $1;
+}
+'
+
+extract_aes_points='
+if (/^profile time: ([^ ]+) ms/) { 
+    $time = $1;
+    print "$bytes $time";
+} elsif (/^encrypt_cl: count = (\d+)/) {
+    $bytes = $1;
+}
+'
+
+extract_kernel_points='
+if (/^The time to complete kernel execution was ([^ ]+) ms/) { 
+    $time = $1;
+    print "$bytes $time";
+} elsif (/^Reading an array input\[(\d+)\]/) {
+    $bytes = $1;
+}
+'

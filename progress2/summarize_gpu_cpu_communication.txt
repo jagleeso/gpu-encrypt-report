@@ -1,0 +1,6 @@
+Min.	1e-06 
+1st Qu.	1e-06 
+Median	1e-06 
+Mean	1e-06 
+3rd Qu.	1e-06 
+Max.	1e-06 
