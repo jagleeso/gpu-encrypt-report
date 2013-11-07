@@ -1,9 +1,16 @@
 plot_throughput_vs_bytes() {
     declare -a labels=()
-    while getopts l: flag; do
+    local width=1
+    local height=1
+    while getopts l:r flag; do
         case $flag in
         l)
             labels=("${labels[@]}" "$OPTARG")
+            ;;
+
+        r)
+            local width=0.45
+            local height=0.35
             ;;
         ?)
             exit;
@@ -75,7 +82,7 @@ set ylabel "Throughput (bytes/ms)"
 set xlabel "Input size (bytes)"
 set ytics border in scale 1,0.5 nomirror norotate  offset character 0, 0, 0
 set term postscript eps 10 solid
-set size 1, 1
+set size $width, $height
 set output "$graph"
 
 set border 2 front linetype 1 linewidth 1.000

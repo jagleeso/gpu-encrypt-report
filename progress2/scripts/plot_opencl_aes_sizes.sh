@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 file="$1"
+subtitle="$2"
+shift 2
+
 set -e
 # set -x
 
@@ -17,4 +20,4 @@ if (/^profile time: ([^ ]+) ms/) {
 '
 
 # plot_time_vs_bytes -l '3' $file "OpenCL AES Encrypt" "$extract_aes_points" "AES_encrypt (labeled with bytes/ms)"
-plot_throughput_vs_bytes $file "OpenCL AES Encrypt - MotoX" "$extract_aes_points" "AES_encrypt"
+plot_throughput_vs_bytes "$@" $file "OpenCL AES Encrypt - $subtitle" "$extract_aes_points" "AES_encrypt"
