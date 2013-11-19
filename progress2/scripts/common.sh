@@ -339,3 +339,12 @@ if (/^profile time: ([^ ]+) ms/) {
     $max_global_worksize = $1;
 }
 '
+
+read_params() {
+    local extract_params="$1"
+    shift 1
+    perl -lne "$extract_params" < $file
+}
+nth_line() {
+    sed "$1q;d"
+}
