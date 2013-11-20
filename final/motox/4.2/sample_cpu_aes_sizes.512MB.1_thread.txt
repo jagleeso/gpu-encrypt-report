@@ -1,0 +1,114 @@
+> Max input/output array size (bytes): 536870912
+> Sample input/ouput size increment (bytes): powers of two starting at 16, ending at 536870912
+> Samples: 26
+Android NDK: WARNING:jni/Android.mk:example-aes: non-system libraries in linker flags: -lcrypto    
+Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
+Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
+Android NDK:     current module    
+Gdbserver      : [arm-linux-androideabi-4.6] libs/armeabi-v7a/gdbserver
+Gdbsetup       : libs/armeabi-v7a/gdb.setup
+Install        : example-aes => libs/armeabi-v7a/example-aes
+> Array input size (bytes): 16
+> Encryption time (ms): 0.030518
+Done
+
+> Array input size (bytes): 32
+> Encryption time (ms): 0.000000
+Done
+
+> Array input size (bytes): 64
+> Encryption time (ms): 0.000000
+Done
+
+> Array input size (bytes): 128
+> Encryption time (ms): 0.000000
+Done
+
+> Array input size (bytes): 256
+> Encryption time (ms): 0.030518
+Done
+
+> Array input size (bytes): 512
+> Encryption time (ms): 0.030518
+Done
+
+> Array input size (bytes): 1024
+> Encryption time (ms): 0.030518
+Done
+
+> Array input size (bytes): 2048
+> Encryption time (ms): 0.061035
+Done
+
+> Array input size (bytes): 4096
+> Encryption time (ms): 0.244141
+Done
+
+> Array input size (bytes): 8192
+> Encryption time (ms): 0.244141
+Done
+
+> Array input size (bytes): 16384
+> Encryption time (ms): 0.488281
+Done
+
+> Array input size (bytes): 32768
+> Encryption time (ms): 1.037842
+Done
+
+> Array input size (bytes): 65536
+> Encryption time (ms): 1.831299
+Done
+
+> Array input size (bytes): 131072
+> Encryption time (ms): 4.028809
+Done
+
+> Array input size (bytes): 262144
+> Encryption time (ms): 8.362549
+Done
+
+> Array input size (bytes): 524288
+> Encryption time (ms): 17.457764
+Done
+
+> Array input size (bytes): 1048576
+> Encryption time (ms): 30.672852
+Done
+
+> Array input size (bytes): 2097152
+> Encryption time (ms): 40.714111
+Done
+
+> Array input size (bytes): 4194304
+> Encryption time (ms): 97.207520
+Done
+
+> Array input size (bytes): 8388608
+> Encryption time (ms): 154.219482
+Done
+
+> Array input size (bytes): 16777216
+> Encryption time (ms): 345.978760
+Done
+
+> Array input size (bytes): 33554432
+> Encryption time (ms): 688.203857
+Done
+
+> Array input size (bytes): 67108864
+> Encryption time (ms): 1368.014648
+Done
+
+> Array input size (bytes): 134217728
+> Encryption time (ms): 2703.738770
+Done
+
+> Array input size (bytes): 268435456
+> Encryption time (ms): 5258.171631
+Done
+
+> Array input size (bytes): 536870912
+> Encryption time (ms): 10829.299561
+Done
+
