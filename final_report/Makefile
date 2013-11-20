@@ -29,7 +29,7 @@
 final_report: final_report.pdf
 .PHONY: final_report
 
-LATEX_FLAGS = -interaction nonstopmode 
+LATEX_FLAGS = -interaction nonstopmode
 
 final_report.pdf: final_report.tex
 	rm -f final_report.aux final_report.bbl
@@ -39,3 +39,12 @@ final_report.pdf: final_report.tex
 	latex $(LATEX_FLAGS) final_report.tex
 	dvips -o final_report.ps final_report.dvi
 	ps2pdf final_report.ps
+
+
+# LATEX_FLAGS = -interaction nonstopmode --enable-write18
+
+# final_report.pdf: final_report.tex
+# 	rm -f final_report.aux final_report.bbl
+# 	pdflatex $(LATEX_FLAGS) final_report.tex
+# 	bibtex final_report
+# 	pdflatex $(LATEX_FLAGS) final_report.tex

@@ -43,14 +43,14 @@ read_params() {
 nth_line() {
     sed "$1q;d"
 }
-# set -x
+set -x
 cat "$file" | perl -lne "$extract_aes_global_worksize_points"
 # exit
 
 array_size=$(read_params | nth_line 1)
 max_global_worksize=$(read_params | nth_line 2)
 title="OpenCL AES Encrypt - $subtitle ($(( (array_size/1024)/1024 ))MB)" 
-xaxis="Global Worksize" 
-line_label="AES_encrypt"
+xaxis="Work Groups" 
+line_label="OpenCL - group size = 1"
 
 plot_throughput_vs -x "$xaxis" "$@" "$file" "$title" "$extract_aes_global_worksize_points" "$line_label"

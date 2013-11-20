@@ -7,6 +7,7 @@
 guard :shell, :all_on_start => true do
   watch(/final_report\.tex/) do |m| 
       puts "="*100
+      `rm final_report.pdf`
       `make final_report.pdf`
   end
 end

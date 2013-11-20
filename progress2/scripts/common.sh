@@ -3,7 +3,9 @@ plot_throughput_vs() {
     local width=1
     local height=1
     local xaxis_label=""
-    while getopts l:rx: flag; do
+    local scale="bytes"
+    local time_scale="ms"
+    while getopts l:rx:s:t: flag; do
         case $flag in
         l)
             labels=("${labels[@]}" "$OPTARG")
@@ -13,11 +15,18 @@ plot_throughput_vs() {
             local width=0.45
             local height=0.35
             ;;
+        s)
+            scale="$OPTARG"
+            ;;
+        t)
+            time_scale="$OPTARG"
+            ;;
         x)
             xaxis_label="$OPTARG"
             ;;
         ?)
-            exit;
+            echo 2>&1 "ERROR: bad arguments";
+            exit 1;
             ;;
         esac
     done
@@ -50,10 +59,40 @@ plot_throughput_vs() {
     }
     trap cleanup EXIT INT TERM HUP
 
+
+    local convert_scale='
+        ($xaxis, $ms, $bytes_per_ms) = @F;
+        if ("'$scale'" eq "bytes") {
+            $throughput = $bytes_per_ms;
+        } elsif ("'$scale'" eq "MB") {
+            $throughput = (($bytes_per_ms/1024)/1024);
+        } else {
+            die "bad scale: '$scale'";
+        }
+
+        if ("'$time_scale'" eq "ms") {
+            # already UNIT / ms
+        } elsif ("'$time_scale'" eq "second") {
+            # make it UNIT / second
+            $throughput = $throughput * 1000;
+        } else {
+            die "bad time_scale: '$time_scale'";
+        }
+
+        $throughput_rounded = sprintf("%.2f", $throughput);
+        print "$xaxis $ms $throughput_rounded $throughput";
+    '
+
     local graph="${file%.*}.eps"
     # points=$(cat $file | perl -lne "$extract_points")
     for j in $(seq 0 $((num_lines-1))); do
-        cat $file | perl -lne  "${extractors[j]}" > "${tmpfiles[j]}"
+        echo "RAW"
+        cat "$file" | perl -lne  "${extractors[j]}"
+        echo "SCALE"
+        cat "$file" | perl -lne  "${extractors[j]}" | \
+            perl -lane "$convert_scale"
+        cat "$file" | perl -lne  "${extractors[j]}" | \
+            perl -lane "$convert_scale" > "${tmpfiles[j]}"
     done
 
     plotit() {
@@ -81,7 +120,7 @@ plot_throughput_vs() {
 # set size 0.45, 0.35
     gnuplot <<EOF
 set title "$title"
-set ylabel "Throughput (bytes/ms)"
+set ylabel "Throughput ($scale/$time_scale)"
 set xlabel "$xaxis_label"
 set ytics border in scale 1,0.5 nomirror norotate  offset character 0, 0, 0
 set term postscript eps 10 solid

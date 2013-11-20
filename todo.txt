@@ -1,3 +1,6 @@
 - measure throughput of (multithreaded?) software AES implementation
   - graph against OpenCL implementation
 - measure energy usage of software AES implementation
+
+- compile methodology / experimental results for report
+  - 

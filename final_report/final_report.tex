@@ -62,7 +62,7 @@
 % should be used if it is desired that the figures are to be displayed in
 % draft mode.
 %
-\documentclass[conference]{IEEEtran}
+\documentclass[conference,10pt]{IEEEtran}
 % Add the compsoc option for Computer Society conferences.
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
@@ -124,11 +124,14 @@
 
 
 
-
+% \usepackage{graphicx}
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
   % \usepackage[pdftex]{graphicx}
+  % I don't know... trying to solve bounding box 
+  % \usepackage{auto-pst-pdf}
+  % \usepackage{epstopdf}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
@@ -138,7 +141,7 @@
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
   % will default to the driver specified in the system graphics.cfg if no
   % driver is specified.
-  % \usepackage[dvips]{graphicx}
+  \usepackage[dvips]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../eps/}}
   % and their extensions so you won't have to specify these with
@@ -253,7 +256,7 @@
 
 
 % *** SUBFIGURE PACKAGES ***
-%\usepackage[tight,footnotesize]{subfigure}
+\usepackage[tight,footnotesize]{subfigure}
 % subfigure.sty was written by Steven Douglas Cochran. This package makes it
 % easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
 % work, it is a good idea to load it with the tight package option to reduce
@@ -288,7 +291,7 @@
 
 % *** FLOAT PACKAGES ***
 %
-%\usepackage{fixltx2e}
+\usepackage{fixltx2e}
 % fixltx2e, the successor to the earlier fix2col.sty, was written by
 % Frank Mittelbach and David Carlisle. This package corrects a few problems
 % in the LaTeX2e kernel, the most notable of which is that in current
@@ -483,6 +486,28 @@ Subsubsection text here.
 %\caption{Simulation Results}
 %\label{fig_sim}
 %\end{figure}
+
+% Some.
+% \begin{figure}[h]
+% \centering
+% \includegraphics[width=0.4\linewidth,angle=-90]{benchmarks/cache-scratch/cache-scratch.ps}
+% \caption{Performance and scalability of allocators on threadtest}
+% \label{fig:threadtest}
+% \end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{../final/motox/4.2/opencl_sizes_vs_cpu_sizes.opencl_4G_19L.cpu_1thread.report.eps}
+\caption{OpenCL GPU vs OpenSSL performance in AES encryption}
+\label{fig:opencl_vs_cpu}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{../final/motox/4.2/sample_opencl_aes_global_worksize.128MB.16_max_global_worksize.again.report.eps}
+\caption{OpenCL performance over varying global worksize}
+\label{fig:global_worksize}
+\end{figure}
 
 % Note that IEEE typically puts floats only at the top, even when this
 % results in a large percentage of a column being occupied by floats.
