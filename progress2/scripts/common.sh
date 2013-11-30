@@ -530,6 +530,36 @@ if (/^> Encryption time \(ms\): ([^\s]+)/) {
 }
 '
 
+# plot_aes_work_group_size / plot_aes_entries
+
+extract_aes_work_group_size_points='
+if (/^profile time: ([^ ]+) ms/) { 
+    $time = $1;
+    $throughput = sprintf("%.2f", $bytes/$time);
+    print "$work_group_size $time $throughput";
+} elsif (/^> LOCAL = (\d+)/) {
+    $work_group_size = $1;
+} elsif (/^> Array size \(bytes\): (\d+)/) {
+    $bytes = $1;
+}
+'
+
+extract_params_aes_work_group_size_points='
+if (/^> Array size \(bytes\): (.*)/) {
+    $array_size = $1;
+} elsif (/^> Number of work groups: (.*)/) {
+    $num_work_groups = $1;
+} elsif (/^> Max work group size: (.*)/) {
+    $max_work_group_size = $1;
+}
+
+END {
+    print "$array_size";
+    print "$num_work_groups";
+    print "$max_work_group_size";
+}
+'
+
 read_params() {
     local extract_params="$1"
     shift 1
