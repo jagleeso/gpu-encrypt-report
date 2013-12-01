@@ -1,0 +1,64 @@
+Compiling the introduction is a straight forward process. Basically, we know we need to cover the following topics: 
+- mobile phones and how ubiquitous they are
+- user privacy and why it matters (even more with mobile)
+- what kinds of attacks can occur for obtaining sensitive information from someone's phone?
+  - cold boot (use the paper we have)
+    - obtaining sensitive information in the clear from unencrypted memory (refer to forensics paper in rest of term plan)
+    - harvesting encryption keys (refer to paper we used)
+- what kinds of information can we obtain from someone's phone?
+  - refer to "Eternal Sunshine of the Spotless Machine: Protecting Privacy with Ephemeral Channels"
+- what kinds of existing techniques guard against stealing private information from a phone (RAM or disk)
+  - disk encryption (find a paper)
+  - encryption of memory (leads into our approach, and describing it)
+  - hiding keys in debug registers (TRESOR paper)
+- OpenCL and GPGPU programming
+  - why do we want to use the GPU
+    - its available on phone models
+      - what's it used for now; perhaps argue we could be using it when the display is idle
+    - it's good for parallelizing certain workloads (cite a paper)
+      - cite papers that find performance improvements from the GPU
+      - cite papers that do encryption on the GPU
+  - the OpenCL programming model.  Not the whole model; hopefully just the main ideas needed for understanding the evaluation (basically like we did in the presentation)
+    - work groups, work items, how it maps to GPU hardware (a diagram here would be nice, but this time we can't steal it)
+    - work groups are scheduled together
+    - work items run 1 instance of the program
+    - (there are other papers that describe this things, as well as the OpenCL programming guide)
+- the AES encryption algorithm
+  - how can you parallelize it
+  - mention our limitations (used ECB I think, but describe the problem with that)
+
+- evaluation
+  - 2 algorithm implementations:
+    - 1: divide input N amongst D participating processing elements, where each work item encrypts consecutive entries
+    - 2: divide input N amongst D participating processing elements, where each work item in a work group does a coalesced memory read when it encrypts entries
+
+  - implementation 1:
+    - figure 1: varying work groups
+      - how are work groups being scheduled (1 per GPU core)
+      - how does throughput increase with more GPU cores?
+    - figure 2: varying work group size:
+      - how much more throughput can we get on 1 GPU core when we increase processing elements used?
+      - why don't we get better throughput?
+      - talk about uncoalesced memory accesses
+    - figure 3: OpenCL vs the GPU
+      - how are we doing relative to CPU encryption?
+      - cite a paper saying that better throughputs have been observed, arguing our implementation is inefficient
+      - how do you optimize an OpenCL kernel (cite A GPGPU Compiler for Memory Optimization and Parallelism Management)?
+    - figure 4: varying entries to encrypt per work item (uncoalesced access within work groups)
+  - implementation 2:
+    - figure 5: varying entries to encrypt per work item (coalesced access within work groups)
+      - still bad performance (perhaps due to uncoalesced access between work groups?  must be investigated in future work)
+
+- related work
+  - talk about the papers we talked about in our presentation (I think there were 2)
+  - talk about papers we read in class
+    - attack papers like TaintDroid which care about identifying sensitive information but not what to do with it
+    - there are more...
+  - attack any papers that don't encrypt stuff at the systems level (i.e. restrict themselves to the Dalvik VM)
+  - use the related work of papers that are trying to solve the same problem (like CleanOS) to find other approaches to talk about
+
+- future work
+  - analyze battery consumption
+  - use a more secure AES implementation that is still parallelizable
+  - investigate coalesced access between work groups
+  - investigate more GPU performance optimizations (refer to A GPGPU Compiler for Memory Optimization and Parallelism Management)
