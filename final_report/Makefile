@@ -31,15 +31,14 @@ final_report: final_report.pdf
 
 LATEX_FLAGS = -interaction nonstopmode
 
-final_report.pdf: final_report.tex
-	rm -f final_report.aux final_report.bbl
-	latex $(LATEX_FLAGS) final_report.tex
-	bibtex final_report
-	latex $(LATEX_FLAGS) final_report.tex
-	latex $(LATEX_FLAGS) final_report.tex
-	dvips -o final_report.ps final_report.dvi
-	ps2pdf final_report.ps
-
+%.pdf: %.tex
+	rm -f $*.aux $*.bbl
+	latex $(LATEX_FLAGS) $*.tex
+	bibtex $*
+	latex $(LATEX_FLAGS) $*.tex
+	latex $(LATEX_FLAGS) $*.tex
+	dvips -o $*.ps $*.dvi
+	ps2pdf $*.ps
 
 # LATEX_FLAGS = -interaction nonstopmode --enable-write18
 
