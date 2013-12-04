@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-file="$1"
+graph="$1"
 main_title="$2"
 subtitle="$3"
 shift 3
@@ -46,14 +46,29 @@ END {
 '
 
 # set -x
-cat "$file" | perl -lne "$extract_aes_entries_points"
+# cat "$file" | perl -lne "$extract_aes_entries_points"
 # exit
+
+argv=( "$@" )
+# make read_params work...
+file="${argv[${#argv[@]} - 1]}"
 
 array_size=$(read_params "$extract_params_aes_entries" | nth_line 1)
 # Assume we are using the max group size for all
 max_work_group_size=$(read_params "$extract_params_aes_entries" | nth_line 2)
 title="$main_title - $subtitle ($(( (array_size/1024)/1024 ))MB)" 
 xaxis="Number of 16 Byte Entries Per Work Item"
-line_label="OpenCL - group size = $max_work_group_size"
 
-plot_throughput_vs -x "$xaxis" "$@" "$file" "$title" "$extract_aes_entries_points" "$line_label"
+declare -a line_label_files=()
+parse_plot_throughput_vs_args "$@"
+for i in $(seq $((OPTIND - 1)) 2 $(($# - 1))); do
+    line_label="${argv[i]} - group size = $max_work_group_size"
+    file="${argv[i+1]}"
+    line_label_files=("${line_label_files[@]}" "$line_label" "$file")
+done
+
+declare -a args=()
+line_label_file_args "$extract_aes_entries_points" "${line_label_files[@]}"
+
+plot_throughput_vs_multiple -x "$xaxis" -s "$scale" -t "$time_scale" $extra_flags \
+    "$graph" "$title" "${args[@]}"
