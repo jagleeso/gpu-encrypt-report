@@ -72,6 +72,8 @@
 
 % Custom packages.
 \usepackage{filecontents}
+\usepackage{csvsimple}
+\usepackage{url}
 
 
 
@@ -129,8 +131,7 @@
 %
 \ifCLASSINFOpdf
   % \usepackage[pdftex]{graphicx}
-  % I don't know... trying to solve bounding box 
-  % \usepackage{auto-pst-pdf}
+  % I don't know... trying to solve bounding box \usepackage{auto-pst-pdf}
   % \usepackage{epstopdf}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
@@ -151,8 +152,7 @@
 % graphicx was written by David Carlisle and Sebastian Rahtz. It is
 % required if you want graphics, photos, etc. graphicx.sty is already
 % installed on most LaTeX systems. The latest version and documentation can
-% be obtained at: 
-% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% be obtained at: http://www.ctan.org/tex-archive/macros/latex/required/graphics/
 % Another good source of documentation is "Using Imported Graphics in
 % LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
 % epslatex.pdf at: http://www.ctan.org/tex-archive/info/
@@ -276,8 +276,8 @@
 % IEEEtran.cls handling of captions and this will result in nonIEEE style
 % figure/table captions. To prevent this problem, be sure and preload
 % caption.sty with its "caption=false" package option. This is will preserve
-% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
-% (recommended due to many improvements over 1.2) of subfig.sty supports
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later (recommended due to many 
+% improvements over 1.2) of subfig.sty supports
 % the caption=false option directly:
 %\usepackage[caption=false,font=footnotesize]{subfig}
 %
@@ -389,8 +389,7 @@ Fax: (888) 555--1212}}
 % 
 %\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
 %Homer Simpson\IEEEauthorrefmark{2},
-%James Kirk\IEEEauthorrefmark{3}, 
-%Montgomery Scott\IEEEauthorrefmark{3} and
+%James Kirk\IEEEauthorrefmark{3}, Montgomery Scott\IEEEauthorrefmark{3} and
 %Eldon Tyrell\IEEEauthorrefmark{4}}
 %\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
 %Georgia Institute of Technology,
@@ -399,7 +398,8 @@ Fax: (888) 555--1212}}
 %Email: homer@thesimpsons.com}
 %\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
 %Telephone: (800) 555--1212, Fax: (888) 555--1212}
-%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 
+%90210--4321}}
 
 
 
@@ -480,8 +480,8 @@ Subsubsection text here.
 %\begin{figure}[!t]
 %\centering
 %\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% where an .eps filename suffix will be assumed under latex, and a .pdf suffix will be assumed for 
+% pdflatex; or what has been declared
 % via \DeclareGraphicsExtensions.
 %\caption{Simulation Results}
 %\label{fig_sim}
@@ -495,6 +495,128 @@ Subsubsection text here.
 % \label{fig:threadtest}
 % \end{figure}
 
+The OpenCL programming model defines work items to be an executing instance of an OpenCL kernel 
+(assigned a local id), and work groups to be equally sized groups of work items (assigned a global 
+id). The OpenCL model ensures that work items within a work group will execute concurrently, but 
+provides no guarantees whether work groups will execute concurrently or serially. When you execute 
+an OpenCL kernel, you specify the number of work groups, and the number of work items within each 
+work group. All work items within a group each get a local id that is unique within that group as 
+well as a global id that is unique across all instances of the executing kernel. The work items then 
+make use of their local and global ids to appropriately divide up the work, and can make use of 
+synchronization constructs like a work group barrier to synchronize their execution (but only for 
+work items within the same group) \cite{opencl_guide}.
+
+An existing implementation of an OpenCL kernel implementing the AES encryption algorithm was 
+obtained from a public source code repository \cite{opencl_impl}.  The original implementation of 
+the OpenCL encrypt kernel is implemented using a data parallel programming model, whereby a program 
+is parallelized by performing the same computation on different pieces of data \cite{opencl_guide}. 
+In particular, it only makes use of the global id of a work group to index itself into the input 
+array at a particular position (e.g. index 0 of the input array), with one work group instance being 
+responsible for encrypting an entry of the input array. The kernel also makes use of the vector 
+instruction set of the GPU to increase the number of bytes that a single "entry" in the input array 
+corresponds to. In particular, in addition to traditional analogs to C data types like uint (a 
+32-bit integer for a total of 4 bytes), there are vector data types like uint4 (4 32-bit integers, 
+for total of 16 bytes). Using these vector types allows one to execute native vector operations for 
+the target platform \cite{opencl_guide}.  In particular, a single work item can operate on 16 bytes 
+at once, whereas a traditional CPU would operate on 4 bytes at once. Thus, given an input array of 
+$N$ bytes, we only need $N/16$ work groups of 1 work item each to encrypt an input array. Hence, in 
+this implementation, the local id is ignored, since a work group only consists of a single work 
+item.
+
+The target device used for conducting experiments was a MotoX phone (table \ref{table:specs}).  We 
+initially intended to use the Nexus 4 phone, but this was abandoned due to apparent instabilities 
+triggered by the use of OpenCL on the device. 
+
+Preliminary experiments determined that the full parallelism offered by the GPU was not being 
+exploited using the original implementation.  Hence, modifications were made to the original 
+implementation in order to explore the different levels of parallelism offered by varying the input 
+parameters to the kernel such as the number of work groups and the work group size (which were 
+previously strictly $N/16$ and 1 respectively).  The following sections describe the modifications 
+that were performed to the original implementation and investigates their effect on the throughput 
+of encryption.
+
+\subsubsection{Even partitioning by work items}
+\label{subsec:impl_partition}
+
+We modified the OpenCL AES encrypt kernel such that the input array is split up evenly amongst the 
+work items across all work groups (whereas previously they only encrypted 16 bytes). In particular, 
+all OpenCL instances get some multiple of 16 bytes on which to operate, all of which are equally 
+sized except one OpenCL instance which will be allocated whatever remains of the input array (i.e. 
+given N = 128 bytes, and 3 work items, then 2 instances will operate on 48 bytes and 1 instance will 
+operate on 32 bytes). Timing experiments were performed on a 128 MB input array, with the total 
+number of work groups being varied from 1 up to 16, and the work group size being kept at 1 (refer 
+to figure \ref{fig:num_work_groups}).
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{../final/motox/4.2/sample_opencl_aes_global_worksize.128MB.16_max_global_worksize.again.report.eps}
+\caption{OpenCL performance over a varying number of work groups}
+\label{fig:num_work_groups}
+\end{figure}
+
+Going from of 1 up to 4 work groups, we see a linear speedup in encryption throughput (going from 
+work groups of 1 to 2 we see a 2.37 MB/second speedup, 2 to 3 we see 2.36 MB/second, and 3 to 4 we 
+see 2.36 MB/second). These linear speedups going from 1 up to 4 work groups are consistent with the 
+device specifications in table \ref{table:specs} which state that the GPU has 4 computing units 
+(hence, it is using an additional computing unit for each additional work group).
+
+When we reach 5 work groups, we see the worst decrease in encryption throughput (3.54 MB/second). 
+This is most likely due to the OpenCL runtime scheduling 4 simultaneous OpenCL kernel instances (4 
+work groups each consisting of a single work item) that operate on $1/5$ of the input array, with a 
+single OpenCL instance running on the remaining $1/5$ only after the first 4 complete (thereby 
+underutilizing the parallelism of the GPU).
+
+The throughput degrades the most for numbers of work groups that that are 1 modulo 4 since given 
+that instances will tend to complete in roughly the same time (since they have the same data size 
+and instructions executed), there will tend to be a point at which only one GPU core will be 
+utilized, thus reducing parallelism (similarly for 2 modulo 4, and 3 modulo 4). As we increase the 
+number of work groups, the degradation is less since the point at which we aren't maximally using 
+all 4 GPU cores operates over less of the input array.  This phenomenon has been described in 
+\cite{gpu_opt} as the tail effect.
+
+Hence, from figure \ref{fig:num_work_groups}, the main conclusion to be drawn is that work groups 
+are being scheduled on compute devices, but only one work group at a time is being scheduled 
+(otherwise the peaks would reach about 10 MB/second as the number of work groups increases).
+
+Next, we investigated the affect of increasing the number of work items used on a single compute 
+device.  In particular, we began by querying the OpenCL runtime for the maximum available work group 
+size, which was found to be 256.  However, this is only a theoretical maximum, and the actual 
+maximum enforced by OpenCL is dependant on the kernel being executed and its resource requirements 
+\cite{opencl_guide}; in our case, the maximum available was 80.  Timing experiments were performed 
+on a 32 MB input array, with the total number of work items being varied from 1 up to 80, and the 
+number of work groups being kept at 1 (refer to figure \ref{fig:work_group_size}).
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{../final/motox/4.2/sample_opencl_aes_work_group_size.32MB.1_work_groups.again.report.eps}
+\caption{OpenCL performance over varying work group size}
+\label{fig:work_group_size}
+\end{figure}
+
+From the graph, we can see the encryption throughput gradually increases from 0 up to 20 work items.  
+However, after 20 work items, we observe some degradation, followed by the throughput leveling off 
+at around 18 MB/second in throughput.  This decrease in throughput for an increase in processing 
+power usage is an unexpected result and warranted further investigation.  In particular, 
+
+
+
+
+
+I used the results from the graph in my previous email to guide me in using an appropriate number of 
+work groups (4, equal to the number of GPU cores). I then varied the size of each work group from 
+the minimum (1 processing element) up to the maximum (80 processing elements).
+
+Refer to attached graph.
+
+Summary:
+From the graph, we can see that the maximum throughput achieved is 57719.41 bytes/ms (~ 55.05 MB/s) 
+when using a global work-size of 4, with a local worksize (a.k.a work group size) of 50. Mind you, 
+the maximum is nearly reached by the time we are using a local worksize of 20. I'm guessing this is 
+related to caching behaviour, but I am not yet familiar with cache layout in GPUs.
+
+
+
+
 \begin{figure}[!t]
 \centering
 \includegraphics[width=2.5in]{../final/motox/4.2/opencl_sizes_vs_cpu_sizes.opencl_4G_19L.cpu_1thread.report.eps}
@@ -502,12 +624,103 @@ Subsubsection text here.
 \label{fig:opencl_vs_cpu}
 \end{figure}
 
+We are able to outperform a single CPU by about 7MB/s. However, we certainly aren't beating the CPU 
+handily.
+
+From here, I am investigating literature for experimental results and implementation details of AES 
+encryption on the GPU.  In particular, I need to understand more about the OpenCL memory model to 
+better understand what techniques published in literature are effective and why.
+
+
+Hello everyone,
+
+Stefan, I wasn't able to get to trying zeroing pages in place of encryption yet.  However, I intend 
+to do that next, since I am wanting to know (and I think you are too) what the memory bandwidth is 
+for this thing.
+
+What I did do (in addition to the plot I showed in my last email), was take my modified AES (that 
+splits the data to be encrypted into equal sized chunks), and investigate 2 parameters:
+
+    work group size: the number processing elements to use on a GPU core
+    number of work groups: the number GPU cores that are utilized
+
+In my previous graph I already looked at varying the work group size (I referred to it as local 
+worksize, but I'll stop using that term), but that was when using 4 GPU cores.  So, the following 
+graph investigates work group size for 1 GPU core.
+
+I observed similar results to my previous graph that varied work group size for 4 GPU cores: max 
+throughput is achieved at around a work group size of 19-20, with no gains after that.
+
+Next, to get a basis of comparison to the CPU, I implemented a benchmark of OpenSSL encryption.  I 
+used the fact that we achieved optimal encryption around a work group size of 19, and the number of 
+work groups set to 4.  I then varied the input size from 16 bytes ... 512 MB (incrementing by powers 
+of 2).
+
+
 \begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{../final/motox/4.2/sample_opencl_aes_global_worksize.128MB.16_max_global_worksize.again.report.eps}
-\caption{OpenCL performance over varying global worksize}
+\includegraphics[width=2.5in]{../final/motox/4.2/sample_opencl_aes_entries.64MB.4_work_groups.5000_max_entries.both.eps}
+\caption{OpenCL performance over for strided vs coalesced accesses within a work group}
 \label{fig:global_worksize}
 \end{figure}
+
+Hey everyone,
+
+I spent this week trying to investigate the reason for the level off in performance observed when 
+using 1 GPU core and varying the number of processing elements used on that core (the first graph in 
+the last email).  In particular, I've been researching general performance optimizations for GPU 
+programming. 
+
+The first thing I tried doing was varying the number of entries (where an entry is a contiguous 16 
+bytes of input) encrypted by each work item.  This is to test the hypothesis that by my 
+implementation splitting the input to be encrypted equally amongst work items, increasing the number 
+of entries that each work item encrypts would introduce increasingly larger stride distances between 
+memory accesses of work items in a work group.  This is an undesirable property if the GPU is 
+reading in memory in chunks, since increasingly distant memory accesses will be more likely to 
+require a separate chunk being read (i.e. no locality).  In summary, memory accesses are said to be 
+coalesced if multiple threads access contiguous memory locations (whereas non-contiguous accesses 
+are referred to as strided accesses).
+
+I set the work group size to the maximum available (80 processing elements per GPU core), with all 4 
+GPU cores are being utilized.  Hence, I am maximizing the parallelism of the GPU hardware for this 
+experiment.
+
+From the graph, we see that we generally achieve the best encryption throughput for small number of 
+entries (< 500), and it tends to get worse at the peaks for increasingly large sizes per work item, 
+which I believe is due to increasingly large stride distances within a work group. I believe the 
+fluctuations observed in the graph are due to the GPU being underutilized near the end of the 
+computation.  In particular, in order to use a work group size of 80, the OpenCL runtime forces me 
+to make each work group that size.  If the number of processing elements needed doesn't evenly 
+divide the input, this will cause the final scheduled work group to underutilize the GPU (and it 
+becomes increasingly bad if the processing element is responsible for a larger encryption size).
+
+Given this result, I then tried to see if I could modify my kernel not to introduce strided memory 
+accesses within a work group.  In particular, the implementation generating the graph above has work 
+items within a single work group accessing entries like:
+
+Work item 0: A[i], A[i + 1], ... A[i + entries - 1]
+Work item 1: A[i + entries], A[i + entries + 1], ... A[i + 2*entries - 1]
+
+(e.g. A[i] and A[i + entries] are read concurrently and are strided accesses)
+
+I modified my implementation to make it so accessing entries within a single work group looks like 
+(given that G is the number of work groups):
+
+Work item 0: A[i], A[i + entries], ... A[i + entries*(G - 1)]
+Work item 1: A[i + 1] A[i + 1 + entries], ..., A[i + 1 + entries*(G - 1)]
+
+(e.g. A[i] and A[i+1] are read concurrently and are coalesced memory accesses)
+
+Refer to the graph below for the results:
+We observe nearly identical throughput behaviour (in particular, when it decreases/increases) as 
+before.  However, we get slightly less throughput, which I believe is due to the increased 
+operations I am performing for entry index calculations.  If memory coalescing is in fact the reason 
+for poor performance, then this graph indicates that memory accesses are still not coalesced.  I am 
+confident that memory operations are coalesced within a work group, but it occurred to me that 
+memory accesses are not being coalesced between work groups.  From reviewing research, it seemed as 
+though the focus was coalesced access within work groups (presumably because we are guaranteed that 
+these accesses will happen simultaneously), so it is not clear whether it matters between work 
+groups (whose accesses may not happen simultaneously).
 
 % Note that IEEE typically puts floats only at the top, even when this
 % results in a large percentage of a column being occupied by floats.
@@ -536,8 +749,8 @@ Subsubsection text here.
 % reference/describe all of them (a), (b), etc., within the main caption.
 
 
-% An example of a floating table. Note that, for IEEE style tables, the 
-% \caption command should come BEFORE the table. Table text will default to
+% An example of a floating table. Note that, for IEEE style tables, the \caption command should come 
+% BEFORE the table. Table text will default to
 % \footnotesize as IEEE normally uses this smaller font for tables.
 % The \label must come after \caption as always.
 %
@@ -559,6 +772,14 @@ Subsubsection text here.
 %\hline
 %\end{tabular}
 %\end{table}
+
+\begin{table}[]
+\centering
+\caption{MotoX device specifications}
+\label{table:specs}
+\csvautotabular{resource/motox_specs.txt}
+\end{table}
+
 
 
 % Note that IEEE does not put floats in the very first column - or typically
@@ -619,7 +840,59 @@ The authors would like to thank...
 % 
 % \end{thebibliography}
 
+% \begin{filecontents*}{bibliography.bib}
+% 
+%     @article{hoard,
+%         title={Hoard: A scalable memory allocator for multithreaded applications},
+%         author={Berger, Emery D and McKinley, Kathryn S and Blumofe, Robert D and Wilson, Paul R},
+%         journal={ACM SIGPLAN Notices},
+%         volume={35},
+%         number={11},
+%         pages={117--128},
+%         year={2000},
+%         publisher={ACM}
+%     },
+% 
+%     @misc{seq_mem_alloc,
+%         title = {{Sequential Memory Allocators}},
+%         howpublished = 
+%         {\url{http://www.cdf.toronto.edu/~csc469h/fall/assignments/a2/malloc_notes.pdf}},
+%         note = {Accessed: 2013-11-11}
+%     },
+% 
+% 
+% 
+% \end{filecontents*}
+
+    % @misc{why,
+    %     title = {{Sequential Memory Allocators}},
+    %     howpublished = 
+%     {\url{http://www.cdf.toronto.edu/~csc469h/fall/assignments/a2/malloc_notes.pdf}},
+    %     note = {Accessed: 2013-11-11}
+    % },
+
 \begin{filecontents*}{bibliography.bib}
+
+    @misc{specs,
+        title = {{PDAdb.net} Qualcomm Snapdragon S4 Pro MSM8960DT Multi-core Application Processor 
+        with Modem Datasheet},
+        howpublished = 
+        {\url{http://www.pdadb.net/index.php?m=cpu&id=a8960dt&c=qualcomm_snapdragon_s4_pro_msm8960dt}},
+        note = {Accessed: 2013-12-04}
+    },
+
+    @misc{gpu_opt,
+        title = {{NVIDIA} GPU Performance Analysis and Optimization},
+        howpublished = 
+        {\url{http://on-demand.gputechconf.com/gtc/2012/presentations/S0514-GTC2012-GPU-Performance-Analysis.pdf}},
+        note = {Accessed: 2013-12-04}
+    },
+
+    @misc{opencl_impl,
+        title = {{GitHub} softboysxp/OpenCL-AES},
+        howpublished = {\url{https://github.com/softboysxp/OpenCL-AES}},
+        note = {Accessed: 2013-12-04}
+    },
 
     @article{hoard,
         title={Hoard: A scalable memory allocator for multithreaded applications},
@@ -631,6 +904,13 @@ The authors would like to thank...
         year={2000},
         publisher={ACM}
     },
+
+    @book{opencl_guide,
+        title={OpenCL programming guide},
+        author={Munshi, Aaftab and Gaster, Benedict and Mattson, Timothy G and Ginsburg, Dan},
+        year={2011},
+        publisher={Pearson Education}
+    }
 
 \end{filecontents*}
 
