@@ -436,10 +436,10 @@ Cell phones have evolved into a ubiquitous and essential method of communication
 Smartphones and mobile devices have significantly increased the productivity of users through the 
 accessibility to important services and have thus become critically integrated with both their work and 
 personal lives.   A side effect of this integration is that our phones contain a large volume of 
-probative information linked to an individual.  This scope of information sensitivity ranges 
+probative information linked to an individual.  The scope of information sensitivity ranges 
 anywhere from low severity (call history, contact information, and text message data, etc.) to more 
 valuable information (such as e-mail, browser history, and chat logs). The ever increasing number of 
-the phones available and in use by the public will continue to enhance the convenience of users, but 
+ phones available and in use by the public will continue to enhance the convenience of users, but 
 simultaneously brings along an increased potential for criminals to misuse this technology.
 
 Traditional desktops are assumed physically secure and need only be protected against software 
@@ -665,10 +665,13 @@ varying from 16 bytes up to 512 MB incrementing by powers of 2 (refer to figure
 \label{fig:opencl_vs_cpu}
 \end{figure}
 
-From figure \ref{fig:opencl_vs_cpu}, we are able to outperform a single CPU by 7 MB/second. This 
-margin is rather small based on previously published experiments investigating GPU encryption 
-acceleration on the desktop (cite a paper). Hence, this result warranted further investigation into 
-the implementation and potential optimizations.
+From figure \ref{fig:opencl_vs_cpu}, we are able achieve a throughput of 55.68 MB/second at an input 
+size of 512 MB, whereas the CPU is able to achieve 51.87 MB/second at an input size of 8 MB (though 
+it quickly degrades to 46.25 MB/second for an input of 16 MB).  Hence, the GPU's overall increase in 
+throughput speed is 3.81 MB/second over the CPU.  This margin is rather small based on previously 
+published experiments investigating GPU encryption acceleration on the desktop (cite a paper). 
+Hence, this result warranted further investigation into the implementation and potential 
+optimizations.
 
 \subsubsection{Version 2: coalesced accesses within work groups}
 \label{subsec:impl_coalesce}
@@ -841,10 +844,28 @@ inside device drivers from reading from sensors such as a camera).
 
 
 \section{Conclusion}
-The conclusion goes here.
 
+In this report, we have taken the first steps in investigating the feasibility of using the GPU as a 
+cryptographic accelerator for the AES algorithm on mobile devices.  In particular, our focus was on 
+exploring the use of OpenCL as a framework for implementing the algorithm.  Using modifications of 
+an existing implementation, we first showed that OpenCL schedules work groups to execute exclusively 
+on the compute units of the GPU, and that optimal throughput must be achieved through more than just 
+a simple data parallel implementation. Next, we investigated how performance varied with the 
+implementation as the number of active work items a single compute unit was varied, discovering a 
+surprising level off in encryption throughput when only using $\mathtt{1/4}$ of the available work 
+items.  Next, we determined that using optimal parameters for the number of work groups and work 
+group size, we are able to achieve on par performance with a single CPU using the OpenSSL 
+implementation.  Finally, we investigated uncoalesced memory accesses in the input data as a 
+potential reason for lower than expected performance, but determined this as not being the 
+underlying cause.  
 
+\section{Future work}
 
+Our next endeavour would be to investigate more causes of less than expected performance in GPU 
+encryption.  In particular, we would investigate the affect of memory access patterns for data other 
+than the input array, such as the T-box lookup table (see section \ref{subsec:impl_coalesce}).  
+Further, we would investigate the use of local memory regions shared between work items in a work 
+group for accelerating redundant accesses to T-box values.
 
 % conference papers do not normally have an appendix
 
