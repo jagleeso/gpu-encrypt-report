@@ -350,35 +350,25 @@
 
 
 % correct bad hyphenation here
-\hyphenation{op-tical net-works semi-conduc-tor}
+% \hyphenation{op-tical net-works semi-conduc-tor}
 
 
 \begin{document}
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Bare Demo of IEEEtran.cls for Conferences}
+\title{GPU Encrypt: AES Encryption on Mobile Devices}
 
 
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
-\author{\IEEEauthorblockN{Michael Shell}
-\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
-Georgia Institute of Technology\\
-Atlanta, Georgia 30332--0250\\
-Email: http://www.michaelshell.org/contact.html}
-\and
-\IEEEauthorblockN{Homer Simpson}
-\IEEEauthorblockA{Twentieth Century Fox\\
-Springfield, USA\\
-Email: homer@thesimpsons.com}
-\and
-\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
-\IEEEauthorblockA{Starfleet Academy\\
-San Francisco, California 96678-2391\\
-Telephone: (800) 555--1212\\
-Fax: (888) 555--1212}}
+\author{\IEEEauthorblockN{James Gleeson, Sreekumar Rajan, Vandana Saini}
+\IEEEauthorblockA{Department of\\Computer Science\\
+University of Toronto\\
+Toronto, ON\\
+\{jagleeso,sreekumar.rajan,vsaini\}@cs.toronto.edu}
+}
 
 % conference papers do not typically use \thanks and this command
 % is locked out in conference mode. If really needed, such as for
@@ -441,29 +431,82 @@ The abstract goes here.
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
-
-
 \section{Introduction}
-Madeup.
-% no \IEEEPARstart
-This demo file is intended to serve as a ``starter file''
-for IEEE conference papers produced under \LaTeX\ using
-IEEEtran.cls version 1.7 and later.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
-I wish you the best of success.
+Cell phones have evolved into a ubiquitous and essential method of communication across the world.  
+Smartphones and mobile devices have significantly increased the productivity of users through the 
+accessibility to important services and have thus become critically integrated with both their work and 
+personal lives.   A side effect of this integration is that our phones contain a large volume of 
+probative information linked to an individual.  This scope of information sensitivity ranges 
+anywhere from low severity (call history, contact information, and text message data, etc.) to more 
+valuable information (such as e-mail, browser history, and chat logs). The ever increasing number of 
+the phones available and in use by the public will continue to enhance the convenience of users, but 
+simultaneously brings along an increased potential for criminals to misuse this technology.
 
-\hfill mds
- 
-\hfill January 11, 2007
+Traditional desktops are assumed physically secure and need only be protected against software 
+attack vectors (e.g. a firewall for guarding against malicious network attacks), but mobile devices 
+are vulnerable to physical tampering, leading to a variety of previously unconsidered data risks.  
+Most of the sensitive and private information hoarded on cell phones can be legally or illegally 
+breached by someone with the technical expertise and the required equipment.  However, the tools 
+needed to perform these attacks are often publicly available in the form of source development tools 
+(cite forensics).  Currently, mobile phone systems try to offer security and privacy to users 
+through user authentication, signal encryption and user anonymity. Nevertheless, these techniques 
+cannot completely guarantee user privacy in domains such as multimedia communication, mobile 
+commerce etc..  A single event of device theft could lead to financial and information loss, a 
+privacy breach, loss of intellectual property, or even more severe damage. Information security is 
+thus becoming increasingly important, given the ever increasing number of new applications that make 
+use of that data.
 
-\subsection{Subsection Heading Here}
-Subsection text here.
+The existing disk encryption mechanisms are rendered vulnerable by direct memory access (DMA) 
+through the use of cold boot attacks.  In a cold boot attack, an attacker gains that physical access 
+to a computer is able to obtain either sensitive data in plain text or retrieve encryption keys from 
+the memory of a running operating system.  In particular, if the computer is forcefully powered off 
+during operation (e.g. unplugging the power cord), the operating system will not have a chance to 
+scrub memory of sensitive information.  Subsequently, the DRAM chips will retain the data in a 
+readable form for a period of time even after the computer is completely shut down.  This period can 
+even be increased by lowering the temperature (temperatures as low as $-50\,^{\circ}\mathrm{C}$ 
+achieved using off-the-shelf air dusters have been shown to preserve up to 99\% of memory for up to 
+10 minutes).  The contents are then read on the same or separate machine by booting the machine with 
+the compromised RAM into a custom kernel that dumps the contents into a separate storage medium. 
+This process thereby grants unauthorized access of a computer's encryption keys when the computer is 
+left physically unattended.  Therefore, the disk encryption systems have virtually no safe place to 
+safely store the cryptographic keys.  An attacker can recover encryption keys using key harvesting 
+algorithms outlined in \cite{coldboot} even in the presence of 15\% decay for 128-bit AES keys.
 
+Operating systems are still in the early stages of offering a completely secure environment to 
+protect against the breach of the secure information on phones in the absence of physical security.  
+With attacks like cold boot making foreign memory access easily achievable, some safeguards for 
+storing the encryption keys have been explored.  TRESOR \cite{tresor} is a Linux kernel patch for 
+the x86 architecture that runs the AES algorithm entirely on the microprocessor, storing the secret 
+key in CPU debug registers as a step to protect against key harvesting.  This provides the advantage 
+of preserving binary compatibility, preventing user-space applications from accessing them (by 
+patching system calls), and being large enough to store cryptographic keys.  This serves as good 
+motivation for the refinement of memory encryption techniques, and motivates the work herein.
 
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
+In this technical report, we propose the use of GPUs as a hardware accelerator for implementing the 
+Advanced Encryption Standard (AES) algorithm over a traditional CPU based implementation.  Modern 
+GPUs are attractive for parallel processing because these architectures have hundreds of processing 
+cores and high bandwidth, delivering up to a teraflop (1 trillion calculations per second) of 
+computing power from the same silicon area as a comparable microprocessor and using only a fraction 
+of the power per calculation \cite{myth}. These high-performance and low-energy advantages are a 
+result of the GPU's support for hiding latency in memory transactions through massive 
+multi-threading with low context switch overhead \cite{aes_gpu}.  Modern mobile devices have a 
+system-on-chip (SoC) architecture where the CPU, GPU, and other computing nodes share the same 
+system bus for accessing main memory. With the recent frameworks performing general-purpose parallel 
+programming on GPUs (GPGPU), OpenCL provides a model for programming whereby a host processor (in 
+this case, a CPU) can delegate work to be performed in parallel by computing nodes (GPUs).
 
+(TODO: AES)
+
+The OpenCL programming model defines work items to be an executing instance of an OpenCL kernel 
+(assigned a local id), and work groups to be equally sized groups of work items (assigned a global 
+id). The OpenCL model ensures that work items within a work group will execute concurrently, but 
+provides no guarantees whether work groups will execute concurrently or serially. When you execute 
+an OpenCL kernel, you specify the number of work groups, and the number of work items within each 
+work group. All work items within a group each get a local id that is unique within that group as 
+well as a global id that is unique across all instances of the executing kernel. The work items then 
+make use of their local and global ids to appropriately divide up the work, and can make use of 
+synchronization constructs like a work group barrier to synchronize their execution (but only for 
+work items within the same group) \cite{opencl_guide}.
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -497,17 +540,6 @@ Subsubsection text here.
 % \end{figure}
 
 \section{Evaluation}
-
-The OpenCL programming model defines work items to be an executing instance of an OpenCL kernel 
-(assigned a local id), and work groups to be equally sized groups of work items (assigned a global 
-id). The OpenCL model ensures that work items within a work group will execute concurrently, but 
-provides no guarantees whether work groups will execute concurrently or serially. When you execute 
-an OpenCL kernel, you specify the number of work groups, and the number of work items within each 
-work group. All work items within a group each get a local id that is unique within that group as 
-well as a global id that is unique across all instances of the executing kernel. The work items then 
-make use of their local and global ids to appropriately divide up the work, and can make use of 
-synchronization constructs like a work group barrier to synchronize their execution (but only for 
-work items within the same group) \cite{opencl_guide}.
 
 An existing implementation of an OpenCL kernel implementing the AES encryption algorithm was 
 obtained from a public source code repository \cite{opencl_impl}.  The original implementation of 
@@ -777,6 +809,35 @@ current implementations, this table is stored in constant memory (a constant reg
 % footnotes above bottom floats. This can be corrected via the \fnbelowfloat
 % command of the stfloats package.
 
+\section{Related work}
+CleanOS is a modification of Android that introduces an abstraction called Sensitive Data Objects 
+(SDOs) to track sensitive data on the RAM, created and hoarded by apps that run on top of the Dalvik 
+Virtual Machine \cite{cleanos}. The system works by defining SDOs (either by the apps or by the default OS), 
+which are a logical collection of Java Objects that contain sensitive data. It introduces a modified 
+garbage collector known as EvictIdleGarbageCollector (eiGC) which walks through an idle SDO and 
+encrypts their data-bearing fields using a key which is then evicted to the cloud whereas the data 
+remains encrypted in memory.  This system, like ours, prevents the download delay of the encrypted 
+data from a remote host as the data is always present in the device itself. Moreover, the key is 
+inaccessible to a malicious user stealing the phone.
+
+However, CleanOS incurs the latency of a network requests in retrieving the key from cloud.  In 
+particular, CleanOS will incur unpredictable pauses during an otherwise inexpensive memory access on 
+an encrypted value when the application is running due to network requests for obtaining keys from 
+the cloud . Due to the implementation of encryption at the Davlik VM level, the application doesn't 
+even have a means for knowing when the pauses are going to happen to prevent them either from doing 
+something else in the meantime, or to avoid the request altogether.  In fact, evaluations show that 
+many operations (like loading of an email onto the screen) incurred overheads of more than 100\% 
+compared to a non-CleanOS implementation, especially over 3G networks \cite{cleanos}.
+
+In contrast, our system stores the key on the device in a special register accessed by the operating 
+system and not user level applications. We can use techniques like TRESOR \cite{tresor} for this, 
+which ensures that the key is only stored in CPU registers which are not accessible to user 
+applications (like debug registers) and that the key is only brought to RAM for a very short period 
+on reboot even before all other applications come to life. The key is cleared from RAM soon after 
+this.  Another major shortcoming of CleanOS is that it only encrypts data (memory) which is managed 
+by the Dalvik virtual machine, and does not account for data that is unencrypted in other parts of 
+the operating system \cite{cleanos}.  This includes OS data buffers (e.g. for writing to a file, 
+inside device drivers from reading from sensors such as a camera).
 
 
 \section{Conclusion}
@@ -786,16 +847,6 @@ The conclusion goes here.
 
 
 % conference papers do not normally have an appendix
-
-
-% use section* for acknowledgement
-\section*{Acknowledgment}
-
-
-The authors would like to thank...
-
-
-
 
 
 % trigger a \newpage just before the given reference
@@ -882,6 +933,51 @@ The authors would like to thank...
         howpublished = {\url{http://www.openssl.org/docs/crypto/crypto.html}},
         note = {Accessed: 2013-12-04}
     },
+
+    @article{coldboot,
+        title={Lest we remember: cold-boot attacks on encryption keys},
+        author={Halderman, J Alex and Schoen, Seth D and Heninger, Nadia and Clarkson, William and Paul, William and Calandrino, Joseph A and Feldman, Ariel J and Appelbaum, Jacob and Felten, Edward W},
+        journal={Communications of the ACM},
+        volume={52},
+        number={5},
+        pages={91--98},
+        year={2009},
+        publisher={ACM}
+    }
+
+    @inproceedings{tresor,
+        title={TRESOR Runs Encryption Securely Outside RAM},
+        author={M{\"u}ller, Tilo and Freiling, Felix C and Dewald, Andreas},
+        booktitle={USENIX Security Symposium},
+        year={2011}
+    }
+
+    @article{myth,
+        title={CPU and/or GPU: Revisiting the GPU Vs. CPU Myth},
+        author={Kothapalli, Kishore and Banerjee, Dip Sankar and Narayanan, PJ and Sood, Surinder and 
+            Bahl, Aman Kumar and Sharma, Shashank and Lad, Shrenik and Singh, Krishna Kumar and Matam, Kiran 
+        and Bharadwaj, Sivaramakrishna and others},
+        journal={arXiv preprint arXiv:1303.2171},
+        year={2013}
+    }
+
+    @inproceedings{aes_gpu,
+        title={Accelerating Encryption Algorithms Using Parallelism},
+        author={Duta, Cristina-Loredana and Michiu, Gicu and Stoica, Silviu and Gheorghe, Laura},
+        booktitle={Control Systems and Computer Science (CSCS), 2013 19th International Conference on},
+        pages={549--554},
+        year={2013},
+        organization={IEEE}
+    }
+
+    @inproceedings{cleanos,
+        title={CleanOS: Limiting mobile data exposure with idle eviction},
+        author={Tang, Yang and Ames, Phillip and Bhamidipati, Sravan and Bijlani, Ashish and Geambasu, 
+        Roxana and Sarda, Nikhil},
+        booktitle={Proceedings of the USENIX Conference on Operating Systems Design and Implementation, 
+        Berkeley, CA, USA},
+        year={2012}
+    }
 
 \end{filecontents*}
 

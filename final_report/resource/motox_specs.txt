@@ -1,0 +1,13 @@
+Name,Value
+Manufacturer,Qualcomm 
+Chipset,Snapdragon S4 Pro MSM8960DT
+CPU,2x Qualcomm Krait 300 Harvard Superscalar processor
+GPU,400 MHz quad-core Adreno 320 MP4 GPU
+GPU device memory,898 MB
+Compute units,4
+Max work group size,256
+Constant buffer size,4096 bytes
+Cache line size,16 bytes
+Profiling timer resolution,1000 nanoseconds
+Local memory size,8192 bytes
+Max clock frequency,325 MHz
