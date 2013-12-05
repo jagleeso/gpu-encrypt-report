@@ -371,7 +371,7 @@
 % use a multiple column layout for up to three different
 % affiliations
 \author{\IEEEauthorblockN{James Gleeson, Sreekumar Rajan, Vandana Saini}
-\IEEEauthorblockA{Department of\\Computer Science\\
+\IEEEauthorblockA{Department of Computer Science\\
 University of Toronto\\
 Toronto, ON\\
 \{james.gleeson,sreekumar.rajan,vsaini\}@cs.toronto.edu}
@@ -605,14 +605,14 @@ previously strictly $N/16$ and 1 respectively).  The following sections describe
 that were performed to the original implementation and investigates their effect on the throughput 
 of encryption.
 
-\subsubsection{Version 1: even partitioning by work items}
+\subsubsection{Version 1 - even partitioning by work items}
 \label{subsec:impl_partition}
 
 We modified the OpenCL AES encrypt kernel such that the input array is split up evenly amongst the 
 work items across all work groups (whereas previously they only encrypted 16 bytes). In particular, 
 all OpenCL instances get some multiple of 16 bytes on which to operate, all of which are equally 
 sized except one OpenCL instance which will be allocated whatever remains of the input array (i.e.  
-given N = 128 bytes, and 3 work items, then 2 instances will operate on 48 bytes and 1 instance will 
+given $N = 128$ bytes, and 3 work items, then 2 instances will operate on 48 bytes and 1 instance will 
 operate on 32 bytes). Timing experiments were performed on a 128 MB input array, with the total 
 number of work groups being varied from 1 up to 16, and the work group size being kept at 1 (refer 
 to figure \ref{fig:num_work_groups}).
@@ -666,9 +666,9 @@ number of work groups being kept at 1 (refer to figure \ref{fig:work_group_size}
 From the graph, we can see the encryption throughput gradually increases from 0 up to 20 work items, 
 doubling the maximum throughput observed when only considering a single work item (as in figure 
 \ref{fig:num_work_groups}).  However, after 20 work items, we observe some degradation, followed by 
-the throughput leveling off at around 18 MB/second in throughput.  This decrease in throughput for 
+the throughput leveling off at around 18 MB/second.  This decrease in throughput for 
 an increase in parallelism is an unexpected result and warranted further investigation.  Previous 
-work has shown that the memory accesses patterns are important to consider when optimizing the 
+work has shown that the memory access patterns are important to consider when optimizing the 
 performance of a GPU program \cite{gpu_mem}. In particular, access to global memory is the slowest 
 memory operation, whereas access to local memory (shared within a work group) is more efficient 
 \cite{opencl_guide}.  The current implementation would not benefit from the use of local memory for 
@@ -704,11 +704,11 @@ From figure \ref{fig:opencl_vs_cpu}, we are able achieve a throughput of 55.68 M
 size of 512 MB, whereas the CPU is able to achieve 51.87 MB/second at an input size of 8 MB (though 
 it quickly degrades to 46.25 MB/second for an input of 16 MB).  Hence, the GPU's overall increase in 
 throughput speed is 3.81 MB/second over the CPU.  This margin is rather small based on previously 
-published experiments investigating GPU encryption acceleration on the desktop (cite a paper). 
-Hence, this result warranted further investigation into the implementation and potential 
-optimizations.
+published experiments investigating GPU encryption acceleration on the desktop using CUDA, which 
+have found up to a 28.39 fold speedup in encryption \cite{aes_cuda}.  Hence, this result warranted 
+further investigation into the implementation and potential optimizations.
 
-\subsubsection{Version 2: coalesced accesses within work groups}
+\subsubsection{Version 2 - coalesced accesses within work groups}
 \label{subsec:impl_coalesce}
 
 We further modified the kernel (from section \ref{subsec:impl_partition}) such that in addition to 
@@ -717,7 +717,7 @@ contiguous sequences.
 
 That is, the kernel in section \ref{subsec:impl_partition} performed strided memory accesses 
 \cite{gpu_mem} within a work group.  For example, given a single work group of size 2 where each 
-work item is responsible for encrypting $\mathtt{E}$ entries, the accesses to the input array 
+work item is responsible for encrypting $\mathtt{E}$ entries, accesses to the input array 
 $\mathtt{A}$ were as follows:
 
 \begin{table}[h]
@@ -862,8 +862,8 @@ inaccessible to a malicious user stealing the phone.
 However, CleanOS incurs the latency of a network requests in retrieving the key from cloud.  In 
 particular, CleanOS will incur unpredictable pauses during an otherwise inexpensive memory access on 
 an encrypted value when the application is running due to network requests for obtaining keys from 
-the cloud . Due to the implementation of encryption at the Davlik VM level, the application doesn't 
-even have a means for knowing when the pauses are going to happen to prevent them either from doing 
+the cloud. Due to the implementation of encryption at the Davlik VM level, the application doesn't 
+even have a means for knowing when the pauses are going to happen to deal with them either by doing 
 something else in the meantime, or to avoid the request altogether.  In fact, evaluations show that 
 many operations (like loading of an email onto the screen) incurred overheads of more than 100\% 
 compared to a non-CleanOS implementation, especially over 3G networks \cite{cleanos}.
@@ -1055,7 +1055,7 @@ encrypt memory on behalf of the Linux kernel.
     },
 
     @inproceedings{cleanos,
-        title={CleanOS: limiting mobile data exposure with idle eviction},
+        title={{CleanOS: limiting mobile data exposure with idle eviction}},
         author={Tang, Yang and Ames, Phillip and Bhamidipati, Sravan and Bijlani, Ashish and Geambasu, 
         Roxana and Sarda, Nikhil},
         booktitle={Proceedings of the USENIX Conference on Operating Systems Design and Implementation, 
@@ -1121,6 +1121,15 @@ encrypt memory on behalf of the Linux kernel.
         author={Lessard, Jeff and Kessler, Gary},
         year={2010},
         publisher={Purdue University}
+    },
+
+    @inproceedings{aes_cuda,
+        title={{AES encryption implementation on CUDA GPU and its analysis}},
+        author={Iwai, Keisuke and Kurokawa, Takakazu and Nisikawa, Naoki},
+        booktitle={Networking and Computing (ICNC), 2010 First International Conference on},
+        pages={209--214},
+        year={2010},
+        organization={IEEE}
     },
 
 \end{filecontents*}
