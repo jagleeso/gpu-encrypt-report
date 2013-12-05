@@ -73,8 +73,15 @@
 % Custom packages.
 \usepackage{filecontents}
 \usepackage{csvsimple}
-\usepackage{url}
+\usepackage[hyphens]{url}
+% \usepackage[pdfborder={0 0 0}]{hyperref}
 \newcommand{\var}[1]{$\mathtt{#1}$}
+
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{breakurl}
+\usepackage{etoolbox}
+% Variant A
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 
 
 
@@ -367,7 +374,7 @@
 \IEEEauthorblockA{Department of\\Computer Science\\
 University of Toronto\\
 Toronto, ON\\
-\{jagleeso,sreekumar.rajan,vsaini\}@cs.toronto.edu}
+\{james.gleeson,sreekumar.rajan,vsaini\}@cs.toronto.edu}
 }
 
 % conference papers do not typically use \thanks and this command
@@ -405,10 +412,10 @@ Toronto, ON\\
 \maketitle
 
 
-\begin{abstract}
+% \begin{abstract}
 %\boldmath
-The abstract goes here.
-\end{abstract}
+% The abstract goes here.
+% \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
 % if the conference you are submitting to favors bold math in the abstract,
@@ -434,43 +441,47 @@ The abstract goes here.
 \section{Introduction}
 Cell phones have evolved into a ubiquitous and essential method of communication across the world.  
 Smartphones and mobile devices have significantly increased the productivity of users through the 
-accessibility to important services and have thus become critically integrated with both their work and 
-personal lives.   A side effect of this integration is that our phones contain a large volume of 
-probative information linked to an individual.  The scope of information sensitivity ranges 
-anywhere from low severity (call history, contact information, and text message data, etc.) to more 
-valuable information (such as e-mail, browser history, and chat logs). The ever increasing number of 
- phones available and in use by the public will continue to enhance the convenience of users, but 
-simultaneously brings along an increased potential for criminals to misuse this technology.
+accessibility to important services and have thus become critically integrated with both their work 
+and personal lives \cite{mobile}.   A side effect of this integration is that our phones contain a 
+large volume of probative information linked to an individual.  The scope of information sensitivity 
+ranges anywhere from low severity (call history, contact information, and text message data, etc.) 
+to more valuable information (such as e-mail, browser history, and chat logs, and even passwords) 
+\cite{lost_phone}.  The ever increasing number of phones available and in use by the public will 
+continue to enhance the convenience of users, but simultaneously brings along an increased potential 
+for criminals to misuse this technology.
 
 Traditional desktops are assumed physically secure and need only be protected against software 
 attack vectors (e.g. a firewall for guarding against malicious network attacks), but mobile devices 
-are vulnerable to physical tampering, leading to a variety of previously unconsidered data risks.  
-Most of the sensitive and private information hoarded on cell phones can be legally or illegally 
-breached by someone with the technical expertise and the required equipment.  However, the tools 
-needed to perform these attacks are often publicly available in the form of source development tools 
-(cite forensics).  Currently, mobile phone systems try to offer security and privacy to users 
-through user authentication, signal encryption and user anonymity. Nevertheless, these techniques 
-cannot completely guarantee user privacy in domains such as multimedia communication, mobile 
-commerce etc..  A single event of device theft could lead to financial and information loss, a 
-privacy breach, loss of intellectual property, or even more severe damage. Information security is 
-thus becoming increasingly important, given the ever increasing number of new applications that make 
-use of that data.
+are vulnerable to physical tampering, leading to a variety of previously unconsidered data risks 
+\cite{mobile}.  Most of the sensitive and private information hoarded on cell phones can be legally 
+or illegally breached by someone with the technical expertise and the required equipment.  However, 
+the tools needed to perform these attacks are often publicly available in the form of source 
+development tools \cite{forensics}.  Currently, mobile phone systems try to offer security and 
+privacy to users through user authentication, signal encryption and user anonymity. Nevertheless, 
+these techniques cannot completely guarantee user privacy in domains such mobile commerce, 
+particularly when they are in conflict with resources present on the device (e.g. power, cycles, 
+memory, and bandwidth) \cite{mobile}.  A single event of device theft could lead to financial and 
+information loss, a privacy breach, loss of intellectual property, or even more severe damage.  
+Information security is thus becoming increasingly important, given the ever increasing number of 
+new applications that make use of that data.
 
-The existing disk encryption mechanisms are rendered vulnerable by direct memory access (DMA) 
-through the use of cold boot attacks.  In a cold boot attack, an attacker gains that physical access 
-to a computer is able to obtain either sensitive data in plain text or retrieve encryption keys from 
-the memory of a running operating system.  In particular, if the computer is forcefully powered off 
-during operation (e.g. unplugging the power cord), the operating system will not have a chance to 
-scrub memory of sensitive information.  Subsequently, the DRAM chips will retain the data in a 
-readable form for a period of time even after the computer is completely shut down.  This period can 
-even be increased by lowering the temperature (temperatures as low as $-50\,^{\circ}\mathrm{C}$ 
-achieved using off-the-shelf air dusters have been shown to preserve up to 99\% of memory for up to 
-10 minutes).  The contents are then read on the same or separate machine by booting the machine with 
-the compromised RAM into a custom kernel that dumps the contents into a separate storage medium. 
-This process thereby grants unauthorized access of a computer's encryption keys when the computer is 
-left physically unattended.  Therefore, the disk encryption systems have virtually no safe place to 
-safely store the cryptographic keys.  An attacker can recover encryption keys using key harvesting 
-algorithms outlined in \cite{coldboot} even in the presence of 15\% decay for 128-bit AES keys.
+Existing disk encryption mechanisms typically deployed in laptops have been shown to be vulnerable 
+to methods that instead focus on obtaining sensitive data directly from memory, with one such method 
+being a cold boot attack \cite{coldboot}.  In a cold boot attack, an attacker gains physical access 
+to a computer and is able to obtain sensitive data either in plain text or indirectly by first 
+obtaining encryption keys from the memory of a running operating system.  In particular, if the 
+computer is forcefully powered off during operation (e.g. unplugging the power cord), the operating 
+system will not have a chance to scrub memory of sensitive information.  Subsequently, the DRAM 
+chips will retain the data in a readable form for a period of time even after the computer is 
+completely shut down.  This period can even be increased by lowering the temperature (temperatures 
+as low as $-50\,^{\circ}\mathrm{C}$ achieved using off-the-shelf air dusters have been shown to 
+preserve up to 99.9\% of memory for up to 1 minute).  The contents are then read on the same or 
+separate machine by booting the machine with the compromised RAM into a custom kernel that dumps the 
+contents into a separate storage medium.  This process thereby grants unauthorized access of a 
+computer's encryption keys when the computer is left physically unattended.  Therefore, the disk 
+encryption systems have virtually no safe place to safely store the cryptographic keys.  An attacker 
+can recover encryption keys using key harvesting algorithms outlined in \cite{coldboot} even in the 
+presence of 15\% decay for 128-bit AES keys.
 
 Operating systems are still in the early stages of offering a completely secure environment to 
 protect against the breach of the secure information on phones in the absence of physical security.  
@@ -501,13 +512,13 @@ individual block of the input plain text (each block being 128 bits). At a high 
 does the following. It first goes through a key expansion stage, where the cipher key is used to 
 derive the round keys using a key scheduling algorithm. The plain text is XORed with one of the 
 derived keys (AddRoundKey) before being subjected to a series of rounds, the number of rounds being 
-decided by the size of the cipher key (10 in case of 128 bits key). The input and output of each of 
+decided by the size of the cipher key (10 in case of 128-bit keys). The input and output of each of 
 the rounds is modeled as 4 by 4 matrix, called a state, with each cell being a byte in size. In each of 
 the rounds the input goes through the following steps. First, each byte is replaced in a non-linear 
 manner with another using a lookup table (SubBytes). Then each of the rows of the input is 
-cyclically shifted to the left a certain number of steps (ShiftRows) . This is followed  by a mixing 
+cyclically shifted to the left a certain number of steps (ShiftRows) . This is followed by a mixing 
 operation which operates on the columns of the state, combining the four bytes in each 
-column(MixColumns). The last round of the encryption algorithm omits this step. The final step in 
+column (MixColumns). The last round of the encryption algorithm omits this step. The final step in 
 the round is again AddRoundKey where the state is XORed with a derived key from the key expansion 
 step. The output of these rounds is the encrypted ciphertext \cite{aes1,aes2}.
 
@@ -582,7 +593,7 @@ at once. Thus, given an input array of $N$ bytes, we only need $N/16$ work group
 each to encrypt an input array. Hence, in this implementation, the local id is ignored, since a work 
 group only consists of a single work item.
 
-The target device used for conducting experiments was a MotoX phone (table \ref{table:specs}).  We 
+The target device used for conducting experiments was a MotoX phone \cite{specs} (table \ref{table:specs}).  We 
 initially intended to use the Nexus 4 phone, but this was abandoned due to apparent instabilities 
 triggered by the use of OpenCL on the device. 
 
@@ -765,8 +776,9 @@ coalescing is in fact the reason for poor performance in the strided implementat
 coalesced graph indicates that memory accesses are still not coalesced.  
 
 This warrants further investigation into the memory access patterns for data other than the input 
-array, such as the T-box lookup table which is used during the encryption process (cite AES).  In  
-current implementations, this table is stored in constant memory (a constant region of global memory 
+array, such as the T-box lookup table which is used during the encryption process (whose purpose is 
+analogous to the S-box in traditional AES implementations \cite{aes1,aes2}).  In current 
+implementations, this table is stored in constant memory (a constant region of global memory 
 \cite{opencl_guide}) and may be subject to random uncoalesced accesses.
 
 % Note that IEEE typically puts floats only at the top, even when this
@@ -838,7 +850,7 @@ current implementations, this table is stored in constant memory (a constant reg
 
 \section{Related work}
 CleanOS is a modification of Android that introduces an abstraction called Sensitive Data Objects 
-(SDOs) to track sensitive data on the RAM, created and hoarded by apps that run on top of the Dalvik 
+(SDOs) to track sensitive data in RAM, created and hoarded by apps that run on top of the Dalvik 
 Virtual Machine \cite{cleanos}. The system works by defining SDOs (either by the apps or by the default OS), 
 which are a logical collection of Java Objects that contain sensitive data. It introduces a modified 
 garbage collector known as EvictIdleGarbageCollector (eiGC) which walks through an idle SDO and 
@@ -867,16 +879,15 @@ the operating system \cite{cleanos}.  This includes OS data buffers (e.g. for wr
 inside device drivers from reading from sensors such as a camera).
 
 XOM is a system to prevent software piracy, wherein the executing code of the software which is in 
-RAM is encrypted by marking it as "execute-only" and so is prevented from tampering \cite{xom}. 
+RAM is encrypted by marking it as "execute-only" and so is prevented from tampering \cite{xom}.  
 Cryptkeeper is a software-encrypted virtual memory manager that segments RAM into two segments, one 
 for running the decrypted programming instructions (small in size) and the other for keeping the 
 encrypted pages. The pages are swapped automatically between the segments and decrypted on demand 
 \cite{cryptkeeper}.  Encrypted Swap aims at encrypting pages before swapping them to swap memory so 
 that sensitive data related to swapped out processes are not available in backing storages 
-\cite{encryptedswap}. These 
-systems all have the same disadvantage that, even though the data is encrypted, the decryption key 
-is still left in RAM and so can be recovered through memory-harvesting techniques.
-
+\cite{encryptedswap}. These systems all have the same disadvantage that, even though the data is 
+encrypted, the decryption key is still left in RAM and so can be recovered through memory-harvesting 
+techniques.
 
 \section{Conclusion}
 
@@ -886,8 +897,8 @@ exploring the use of OpenCL as a framework for implementing the algorithm.  Usin
 an existing implementation, we first showed that OpenCL schedules work groups to execute exclusively 
 on the compute units of the GPU, and that optimal throughput must be achieved through more than just 
 a simple data parallel implementation. Next, we investigated how performance varied with the 
-implementation as the number of active work items a single compute unit was varied, discovering a 
-surprising level off in encryption throughput when only using $\mathtt{1/4}$ of the available work 
+implementation as the number of active work items in a single compute unit was varied, discovering a 
+surprising level off in encryption throughput when using only $1/4$ of the available work 
 items.  Next, we determined that using optimal parameters for the number of work groups and work 
 group size, we are able to achieve on par performance with a single CPU using the OpenSSL 
 implementation.  Finally, we investigated uncoalesced memory accesses in the input data as a 
@@ -903,8 +914,8 @@ would investigate the use of local memory regions shared between work items in a
 accelerating redundant accesses to T-box values.  After achieving sufficient performance in 
 encryption throughput, we would turn our focus to evaluating other characteristics relevant to 
 mobile devices, such as energy consumption during encryption.  Finally, we would investigate methods 
-for securely providing a privileged user-level process the permissions needed to encrypt memory on 
-behalf of the Linux kernel.
+for securely providing a privileged user-level process the permissions and capabilities needed to 
+encrypt memory on behalf of the Linux kernel.
 
 % conference papers do not normally have an appendix
 
@@ -939,34 +950,47 @@ behalf of the Linux kernel.
 % 
 % \end{thebibliography}
 
+    % @online{specs,
+    %     title = {{PDAdb.net - Qualcomm Snapdragon S4 Pro MSM8960DT multi-core application processor with Modem Datasheet}},
+    %     url = {\url{http://www.pdadb.net/index.php?m=cpu&id=a8960dt&c=qualcomm_snapdragon_s4_pro_msm8960dt}},
+    %     month = {12},
+    %     year = {2013},
+    % },
 
 \begin{filecontents*}{bibliography.bib}
 
     @misc{specs,
-        title = {{PDAdb.net} Qualcomm Snapdragon S4 Pro MSM8960DT Multi-core Application Processor 
-        with Modem Datasheet},
+        title = {{PDAdb.net -  Qualcomm Snapdragon S4 Pro MSM8960DT multi-core application processor 
+        with Modem Datasheet}},
         howpublished = 
         {\url{http://www.pdadb.net/index.php?m=cpu&id=a8960dt&c=qualcomm_snapdragon_s4_pro_msm8960dt}},
         note = {Accessed: 2013-12-04}
     },
 
     @misc{gpu_opt,
-        title = {{NVIDIA} GPU Performance Analysis and Optimization},
+        title = {{NVIDIA GPU performance analysis and optimization}},
         howpublished = 
         {\url{http://on-demand.gputechconf.com/gtc/2012/presentations/S0514-GTC2012-GPU-Performance-Analysis.pdf}},
         note = {Accessed: 2013-12-04}
     },
 
     @misc{opencl_impl,
-        title = {{GitHub} softboysxp/OpenCL-AES},
+        title = {{GitHub -  softboysxp/OpenCL-AES}},
         howpublished = {\url{https://github.com/softboysxp/OpenCL-AES}},
         note = {Accessed: 2013-12-04}
     },
 
     @misc{nvidia_opencl,
-        title = {{NVIDIA} OpenCL Programming Guide for the CUDA Architecture},
+        title = {{NVIDIA -  OpenCL programming guide for the CUDA architecture}},
         howpublished = 
         {\url{http://www.nvidia.com/content/cudazone/download/OpenCL/NVIDIA_OpenCL_ProgrammingGuide.pdf}},
+        note = {Accessed: 2013-12-04}
+    },
+
+    @misc{lost_phone,
+        title = {{Ponemon Institute -  The lost smartphone problem}},
+        howpublished = 
+        {\url{http://www.mcafee.com/us/resources/reports/rp-ponemon-lost-smartphone-problem.pdf}},
         note = {Accessed: 2013-12-04}
     },
 
@@ -978,7 +1002,7 @@ behalf of the Linux kernel.
     }
 
     @inproceedings{gpu_mem,
-        title={A GPGPU compiler for memory optimization and parallelism management},
+        title={{A GPGPU compiler for memory optimization and parallelism management}},
         author={Yang, Yi and Xiang, Ping and Kong, Jingfei and Zhou, Huiyang},
         booktitle={ACM Sigplan Notices},
         volume={45},
@@ -989,7 +1013,7 @@ behalf of the Linux kernel.
     }
 
     @misc{openssl,
-        title = {{OpenSSL} Documents, crypto(3)},
+        title = {{OpenSSL} - Documents, crypto(3)},
         howpublished = {\url{http://www.openssl.org/docs/crypto/crypto.html}},
         note = {Accessed: 2013-12-04}
     },
@@ -1006,14 +1030,14 @@ behalf of the Linux kernel.
     },
 
     @inproceedings{tresor,
-        title={TRESOR Runs Encryption Securely Outside RAM},
+        title={{TRESOR runs encryption securely outside RAM}},
         author={M{\"u}ller, Tilo and Freiling, Felix C and Dewald, Andreas},
         booktitle={USENIX Security Symposium},
         year={2011}
     },
 
     @article{myth,
-        title={CPU and/or GPU: Revisiting the GPU Vs. CPU Myth},
+        title={{CPU and/or GPU: revisiting the GPU vs. CPU myth}},
         author={Kothapalli, Kishore and Banerjee, Dip Sankar and Narayanan, PJ and Sood, Surinder and 
             Bahl, Aman Kumar and Sharma, Shashank and Lad, Shrenik and Singh, Krishna Kumar and Matam, Kiran 
         and Bharadwaj, Sivaramakrishna and others},
@@ -1022,7 +1046,7 @@ behalf of the Linux kernel.
     },
 
     @inproceedings{aes_gpu,
-        title={Accelerating Encryption Algorithms Using Parallelism},
+        title={Accelerating encryption algorithms using parallelism},
         author={Duta, Cristina-Loredana and Michiu, Gicu and Stoica, Silviu and Gheorghe, Laura},
         booktitle={Control Systems and Computer Science (CSCS), 2013 19th International Conference on},
         pages={549--554},
@@ -1031,7 +1055,7 @@ behalf of the Linux kernel.
     },
 
     @inproceedings{cleanos,
-        title={CleanOS: Limiting mobile data exposure with idle eviction},
+        title={CleanOS: limiting mobile data exposure with idle eviction},
         author={Tang, Yang and Ames, Phillip and Bhamidipati, Sravan and Bijlani, Ashish and Geambasu, 
         Roxana and Sarda, Nikhil},
         booktitle={Proceedings of the USENIX Conference on Operating Systems Design and Implementation, 
@@ -1051,7 +1075,7 @@ behalf of the Linux kernel.
     },
 
     @inproceedings{cryptkeeper,
-        title={Cryptkeeper: Improving security with encrypted RAM},
+        title={Cryptkeeper: improving security with encrypted RAM},
         author={Peterson, Peter AH},
         booktitle={Technologies for Homeland Security (HST), 2010 IEEE International Conference on},
         pages={120--126},
@@ -1068,23 +1092,43 @@ behalf of the Linux kernel.
     },
 
     @article{aes1,
-        title={197, Advanced encryption standard (AES)},
+        title={{197, Advanced encryption standard (AES)}},
         author={FIPS, PUB},
         journal={National Institute of Standards and Technology},
         year={2001}
-    }
+    },
 
-    @misc{aes2,
-        title={The Design of Rijndael: AES-The Advanced Encryption Standard (Information Security and Cryptography)},
+    @book{aes2,
+        title={The design of Rijndael: AES-the advanced encryption standard},
         author={Daemen, Joan and Rijmen, Vincent},
         year={2002},
-        publisher={Springer Heidelberg}
+        publisher={Springer}
     }
+
+    @article{mobile,
+        title={Software security and privacy risks in mobile e-commerce},
+        author={Ghosh, Anup K and Swaminatha, Tara M},
+        journal={Communications of the ACM},
+        volume={44},
+        number={2},
+        pages={51--57},
+        year={2001},
+        publisher={ACM}
+    },
+
+    @article{forensics,
+        title={Android Forensics: Simplifying Cell Phone Examinations.},
+        author={Lessard, Jeff and Kessler, Gary},
+        year={2010},
+        publisher={Purdue University}
+    },
 
 \end{filecontents*}
 
 % \newpage
-\bibliographystyle{plain}
+% \bibliographystyle{plain}
+\bibliographystyle{IEEEtran}
+% \sloppy
 \bibliography{bibliography}
 
 % that's all folks
