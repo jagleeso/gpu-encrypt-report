@@ -495,18 +495,42 @@ system bus for accessing main memory. With the recent frameworks performing gene
 programming on GPUs (GPGPU), OpenCL provides a model for programming whereby a host processor (in 
 this case, a CPU) can delegate work to be performed in parallel by computing nodes (GPUs).
 
-(TODO: AES)
+Advanced Encryption Standard (AES) is a variant of the Rijndael cipher which acts on input blocks 
+of 128 bits and uses keys of size 128, 192 or 256 bits. The algorithm can work in parallel on each 
+individual block of the input plain text (each block being 128 bits). At a high level, the algorithm 
+does the following. It first goes through a key expansion stage, where the cipher key is used to 
+derive the round keys using a key scheduling algorithm. The plain text is XORed with one of the 
+derived keys (AddRoundKey) before being subjected to a series of rounds, the number of rounds being 
+decided by the size of the cipher key (10 in case of 128 bits key). The input and output of each of 
+the rounds is modeled as 4 by 4 matrix, called a state, with each cell being a byte in size. In each of 
+the rounds the input goes through the following steps. First, each byte is replaced in a non-linear 
+manner with another using a lookup table (SubBytes). Then each of the rows of the input is 
+cyclically shifted to the left a certain number of steps (ShiftRows) . This is followed  by a mixing 
+operation which operates on the columns of the state, combining the four bytes in each 
+column(MixColumns). The last round of the encryption algorithm omits this step. The final step in 
+the round is again AddRoundKey where the state is XORed with a derived key from the key expansion 
+step. The output of these rounds is the encrypted ciphertext \cite{aes1,aes2}.
 
-The OpenCL programming model defines work items to be an executing instance of an OpenCL kernel 
-(assigned a local id), and work groups to be equally sized groups of work items (assigned a global 
-id). The OpenCL model ensures that work items within a work group will execute concurrently, but 
-provides no guarantees whether work groups will execute concurrently or serially. When you execute 
-an OpenCL kernel, you specify the number of work groups, and the number of work items within each 
-work group. All work items within a group each get a local id that is unique within that group as 
-well as a global id that is unique across all instances of the executing kernel. The work items then 
-make use of their local and global ids to appropriately divide up the work, and can make use of 
-synchronization constructs like a work group barrier to synchronize their execution (but only for 
-work items within the same group) \cite{opencl_guide}.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{resource/opencl_model.eps}
+\caption{The OpenCL platform and execution model}
+\label{fig:opencl}
+\end{figure}
+
+In the OpenCL platform and execution model (figure \ref{fig:opencl}), the user creates a host (in 
+our case, the CPU) program that compiles and dispatches a GPGPU program to run on a particular 
+device (the GPU).  Upon executing the kernel, the user must specify the number of work groups to 
+execute as well as the size of each work group.  The execution model defines work items to be an 
+executing instance of an OpenCL kernel which are run on processing elements, and work groups to be 
+equally sized groups of work items. The OpenCL runtime ensures that work items within a work group 
+will execute concurrently on the same compute unit, but provides no guarantees whether work items 
+across work groups will execute concurrently or serially. All work items within a group are assigned 
+a local id that is unique within that group as well as a global id that is unique across all work 
+items in all work groups of the executing kernel.  The work items then make use of their local and 
+global ids to appropriately divide up the work, and can make use of synchronization constructs like 
+a work group barriers to synchronize their execution (but only for work items within the same group) 
+\cite{opencl_guide}.
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -842,6 +866,17 @@ by the Dalvik virtual machine, and does not account for data that is unencrypted
 the operating system \cite{cleanos}.  This includes OS data buffers (e.g. for writing to a file, 
 inside device drivers from reading from sensors such as a camera).
 
+XOM is a system to prevent software piracy, wherein the executing code of the software which is in 
+RAM is encrypted by marking it as "execute-only" and so is prevented from tampering \cite{xom}. 
+Cryptkeeper is a software-encrypted virtual memory manager that segments RAM into two segments, one 
+for running the decrypted programming instructions (small in size) and the other for keeping the 
+encrypted pages. The pages are swapped automatically between the segments and decrypted on demand 
+\cite{cryptkeeper}.  Encrypted Swap aims at encrypting pages before swapping them to swap memory so 
+that sensitive data related to swapped out processes are not available in backing storages 
+\cite{encryptedswap}. These 
+systems all have the same disadvantage that, even though the data is encrypted, the decryption key 
+is still left in RAM and so can be recovered through memory-harvesting techniques.
+
 
 \section{Conclusion}
 
@@ -861,11 +896,15 @@ underlying cause.
 
 \section{Future work}
 
-Our next endeavour would be to investigate more causes of less than expected performance in GPU 
-encryption.  In particular, we would investigate the affect of memory access patterns for data other 
-than the input array, such as the T-box lookup table (see section \ref{subsec:impl_coalesce}).  
-Further, we would investigate the use of local memory regions shared between work items in a work 
-group for accelerating redundant accesses to T-box values.
+Our next endeavour would be to further investigate causes for reduced throughput in GPU encryption.  
+In particular, we would investigate the affect of memory access patterns for data other than the 
+input array, such as the T-box lookup table (see section \ref{subsec:impl_coalesce}).  Further, we 
+would investigate the use of local memory regions shared between work items in a work group for 
+accelerating redundant accesses to T-box values.  After achieving sufficient performance in 
+encryption throughput, we would turn our focus to evaluating other characteristics relevant to 
+mobile devices, such as energy consumption during encryption.  Finally, we would investigate methods 
+for securely providing a privileged user-level process the permissions needed to encrypt memory on 
+behalf of the Linux kernel.
 
 % conference papers do not normally have an appendix
 
@@ -964,14 +1003,14 @@ group for accelerating redundant accesses to T-box values.
         pages={91--98},
         year={2009},
         publisher={ACM}
-    }
+    },
 
     @inproceedings{tresor,
         title={TRESOR Runs Encryption Securely Outside RAM},
         author={M{\"u}ller, Tilo and Freiling, Felix C and Dewald, Andreas},
         booktitle={USENIX Security Symposium},
         year={2011}
-    }
+    },
 
     @article{myth,
         title={CPU and/or GPU: Revisiting the GPU Vs. CPU Myth},
@@ -980,7 +1019,7 @@ group for accelerating redundant accesses to T-box values.
         and Bharadwaj, Sivaramakrishna and others},
         journal={arXiv preprint arXiv:1303.2171},
         year={2013}
-    }
+    },
 
     @inproceedings{aes_gpu,
         title={Accelerating Encryption Algorithms Using Parallelism},
@@ -989,7 +1028,7 @@ group for accelerating redundant accesses to T-box values.
         pages={549--554},
         year={2013},
         organization={IEEE}
-    }
+    },
 
     @inproceedings{cleanos,
         title={CleanOS: Limiting mobile data exposure with idle eviction},
@@ -998,6 +1037,48 @@ group for accelerating redundant accesses to T-box values.
         booktitle={Proceedings of the USENIX Conference on Operating Systems Design and Implementation, 
         Berkeley, CA, USA},
         year={2012}
+    },
+
+    @article{xom,
+        title={Architectural support for copy and tamper resistant software},
+        author={Lie, David and Thekkath, Chandramohan and Mitchell, Mark and Lincoln, Patrick and Boneh, Dan and Mitchell, John and Horowitz, Mark},
+        journal={ACM SIGPLAN Notices},
+        volume={35},
+        number={11},
+        pages={168--177},
+        year={2000},
+        publisher={ACM}
+    },
+
+    @inproceedings{cryptkeeper,
+        title={Cryptkeeper: Improving security with encrypted RAM},
+        author={Peterson, Peter AH},
+        booktitle={Technologies for Homeland Security (HST), 2010 IEEE International Conference on},
+        pages={120--126},
+        year={2010},
+        organization={IEEE}
+    },
+
+    @inproceedings{encryptedswap,
+        title={Encrypting virtual memory},
+        author={Provos, Niels},
+        booktitle={Proceedings of the Ninth USENIX Security Symposium},
+        pages={35--44},
+        year={2000}
+    },
+
+    @article{aes1,
+        title={197, Advanced encryption standard (AES)},
+        author={FIPS, PUB},
+        journal={National Institute of Standards and Technology},
+        year={2001}
+    }
+
+    @misc{aes2,
+        title={The Design of Rijndael: AES-The Advanced Encryption Standard (Information Security and Cryptography)},
+        author={Daemen, Joan and Rijmen, Vincent},
+        year={2002},
+        publisher={Springer Heidelberg}
     }
 
 \end{filecontents*}
