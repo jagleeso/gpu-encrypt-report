@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 file="$1"
 subtitle="$2"
-shift 2
-
 set -e
+shift 2 || (echo 2>&1 "ERROR: $0 file subtitle" && exit 1)
+
 # set -x
 
 cd "$(dirname "$0")"

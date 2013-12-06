@@ -365,7 +365,8 @@ plot_throughput_vs_bytes_multiple() {
             time_scale="$OPTARG"
             ;;
         ?)
-            exit;
+            echo 2>&1 "ERROR: bad arguments";
+            exit 1;
             ;;
         esac
     done
@@ -770,4 +771,32 @@ read_params() {
 }
 nth_line() {
     sed "$1q;d"
+}
+
+plot_all_with_extractor() {
+    # plot_with_extractor $graph "Title" "X Axis" $extractor line_label_func $plot_throughput_vs_multiple_args
+
+    local graph="$1"
+    local title="$2"
+    local xaxis="$3"
+    local extractor="$4"
+    local line_label_func="$5"
+    shift 5
+
+    local argv=( "$@" )
+
+    declare -a line_label_files=()
+    parse_plot_throughput_vs_args "$@"
+    for i in $(seq $((OPTIND - 1)) 2 $(($# - 1))); do
+        # line_label="${argv[i]} - group size = $max_work_group_size"
+        line_label="$($line_label_func "${argv[i]}")"
+        file="${argv[i+1]}"
+        line_label_files=("${line_label_files[@]}" "$line_label" "$file")
+    done
+
+    declare -a args=()
+    line_label_file_args "$extractor" "${line_label_files[@]}"
+
+    plot_throughput_vs_multiple -x "$xaxis" -s "$scale" -t "$time_scale" $extra_flags \
+        "$graph" "$title" "${args[@]}"
 }
