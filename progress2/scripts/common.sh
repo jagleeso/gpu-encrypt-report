@@ -346,15 +346,21 @@ plot_throughput_vs_bytes_multiple() {
     local height=1
     local scale="bytes"
     local time_scale="ms"
-    while getopts l:rs:t: flag; do
+    while getopts l:rs:t:w:h: flag; do
         case $flag in
         l)
             labels=("${labels[@]}" "$OPTARG")
             ;;
 
         r)
-            local width=0.45
-            local height=0.35
+            width=0.45
+            height=0.35
+            ;;
+        w)
+            width="$OPTARG"
+            ;;
+        h)
+            height="$OPTARG"
             ;;
         s)
             scale="$OPTARG"

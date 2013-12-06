@@ -22,8 +22,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -41,14 +41,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 1
 > GLOBAL = 1
 > LOCAL = 1
-profile time: 161.177994 ms
+profile time: 17668.517578 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.64s
+encrypt_cl Time taken: 18.12s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.41s
+cl Execute kernel time taken: 17.67s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -65,8 +65,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -84,14 +84,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 2
 > GLOBAL = 2
 > LOCAL = 2
-profile time: 156.631012 ms
+profile time: 9455.057617 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.66s
+encrypt_cl Time taken: 9.93s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.44s
+cl Execute kernel time taken: 9.46s
+cl read memory taken: 0.41s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -108,8 +108,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -127,14 +127,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 3
 > GLOBAL = 3
 > LOCAL = 3
-profile time: 149.611008 ms
+profile time: 6721.226562 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.70s
+encrypt_cl Time taken: 7.24s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.48s
+cl Execute kernel time taken: 6.73s
+cl read memory taken: 0.46s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -151,8 +151,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -170,14 +170,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 4
 > GLOBAL = 4
 > LOCAL = 4
-profile time: 165.481995 ms
+profile time: 5366.641113 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.68s
+encrypt_cl Time taken: 5.81s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.44s
+cl Execute kernel time taken: 5.37s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -194,8 +194,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -213,14 +213,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 5
 > GLOBAL = 5
 > LOCAL = 5
-profile time: 157.973999 ms
+profile time: 5724.187988 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.63s
+encrypt_cl Time taken: 6.24s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.40s
+cl Execute kernel time taken: 5.73s
+cl read memory taken: 0.45s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -237,8 +237,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -256,14 +256,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 6
 > GLOBAL = 6
 > LOCAL = 6
-profile time: 152.511002 ms
+profile time: 4930.841309 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.62s
+encrypt_cl Time taken: 5.41s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.40s
+cl Execute kernel time taken: 4.94s
+cl read memory taken: 0.41s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -280,8 +280,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -299,14 +299,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 7
 > GLOBAL = 7
 > LOCAL = 7
-profile time: 155.654007 ms
+profile time: 4384.557129 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.68s
+encrypt_cl Time taken: 4.85s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.46s
+cl Execute kernel time taken: 4.39s
+cl read memory taken: 0.40s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -323,8 +323,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -342,14 +342,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 8
 > GLOBAL = 8
 > LOCAL = 8
-profile time: 156.539001 ms
+profile time: 3939.294922 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.70s
+encrypt_cl Time taken: 4.41s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.48s
+cl Execute kernel time taken: 3.94s
+cl read memory taken: 0.40s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -366,8 +366,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -385,14 +385,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 9
 > GLOBAL = 9
 > LOCAL = 9
-profile time: 155.806000 ms
+profile time: 3543.292969 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.61s
+encrypt_cl Time taken: 3.99s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.39s
+cl Execute kernel time taken: 3.55s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -409,8 +409,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -428,14 +428,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 10
 > GLOBAL = 10
 > LOCAL = 10
-profile time: 154.279999 ms
+profile time: 3164.229980 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.61s
+encrypt_cl Time taken: 3.61s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.39s
+cl Execute kernel time taken: 3.17s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -452,8 +452,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -471,14 +471,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 11
 > GLOBAL = 11
 > LOCAL = 11
-profile time: 154.615997 ms
+profile time: 2914.970215 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.70s
+encrypt_cl Time taken: 3.42s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.48s
+cl Execute kernel time taken: 2.92s
+cl read memory taken: 0.44s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -495,8 +495,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -514,13 +514,13 @@ entries_to_encrypt == 2097152
 num_processing_elements == 12
 > GLOBAL = 12
 > LOCAL = 12
-profile time: 162.032990 ms
+profile time: 2662.048096 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.61s
+encrypt_cl Time taken: 3.11s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
+cl Execute kernel time taken: 2.67s
 cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
@@ -538,8 +538,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -557,14 +557,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 13
 > GLOBAL = 13
 > LOCAL = 13
-profile time: 158.279007 ms
+profile time: 2440.103027 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.72s
+encrypt_cl Time taken: 2.89s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.49s
+cl Execute kernel time taken: 2.44s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -581,8 +581,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -600,14 +600,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 14
 > GLOBAL = 14
 > LOCAL = 14
-profile time: 152.022003 ms
+profile time: 2274.958008 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.65s
+encrypt_cl Time taken: 2.72s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.44s
+cl Execute kernel time taken: 2.28s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -624,8 +624,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -643,14 +643,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 15
 > GLOBAL = 15
 > LOCAL = 15
-profile time: 156.996994 ms
+profile time: 2135.663086 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.62s
+encrypt_cl Time taken: 2.66s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.40s
+cl Execute kernel time taken: 2.14s
+cl read memory taken: 0.46s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -667,8 +667,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -686,14 +686,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 16
 > GLOBAL = 16
 > LOCAL = 16
-profile time: 152.753998 ms
+profile time: 1997.130981 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.62s
+encrypt_cl Time taken: 2.51s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.40s
+cl Execute kernel time taken: 2.00s
+cl read memory taken: 0.45s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -710,8 +710,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -729,13 +729,13 @@ entries_to_encrypt == 2097152
 num_processing_elements == 17
 > GLOBAL = 17
 > LOCAL = 17
-profile time: 158.003006 ms
+profile time: 2018.983032 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.61s
+encrypt_cl Time taken: 2.47s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
+cl Execute kernel time taken: 2.02s
 cl read memory taken: 0.39s
 Computed '33554432/33554432' correct values!
 
@@ -753,8 +753,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -772,14 +772,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 18
 > GLOBAL = 18
 > LOCAL = 18
-profile time: 157.943008 ms
+profile time: 2014.925049 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.67s
+encrypt_cl Time taken: 2.53s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.44s
+cl Execute kernel time taken: 2.02s
+cl read memory taken: 0.45s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -796,8 +796,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -815,13 +815,13 @@ entries_to_encrypt == 2097152
 num_processing_elements == 19
 > GLOBAL = 19
 > LOCAL = 19
-profile time: 155.166000 ms
+profile time: 1944.482910 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.68s
+encrypt_cl Time taken: 2.47s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
+cl Execute kernel time taken: 1.95s
 cl read memory taken: 0.46s
 Computed '33554432/33554432' correct values!
 
@@ -839,8 +839,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -858,14 +858,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 20
 > GLOBAL = 20
 > LOCAL = 20
-profile time: 163.528000 ms
+profile time: 1950.130005 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.62s
+encrypt_cl Time taken: 2.46s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.39s
+cl Execute kernel time taken: 1.96s
+cl read memory taken: 0.44s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -882,8 +882,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -901,14 +901,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 21
 > GLOBAL = 21
 > LOCAL = 21
-profile time: 162.947998 ms
+profile time: 2256.280029 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.66s
+encrypt_cl Time taken: 2.71s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.43s
+cl Execute kernel time taken: 2.26s
+cl read memory taken: 0.39s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -925,8 +925,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -944,13 +944,13 @@ entries_to_encrypt == 2097152
 num_processing_elements == 22
 > GLOBAL = 22
 > LOCAL = 22
-profile time: 158.919006 ms
+profile time: 2187.699951 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.63s
+encrypt_cl Time taken: 2.66s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
+cl Execute kernel time taken: 2.19s
 cl read memory taken: 0.40s
 Computed '33554432/33554432' correct values!
 
@@ -968,8 +968,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -987,14 +987,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 23
 > GLOBAL = 23
 > LOCAL = 23
-profile time: 153.212997 ms
+profile time: 2138.836914 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.66s
+encrypt_cl Time taken: 2.66s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.44s
+cl Execute kernel time taken: 2.14s
+cl read memory taken: 0.45s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1011,8 +1011,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -1030,14 +1030,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 24
 > GLOBAL = 24
 > LOCAL = 24
-profile time: 148.970001 ms
+profile time: 2096.048096 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.63s
+encrypt_cl Time taken: 2.54s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.15s
-cl read memory taken: 0.42s
+cl Execute kernel time taken: 2.10s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1054,8 +1054,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -1073,14 +1073,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 25
 > GLOBAL = 25
 > LOCAL = 25
-profile time: 154.401993 ms
+profile time: 2007.019043 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.66s
+encrypt_cl Time taken: 2.46s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.44s
+cl Execute kernel time taken: 2.01s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1097,8 +1097,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -1116,14 +1116,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 26
 > GLOBAL = 26
 > LOCAL = 26
-profile time: 152.907013 ms
+profile time: 1919.059937 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.60s
+encrypt_cl Time taken: 2.39s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.39s
+cl Execute kernel time taken: 1.92s
+cl read memory taken: 0.41s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1140,8 +1140,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -1159,13 +1159,13 @@ entries_to_encrypt == 2097152
 num_processing_elements == 27
 > GLOBAL = 27
 > LOCAL = 27
-profile time: 161.391998 ms
+profile time: 1844.345947 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.68s
+encrypt_cl Time taken: 2.36s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
+cl Execute kernel time taken: 1.85s
 cl read memory taken: 0.45s
 Computed '33554432/33554432' correct values!
 
@@ -1183,8 +1183,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -1202,14 +1202,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 28
 > GLOBAL = 28
 > LOCAL = 28
-profile time: 152.694000 ms
+profile time: 1778.727051 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.71s
+encrypt_cl Time taken: 2.23s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.50s
+cl Execute kernel time taken: 1.79s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1226,8 +1226,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -1245,13 +1245,13 @@ entries_to_encrypt == 2097152
 num_processing_elements == 29
 > GLOBAL = 29
 > LOCAL = 29
-profile time: 151.716995 ms
+profile time: 1726.781982 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.59s
+encrypt_cl Time taken: 2.17s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
+cl Execute kernel time taken: 1.73s
 cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
@@ -1269,8 +1269,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -1288,14 +1288,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 30
 > GLOBAL = 30
 > LOCAL = 30
-profile time: 155.440002 ms
+profile time: 1667.786011 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.62s
+encrypt_cl Time taken: 2.11s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.40s
+cl Execute kernel time taken: 1.67s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1312,8 +1312,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -1331,14 +1331,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 31
 > GLOBAL = 31
 > LOCAL = 31
-profile time: 157.087997 ms
+profile time: 1615.169067 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.68s
+encrypt_cl Time taken: 2.08s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.46s
+cl Execute kernel time taken: 1.62s
+cl read memory taken: 0.40s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1355,8 +1355,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -1374,14 +1374,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 32
 > GLOBAL = 32
 > LOCAL = 32
-profile time: 157.240997 ms
+profile time: 1577.048950 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.64s
+encrypt_cl Time taken: 2.03s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.42s
+cl Execute kernel time taken: 1.58s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1398,8 +1398,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -1417,14 +1417,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 33
 > GLOBAL = 33
 > LOCAL = 33
-profile time: 156.477997 ms
+profile time: 1697.817993 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.69s
+encrypt_cl Time taken: 2.14s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.46s
+cl Execute kernel time taken: 1.70s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1441,8 +1441,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -1460,14 +1460,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 34
 > GLOBAL = 34
 > LOCAL = 34
-profile time: 164.352005 ms
+profile time: 1688.814941 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.68s
+encrypt_cl Time taken: 2.14s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.45s
+cl Execute kernel time taken: 1.69s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1484,8 +1484,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -1503,658 +1503,13 @@ entries_to_encrypt == 2097152
 num_processing_elements == 35
 > GLOBAL = 35
 > LOCAL = 35
-profile time: 163.955994 ms
+profile time: 1657.133911 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.67s
+encrypt_cl Time taken: 2.19s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.44s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 58255
-entries_to_encrypt == 2097152
-num_processing_elements == 36
-> GLOBAL = 36
-> LOCAL = 36
-profile time: 153.669998 ms
------------------------------------------------
-encrypt_cl Time taken: 0.68s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.07s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.45s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 56680
-entries_to_encrypt == 2097152
-num_processing_elements == 37
-> GLOBAL = 37
-> LOCAL = 37
-profile time: 159.224991 ms
------------------------------------------------
-encrypt_cl Time taken: 0.62s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.40s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 55189
-entries_to_encrypt == 2097152
-num_processing_elements == 38
-> GLOBAL = 38
-> LOCAL = 38
-profile time: 158.462006 ms
------------------------------------------------
-encrypt_cl Time taken: 0.68s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.45s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 53774
-entries_to_encrypt == 2097152
-num_processing_elements == 39
-> GLOBAL = 39
-> LOCAL = 39
-profile time: 161.940994 ms
------------------------------------------------
-encrypt_cl Time taken: 0.68s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.45s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 52429
-entries_to_encrypt == 2097152
-num_processing_elements == 40
-> GLOBAL = 40
-> LOCAL = 40
-profile time: 163.436996 ms
------------------------------------------------
-encrypt_cl Time taken: 0.67s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.44s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 51151
-entries_to_encrypt == 2097152
-num_processing_elements == 41
-> GLOBAL = 41
-> LOCAL = 41
-profile time: 152.417999 ms
------------------------------------------------
-encrypt_cl Time taken: 0.69s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.48s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 49933
-entries_to_encrypt == 2097152
-num_processing_elements == 42
-> GLOBAL = 42
-> LOCAL = 42
-profile time: 152.815994 ms
------------------------------------------------
-encrypt_cl Time taken: 0.62s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.40s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 48771
-entries_to_encrypt == 2097152
-num_processing_elements == 43
-> GLOBAL = 43
-> LOCAL = 43
-profile time: 151.992004 ms
------------------------------------------------
-encrypt_cl Time taken: 0.68s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.46s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 47663
-entries_to_encrypt == 2097152
-num_processing_elements == 44
-> GLOBAL = 44
-> LOCAL = 44
-profile time: 156.722000 ms
------------------------------------------------
-encrypt_cl Time taken: 0.62s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.39s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 46604
-entries_to_encrypt == 2097152
-num_processing_elements == 45
-> GLOBAL = 45
-> LOCAL = 45
-profile time: 156.813995 ms
------------------------------------------------
-encrypt_cl Time taken: 0.73s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.51s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 45591
-entries_to_encrypt == 2097152
-num_processing_elements == 46
-> GLOBAL = 46
-> LOCAL = 46
-profile time: 156.723007 ms
------------------------------------------------
-encrypt_cl Time taken: 0.67s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.45s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 44621
-entries_to_encrypt == 2097152
-num_processing_elements == 47
-> GLOBAL = 47
-> LOCAL = 47
-profile time: 169.112991 ms
------------------------------------------------
-encrypt_cl Time taken: 0.66s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.42s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 43691
-entries_to_encrypt == 2097152
-num_processing_elements == 48
-> GLOBAL = 48
-> LOCAL = 48
-profile time: 156.386002 ms
------------------------------------------------
-encrypt_cl Time taken: 0.70s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.48s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 42800
-entries_to_encrypt == 2097152
-num_processing_elements == 49
-> GLOBAL = 49
-> LOCAL = 49
-profile time: 164.412994 ms
------------------------------------------------
-encrypt_cl Time taken: 0.68s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.45s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 41944
-entries_to_encrypt == 2097152
-num_processing_elements == 50
-> GLOBAL = 50
-> LOCAL = 50
-profile time: 156.936005 ms
------------------------------------------------
-encrypt_cl Time taken: 0.69s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
+cl Execute kernel time taken: 1.66s
 cl read memory taken: 0.47s
 Computed '33554432/33554432' correct values!
 
@@ -2172,8 +1527,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -2186,190 +1541,18 @@ rd_key 3"
 > max_kernel_work_group_size: 80
 > mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 1
-entries == 41121
+entries == 58255
 entries_to_encrypt == 2097152
-num_processing_elements == 51
-> GLOBAL = 51
-> LOCAL = 51
-profile time: 157.973999 ms
+num_processing_elements == 36
+> GLOBAL = 36
+> LOCAL = 36
+profile time: 1655.302979 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.65s
+encrypt_cl Time taken: 2.09s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.42s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 40330
-entries_to_encrypt == 2097152
-num_processing_elements == 52
-> GLOBAL = 52
-> LOCAL = 52
-profile time: 162.491013 ms
------------------------------------------------
-encrypt_cl Time taken: 0.67s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.45s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 39569
-entries_to_encrypt == 2097152
-num_processing_elements == 53
-> GLOBAL = 53
-> LOCAL = 53
-profile time: 154.891006 ms
------------------------------------------------
-encrypt_cl Time taken: 0.61s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.39s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 38837
-entries_to_encrypt == 2097152
-num_processing_elements == 54
-> GLOBAL = 54
-> LOCAL = 54
-profile time: 159.499008 ms
------------------------------------------------
-encrypt_cl Time taken: 0.62s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.39s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 38131
-entries_to_encrypt == 2097152
-num_processing_elements == 55
-> GLOBAL = 55
-> LOCAL = 55
-profile time: 170.182007 ms
------------------------------------------------
-encrypt_cl Time taken: 0.61s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.18s
+cl Execute kernel time taken: 1.66s
 cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
@@ -2387,8 +1570,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -2401,104 +1584,18 @@ rd_key 3"
 > max_kernel_work_group_size: 80
 > mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 1
-entries == 37450
+entries == 56680
 entries_to_encrypt == 2097152
-num_processing_elements == 56
-> GLOBAL = 56
-> LOCAL = 56
-profile time: 162.031998 ms
+num_processing_elements == 37
+> GLOBAL = 37
+> LOCAL = 37
+profile time: 1837.112915 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.66s
+encrypt_cl Time taken: 2.35s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.43s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 36793
-entries_to_encrypt == 2097152
-num_processing_elements == 57
-> GLOBAL = 57
-> LOCAL = 57
-profile time: 148.572998 ms
------------------------------------------------
-encrypt_cl Time taken: 0.75s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.15s
-cl read memory taken: 0.53s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 36158
-entries_to_encrypt == 2097152
-num_processing_elements == 58
-> GLOBAL = 58
-> LOCAL = 58
-profile time: 162.001999 ms
------------------------------------------------
-encrypt_cl Time taken: 0.67s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
+cl Execute kernel time taken: 1.84s
 cl read memory taken: 0.45s
 Computed '33554432/33554432' correct values!
 
@@ -2516,8 +1613,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -2530,61 +1627,18 @@ rd_key 3"
 > max_kernel_work_group_size: 80
 > mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 1
-entries == 35545
+entries == 55189
 entries_to_encrypt == 2097152
-num_processing_elements == 59
-> GLOBAL = 59
-> LOCAL = 59
-profile time: 156.477997 ms
+num_processing_elements == 38
+> GLOBAL = 38
+> LOCAL = 38
+profile time: 1810.651001 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.72s
+encrypt_cl Time taken: 2.33s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.50s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 34953
-entries_to_encrypt == 2097152
-num_processing_elements == 60
-> GLOBAL = 60
-> LOCAL = 60
-profile time: 149.824997 ms
------------------------------------------------
-encrypt_cl Time taken: 0.66s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.15s
+cl Execute kernel time taken: 1.82s
 cl read memory taken: 0.45s
 Computed '33554432/33554432' correct values!
 
@@ -2602,8 +1656,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -2616,448 +1670,18 @@ rd_key 3"
 > max_kernel_work_group_size: 80
 > mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 1
-entries == 34380
+entries == 53774
 entries_to_encrypt == 2097152
-num_processing_elements == 61
-> GLOBAL = 61
-> LOCAL = 61
-profile time: 150.037994 ms
+num_processing_elements == 39
+> GLOBAL = 39
+> LOCAL = 39
+profile time: 1789.897949 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.71s
+encrypt_cl Time taken: 2.31s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.15s
-cl read memory taken: 0.50s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 33826
-entries_to_encrypt == 2097152
-num_processing_elements == 62
-> GLOBAL = 62
-> LOCAL = 62
-profile time: 154.036987 ms
------------------------------------------------
-encrypt_cl Time taken: 0.68s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.08s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.44s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 33289
-entries_to_encrypt == 2097152
-num_processing_elements == 63
-> GLOBAL = 63
-> LOCAL = 63
-profile time: 154.920990 ms
------------------------------------------------
-encrypt_cl Time taken: 0.65s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.43s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 32768
-entries_to_encrypt == 2097152
-num_processing_elements == 64
-> GLOBAL = 64
-> LOCAL = 64
-profile time: 161.512985 ms
------------------------------------------------
-encrypt_cl Time taken: 0.76s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.53s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 32264
-entries_to_encrypt == 2097152
-num_processing_elements == 65
-> GLOBAL = 65
-> LOCAL = 65
-profile time: 150.099014 ms
------------------------------------------------
-encrypt_cl Time taken: 0.70s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.48s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 31776
-entries_to_encrypt == 2097152
-num_processing_elements == 66
-> GLOBAL = 66
-> LOCAL = 66
-profile time: 159.774002 ms
------------------------------------------------
-encrypt_cl Time taken: 0.61s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.38s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 31301
-entries_to_encrypt == 2097152
-num_processing_elements == 67
-> GLOBAL = 67
-> LOCAL = 67
-profile time: 151.624985 ms
------------------------------------------------
-encrypt_cl Time taken: 0.61s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.39s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 30841
-entries_to_encrypt == 2097152
-num_processing_elements == 68
-> GLOBAL = 68
-> LOCAL = 68
-profile time: 150.191010 ms
------------------------------------------------
-encrypt_cl Time taken: 0.63s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.41s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 30394
-entries_to_encrypt == 2097152
-num_processing_elements == 69
-> GLOBAL = 69
-> LOCAL = 69
-profile time: 153.212997 ms
------------------------------------------------
-encrypt_cl Time taken: 0.65s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.43s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 29960
-entries_to_encrypt == 2097152
-num_processing_elements == 70
-> GLOBAL = 70
-> LOCAL = 70
-profile time: 150.464996 ms
------------------------------------------------
-encrypt_cl Time taken: 0.62s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.15s
-cl read memory taken: 0.41s
-Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 29538
-entries_to_encrypt == 2097152
-num_processing_elements == 71
-> GLOBAL = 71
-> LOCAL = 71
-profile time: 155.348999 ms
------------------------------------------------
-encrypt_cl Time taken: 0.67s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
+cl Execute kernel time taken: 1.79s
 cl read memory taken: 0.46s
 Computed '33554432/33554432' correct values!
 
@@ -3075,8 +1699,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -3089,19 +1713,19 @@ rd_key 3"
 > max_kernel_work_group_size: 80
 > mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 1
-entries == 29128
+entries == 52429
 entries_to_encrypt == 2097152
-num_processing_elements == 72
-> GLOBAL = 72
-> LOCAL = 72
-profile time: 152.358002 ms
+num_processing_elements == 40
+> GLOBAL = 40
+> LOCAL = 40
+profile time: 1764.443970 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.71s
+encrypt_cl Time taken: 2.21s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.49s
+cl Execute kernel time taken: 1.77s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3118,8 +1742,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -3132,19 +1756,19 @@ rd_key 3"
 > max_kernel_work_group_size: 80
 > mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 1
-entries == 28729
+entries == 51151
 entries_to_encrypt == 2097152
-num_processing_elements == 73
-> GLOBAL = 73
-> LOCAL = 73
-profile time: 150.556992 ms
+num_processing_elements == 41
+> GLOBAL = 41
+> LOCAL = 41
+profile time: 1725.133057 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.61s
+encrypt_cl Time taken: 2.17s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.39s
+cl Execute kernel time taken: 1.73s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3161,8 +1785,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -3175,19 +1799,19 @@ rd_key 3"
 > max_kernel_work_group_size: 80
 > mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 1
-entries == 28340
+entries == 49933
 entries_to_encrypt == 2097152
-num_processing_elements == 74
-> GLOBAL = 74
-> LOCAL = 74
-profile time: 165.664993 ms
+num_processing_elements == 42
+> GLOBAL = 42
+> LOCAL = 42
+profile time: 1701.847046 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.66s
+encrypt_cl Time taken: 2.23s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.43s
+cl Execute kernel time taken: 1.71s
+cl read memory taken: 0.46s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3204,8 +1828,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -3218,19 +1842,19 @@ rd_key 3"
 > max_kernel_work_group_size: 80
 > mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 1
-entries == 27963
+entries == 48771
 entries_to_encrypt == 2097152
-num_processing_elements == 75
-> GLOBAL = 75
-> LOCAL = 75
-profile time: 151.992004 ms
+num_processing_elements == 43
+> GLOBAL = 43
+> LOCAL = 43
+profile time: 1647.825073 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.74s
+encrypt_cl Time taken: 2.18s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.53s
+cl Execute kernel time taken: 1.65s
+cl read memory taken: 0.46s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3247,8 +1871,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -3261,18 +1885,147 @@ rd_key 3"
 > max_kernel_work_group_size: 80
 > mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 1
-entries == 27595
+entries == 47663
 entries_to_encrypt == 2097152
-num_processing_elements == 76
-> GLOBAL = 76
-> LOCAL = 76
-profile time: 157.912003 ms
+num_processing_elements == 44
+> GLOBAL = 44
+> LOCAL = 44
+profile time: 1628.658936 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.67s
+encrypt_cl Time taken: 2.08s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
+cl Execute kernel time taken: 1.63s
+cl read memory taken: 0.38s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 46604
+entries_to_encrypt == 2097152
+num_processing_elements == 45
+> GLOBAL = 45
+> LOCAL = 45
+profile time: 1581.107910 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.05s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.59s
+cl read memory taken: 0.40s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 45591
+entries_to_encrypt == 2097152
+num_processing_elements == 46
+> GLOBAL = 46
+> LOCAL = 46
+profile time: 1560.812012 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.09s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.57s
+cl read memory taken: 0.46s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 44621
+entries_to_encrypt == 2097152
+num_processing_elements == 47
+> GLOBAL = 47
+> LOCAL = 47
+profile time: 1520.432983 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.04s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.53s
 cl read memory taken: 0.45s
 Computed '33554432/33554432' correct values!
 
@@ -3290,8 +2043,1255 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 43691
+entries_to_encrypt == 2097152
+num_processing_elements == 48
+> GLOBAL = 48
+> LOCAL = 48
+profile time: 1506.302002 ms
+-----------------------------------------------
+encrypt_cl Time taken: 1.99s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.51s
+cl read memory taken: 0.42s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 42800
+entries_to_encrypt == 2097152
+num_processing_elements == 49
+> GLOBAL = 49
+> LOCAL = 49
+profile time: 1586.877075 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.05s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.59s
+cl read memory taken: 0.39s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 41944
+entries_to_encrypt == 2097152
+num_processing_elements == 50
+> GLOBAL = 50
+> LOCAL = 50
+profile time: 1563.986084 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.08s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.57s
+cl read memory taken: 0.46s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 41121
+entries_to_encrypt == 2097152
+num_processing_elements == 51
+> GLOBAL = 51
+> LOCAL = 51
+profile time: 1542.347046 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.07s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.55s
+cl read memory taken: 0.46s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 40330
+entries_to_encrypt == 2097152
+num_processing_elements == 52
+> GLOBAL = 52
+> LOCAL = 52
+profile time: 1544.147949 ms
+-----------------------------------------------
+encrypt_cl Time taken: 1.98s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.55s
+cl read memory taken: 0.38s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 39569
+entries_to_encrypt == 2097152
+num_processing_elements == 53
+> GLOBAL = 53
+> LOCAL = 53
+profile time: 1682.893066 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.18s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.69s
+cl read memory taken: 0.42s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 38837
+entries_to_encrypt == 2097152
+num_processing_elements == 54
+> GLOBAL = 54
+> LOCAL = 54
+profile time: 1675.965088 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.18s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.68s
+cl read memory taken: 0.44s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 38131
+entries_to_encrypt == 2097152
+num_processing_elements == 55
+> GLOBAL = 55
+> LOCAL = 55
+profile time: 1655.302979 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.10s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.66s
+cl read memory taken: 0.38s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 37450
+entries_to_encrypt == 2097152
+num_processing_elements == 56
+> GLOBAL = 56
+> LOCAL = 56
+profile time: 1647.336914 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.09s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.65s
+cl read memory taken: 0.38s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 36793
+entries_to_encrypt == 2097152
+num_processing_elements == 57
+> GLOBAL = 57
+> LOCAL = 57
+profile time: 1612.177002 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.06s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.62s
+cl read memory taken: 0.38s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 36158
+entries_to_encrypt == 2097152
+num_processing_elements == 58
+> GLOBAL = 58
+> LOCAL = 58
+profile time: 1593.530029 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.12s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.60s
+cl read memory taken: 0.46s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 35545
+entries_to_encrypt == 2097152
+num_processing_elements == 59
+> GLOBAL = 59
+> LOCAL = 59
+profile time: 1560.079956 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.07s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.57s
+cl read memory taken: 0.45s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 34953
+entries_to_encrypt == 2097152
+num_processing_elements == 60
+> GLOBAL = 60
+> LOCAL = 60
+profile time: 1542.804932 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.05s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.55s
+cl read memory taken: 0.44s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 34380
+entries_to_encrypt == 2097152
+num_processing_elements == 61
+> GLOBAL = 61
+> LOCAL = 61
+profile time: 1519.609985 ms
+-----------------------------------------------
+encrypt_cl Time taken: 1.98s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.53s
+cl read memory taken: 0.40s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 33826
+entries_to_encrypt == 2097152
+num_processing_elements == 62
+> GLOBAL = 62
+> LOCAL = 62
+profile time: 1506.119873 ms
+-----------------------------------------------
+encrypt_cl Time taken: 1.96s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.51s
+cl read memory taken: 0.39s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 33289
+entries_to_encrypt == 2097152
+num_processing_elements == 63
+> GLOBAL = 63
+> LOCAL = 63
+profile time: 1473.828003 ms
+-----------------------------------------------
+encrypt_cl Time taken: 1.93s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.48s
+cl read memory taken: 0.40s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 32768
+entries_to_encrypt == 2097152
+num_processing_elements == 64
+> GLOBAL = 64
+> LOCAL = 64
+profile time: 1464.123047 ms
+-----------------------------------------------
+encrypt_cl Time taken: 1.93s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.47s
+cl read memory taken: 0.40s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 32264
+entries_to_encrypt == 2097152
+num_processing_elements == 65
+> GLOBAL = 65
+> LOCAL = 65
+profile time: 1499.373901 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.02s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.50s
+cl read memory taken: 0.45s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 31776
+entries_to_encrypt == 2097152
+num_processing_elements == 66
+> GLOBAL = 66
+> LOCAL = 66
+profile time: 1509.538086 ms
+-----------------------------------------------
+encrypt_cl Time taken: 1.96s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.51s
+cl read memory taken: 0.38s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 31301
+entries_to_encrypt == 2097152
+num_processing_elements == 67
+> GLOBAL = 67
+> LOCAL = 67
+profile time: 1502.151978 ms
+-----------------------------------------------
+encrypt_cl Time taken: 1.95s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.51s
+cl read memory taken: 0.38s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 30841
+entries_to_encrypt == 2097152
+num_processing_elements == 68
+> GLOBAL = 68
+> LOCAL = 68
+profile time: 1508.713013 ms
+-----------------------------------------------
+encrypt_cl Time taken: 1.96s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.51s
+cl read memory taken: 0.38s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 30394
+entries_to_encrypt == 2097152
+num_processing_elements == 69
+> GLOBAL = 69
+> LOCAL = 69
+profile time: 1607.630005 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.11s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.61s
+cl read memory taken: 0.44s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 29960
+entries_to_encrypt == 2097152
+num_processing_elements == 70
+> GLOBAL = 70
+> LOCAL = 70
+profile time: 1586.509888 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.10s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.59s
+cl read memory taken: 0.45s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 29538
+entries_to_encrypt == 2097152
+num_processing_elements == 71
+> GLOBAL = 71
+> LOCAL = 71
+profile time: 1598.473999 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.13s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.60s
+cl read memory taken: 0.47s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 29128
+entries_to_encrypt == 2097152
+num_processing_elements == 72
+> GLOBAL = 72
+> LOCAL = 72
+profile time: 1593.346924 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.12s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.60s
+cl read memory taken: 0.45s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 28729
+entries_to_encrypt == 2097152
+num_processing_elements == 73
+> GLOBAL = 73
+> LOCAL = 73
+profile time: 1545.826904 ms
+-----------------------------------------------
+encrypt_cl Time taken: 2.07s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.55s
+cl read memory taken: 0.46s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 28340
+entries_to_encrypt == 2097152
+num_processing_elements == 74
+> GLOBAL = 74
+> LOCAL = 74
+profile time: 1522.966064 ms
+-----------------------------------------------
+encrypt_cl Time taken: 1.97s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.53s
+cl read memory taken: 0.38s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 27963
+entries_to_encrypt == 2097152
+num_processing_elements == 75
+> GLOBAL = 75
+> LOCAL = 75
+profile time: 1505.997070 ms
+-----------------------------------------------
+encrypt_cl Time taken: 1.95s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.51s
+cl read memory taken: 0.38s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 27595
+entries_to_encrypt == 2097152
+num_processing_elements == 76
+> GLOBAL = 76
+> LOCAL = 76
+profile time: 1493.820068 ms
+-----------------------------------------------
+encrypt_cl Time taken: 1.94s
+cl Fill data Time taken: 0.00s
+cl memory copy Time taken: 0.06s
+cl set Argument Time taken: 0.00s
+cl Execute kernel time taken: 1.50s
+cl read memory taken: 0.39s
+Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -3309,13 +3309,13 @@ entries_to_encrypt == 2097152
 num_processing_elements == 77
 > GLOBAL = 77
 > LOCAL = 77
-profile time: 152.571014 ms
+profile time: 1498.366943 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.65s
+encrypt_cl Time taken: 2.00s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
+cl Execute kernel time taken: 1.50s
 cl read memory taken: 0.44s
 Computed '33554432/33554432' correct values!
 
@@ -3333,8 +3333,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -3352,14 +3352,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 78
 > GLOBAL = 78
 > LOCAL = 78
-profile time: 167.464996 ms
+profile time: 1463.665039 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.67s
+encrypt_cl Time taken: 1.91s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.44s
+cl Execute kernel time taken: 1.47s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3376,8 +3376,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -3395,14 +3395,14 @@ entries_to_encrypt == 2097152
 num_processing_elements == 79
 > GLOBAL = 79
 > LOCAL = 79
-profile time: 164.932007 ms
+profile time: 1446.848999 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.68s
+encrypt_cl Time taken: 1.89s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.17s
-cl read memory taken: 0.44s
+cl Execute kernel time taken: 1.45s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3419,8 +3419,8 @@ Create the compute program from the source buffer
 file len is: 34
 full path is: /data/local/tmp/eng_opencl_aes.cl
 file opened, fd is 4
-file size is 34564 byte
-read in size is: 34564
+file size is 34648 byte
+read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
 > kernel_name = AES_encrypt_coalesced_local_tbox
@@ -3438,13 +3438,573 @@ entries_to_encrypt == 2097152
 num_processing_elements == 80
 > GLOBAL = 80
 > LOCAL = 80
-profile time: 154.250000 ms
+profile time: 1440.226074 ms
 -----------------------------------------------
-encrypt_cl Time taken: 0.61s
+encrypt_cl Time taken: 1.89s
 cl Fill data Time taken: 0.00s
 cl memory copy Time taken: 0.06s
 cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 0.16s
-cl read memory taken: 0.39s
+cl Execute kernel time taken: 1.44s
+cl read memory taken: 0.38s
 Computed '33554432/33554432' correct values!
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 25891
+entries_to_encrypt == 2097152
+num_processing_elements == 81
+> GLOBAL = 81
+> LOCAL = 81
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 25576
+entries_to_encrypt == 2097152
+num_processing_elements == 82
+> GLOBAL = 82
+> LOCAL = 82
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 25267
+entries_to_encrypt == 2097152
+num_processing_elements == 83
+> GLOBAL = 83
+> LOCAL = 83
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 24967
+entries_to_encrypt == 2097152
+num_processing_elements == 84
+> GLOBAL = 84
+> LOCAL = 84
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 24673
+entries_to_encrypt == 2097152
+num_processing_elements == 85
+> GLOBAL = 85
+> LOCAL = 85
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 24386
+entries_to_encrypt == 2097152
+num_processing_elements == 86
+> GLOBAL = 86
+> LOCAL = 86
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 24106
+entries_to_encrypt == 2097152
+num_processing_elements == 87
+> GLOBAL = 87
+> LOCAL = 87
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 23832
+entries_to_encrypt == 2097152
+num_processing_elements == 88
+> GLOBAL = 88
+> LOCAL = 88
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 23564
+entries_to_encrypt == 2097152
+num_processing_elements == 89
+> GLOBAL = 89
+> LOCAL = 89
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 23302
+entries_to_encrypt == 2097152
+num_processing_elements == 90
+> GLOBAL = 90
+> LOCAL = 90
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 23046
+entries_to_encrypt == 2097152
+num_processing_elements == 91
+> GLOBAL = 91
+> LOCAL = 91
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 22796
+entries_to_encrypt == 2097152
+num_processing_elements == 92
+> GLOBAL = 92
+> LOCAL = 92
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 22551
+entries_to_encrypt == 2097152
+num_processing_elements == 93
+> GLOBAL = 93
+> LOCAL = 93
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 22311
+entries_to_encrypt == 2097152
+num_processing_elements == 94
+> GLOBAL = 94
+> LOCAL = 94
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 22076
+entries_to_encrypt == 2097152
+num_processing_elements == 95
+> GLOBAL = 95
+> LOCAL = 95
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
+
+start of encrypt_cl
+data, keydata, results
+initFns
+Loaded library name:/system/lib/libllvm-a3xx.so
+Connect to a compute device
+has 2 devices
+Device name is QUALCOMM Adreno(TM)
+Device name is QUALCOMM Krait(TM)
+Create a compute context
+Create a command commands
+Create the compute program from the source buffer
+file len is: 34
+full path is: /data/local/tmp/eng_opencl_aes.cl
+file opened, fd is 4
+file size is 34648 byte
+read in size is: 34648
+Build the program executable
+Create the compute kernel in the program we wish to run
+> kernel_name = AES_encrypt_coalesced_local_tbox
+Create the input and output arrays in device memory for our calculation
+Get the maximum work group size for executing the kernel on the device
+encrypt_cl: count = 33554432
+rd_key 3"
+> max dimensions: 3
+> max_work_items_dim1: 256
+> max_kernel_work_group_size: 80
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
+num_work_groups is 1
+entries == 21846
+entries_to_encrypt == 2097152
+num_processing_elements == 96
+> GLOBAL = 96
+> LOCAL = 96
+Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
 
