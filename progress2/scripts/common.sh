@@ -7,8 +7,6 @@ plot_throughput_vs() {
     local title="$2"
     shift 2
 
-    plot_throughput_vs_multiple
-
     local graph="${file%.*}.eps"
 
     # ["$perl_extract_fields_script" "$line_label" "$file"]+

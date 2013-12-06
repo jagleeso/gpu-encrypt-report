@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 file="$1"
 subtitle="$2"
-shift 2
-
 set -e
+shift 2 || 
+    (echo 2>&1 "ERROR: $0 file subtitle" && exit 1)
 
 prev_dir="$PWD"
 cd "$(dirname "$0")"
@@ -16,7 +16,7 @@ if (/^profile time: ([^ ]+) ms/) {
     $time = $1;
     $throughput = sprintf("%.2f", $bytes/$time);
     print "$global_worksize $time $throughput";
-} elsif (/^global is (\d+)/) {
+} elsif (/^> GLOBAL = (\d+)/) {
     $global_worksize = $1;
 } elsif (/^> Array size \(bytes\): (\d+)/) {
     $bytes = $1;
@@ -37,9 +37,9 @@ END {
 }
 '
 
-set -x
+# set -x
 cat "$file" | perl -lne "$extract_aes_local_worksize_points"
-# exit
+# exit 1
 
 array_size=$(read_params "$extract_params" | nth_line 1)
 max_global_worksize=$(read_params "$extract_params" | nth_line 2)
