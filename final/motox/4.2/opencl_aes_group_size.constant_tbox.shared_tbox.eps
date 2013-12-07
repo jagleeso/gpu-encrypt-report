@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0 EPSF-2.0
 %%Title: final/motox/4.2/opencl_aes_group_size.constant_tbox.shared_tbox.eps
-%%Creator: gnuplot 4.4 patchlevel 3
-%%CreationDate: Fri Dec  6 19:49:20 2013
+%%Creator: gnuplot 4.6 patchlevel 1
+%%CreationDate: Fri Dec  6 20:12:00 2013
 %%DocumentFonts: (atend)
 %%BoundingBox: 50 50 212 138
 %%EndComments
@@ -20,10 +20,12 @@ gnudict begin
 /Level1 false def
 /Rounded false def
 /ClipToBoundingBox false def
+/SuppressPDFMark false def
 /TransparentPatterns false def
 /gnulinewidth 5.000 def
 /userlinewidth gnulinewidth def
 /Gamma 1.0 def
+/BackgroundColor {-1.000 -1.000 -1.000} def
 %
 /vshift -33 def
 /dl1 {
@@ -38,22 +40,6 @@ gnudict begin
 /vpt_ 31.5 def
 /hpt hpt_ def
 /vpt vpt_ def
-Level1 {} {
-/SDict 10 dict def
-systemdict /pdfmark known not {
-  userdict /pdfmark systemdict /cleartomark get put
-} if
-SDict begin [
-  /Title (final/motox/4.2/opencl_aes_group_size.constant_tbox.shared_tbox.eps)
-  /Subject (gnuplot plot)
-  /Creator (gnuplot 4.4 patchlevel 3)
-  /Author (james)
-%  /Producer (gnuplot)
-%  /Keywords ()
-  /CreationDate (Fri Dec  6 19:49:20 2013)
-  /DOCINFO pdfmark
-end
-} ifelse
 /doclip {
   ClipToBoundingBox {
     newpath 50 50 moveto 212 50 lineto 212 138 lineto 50 138 lineto closepath
@@ -61,7 +47,7 @@ end
   } if
 } def
 %
-% Gnuplot Prolog Version 4.4 (August 2010)
+% Gnuplot Prolog Version 4.6 (September 2012)
 %
 %/SuppressPDFMark true def
 %
@@ -328,7 +314,8 @@ end
 /PatternFill {gsave /PFa [ 9 2 roll ] def
   PFa 0 get PFa 2 get 2 div add PFa 1 get PFa 3 get 2 div add translate
   PFa 2 get -2 div PFa 3 get -2 div PFa 2 get PFa 3 get Rec
-  gsave 1 setgray fill grestore clip
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+  clip
   currentlinewidth 0.5 mul setlinewidth
   /PFs PFa 2 get dup mul PFa 3 get dup mul add sqrt def
   0 0 M PFa 5 get rotate PFs -2 div dup translate
@@ -433,8 +420,26 @@ Level1 {Level1PatternFill} {Level2PatternFill} ifelse
 /Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
 dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
 currentdict end definefont pop
+Level1 SuppressPDFMark or 
+{} {
+/SDict 10 dict def
+systemdict /pdfmark known not {
+  userdict /pdfmark systemdict /cleartomark get put
+} if
+SDict begin [
+  /Title (final/motox/4.2/opencl_aes_group_size.constant_tbox.shared_tbox.eps)
+  /Subject (gnuplot plot)
+  /Creator (gnuplot 4.6 patchlevel 1)
+  /Author (james)
+%  /Producer (gnuplot)
+%  /Keywords ()
+  /CreationDate (Fri Dec  6 20:12:00 2013)
+  /DOCINFO pdfmark
+end
+} ifelse
 end
 %%EndProlog
+%%Page: 1 1
 gnudict begin
 gsave
 doclip
@@ -443,6 +448,7 @@ doclip
 0 setgray
 newpath
 (Helvetica) findfont 100 scalefont setfont
+BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {BackgroundColor C 1.000 0 0 3240.00 1764.00 BoxColFill} if
 1.000 UL
 LT0
 430 620 M
@@ -581,10 +587,10 @@ LT0
 1.000 UL
 LT0
 1.00 0.00 0.00 C LCb setrgbcolor
-349 213 M
-(strided constant T-box - work groups = 1) Lshow
+589 213 M
+(constant T-box - work groups = 1) Lshow
 LT0
-1.00 0.00 0.00 C 2809 213 M
+1.00 0.00 0.00 C 2569 213 M
 271 0 V
 463 700 M
 33 70 V
@@ -746,17 +752,17 @@ LT0
 2993 1230 C15
 3026 1227 C15
 3059 1247 C15
-2944 213 C15
+2704 213 C15
 % End plot #1
 % Begin plot #2
 0.500 UP
 1.000 UL
 LT1
 0.00 0.00 1.00 C LCb setrgbcolor
-349 113 M
-(strided shared T-box - work groups = 1) Lshow
+589 113 M
+(shared T-box - work groups = 1) Lshow
 LT1
-0.00 0.00 1.00 C 2809 113 M
+0.00 0.00 1.00 C 2569 113 M
 271 0 V
 463 681 M
 33 56 V
@@ -918,7 +924,7 @@ LT1
 2993 1381 C15
 3026 1395 C15
 3059 1401 C15
-2944 113 C15
+2704 113 C15
 % End plot #2
 1.000 UL
 LT0

@@ -2,9 +2,9 @@
 graph="$1"
 main_title="$2"
 subtitle="$3"
-shift 3
-
 set -e
+shift 3 ||
+    (echo 2>&1 "ERROR: $0 graph main_title subtitle [line_label file]+" && exit 1)
 
 prev_dir="$PWD"
 cd "$(dirname "$0")"

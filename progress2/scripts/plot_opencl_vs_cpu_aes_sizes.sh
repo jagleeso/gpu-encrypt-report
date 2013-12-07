@@ -20,9 +20,9 @@ source ./common.sh
 cd -
 
 # set -x
-# cat "$opencl_file" | perl -lne "$extract_opencl_aes_sizes_points"
+cat "$opencl_file" | perl -lne "$extract_opencl_aes_sizes_points"
 # cat "$cpu_file" | perl -lne "$extract_cpu_aes_points"
-# exit
+exit 1
 
 # plot_time_vs_bytes -l '3' $file "OpenCL AES Encrypt" "$extract_opencl_aes_sizes_points" "AES_encrypt (labeled with bytes/ms)"
 title="Encryption Throughput - $subtitle" 

@@ -441,86 +441,84 @@ Toronto, ON\\
 \section{Introduction}
 Cell phones have evolved into a ubiquitous and essential method of communication across the world.  
 Smartphones and mobile devices have significantly increased the productivity of users through the 
-accessibility to important services and have thus become critically integrated with both their work 
-and personal lives \cite{mobile}.   A side effect of this integration is that our phones contain a 
-large volume of probative information linked to an individual.  The scope of information sensitivity 
-ranges anywhere from low severity (call history, contact information, and text message data, etc.) 
-to more valuable information (such as e-mail, browser history, and chat logs, and even passwords) 
-\cite{lost_phone}.  The ever increasing number of phones available and in use by the public will 
-continue to enhance the convenience of users, but simultaneously brings along an increased potential 
-for criminals to misuse this technology.
+accessibility to important services and have thus become critically integrated with both their work and 
+personal lives \cite{mobile}.   A side effect of this integration is that our phones contain a large volume 
+of probative information linked to an individual.  The scope of information sensitivity ranges anywhere 
+from low severity (call history, contact information, and text message data, etc.) to more valuable 
+information (such as e-mail, browser history, and chat logs, and even passwords) \cite{lost_phone}.  The 
+ever increasing number of phones available and in use by the public will continue to enhance the 
+convenience of users, but simultaneously brings along an increased potential for criminals to misuse this 
+technology.
 
-Traditional desktops are assumed physically secure and need only be protected against software 
-attack vectors (e.g. a firewall for guarding against malicious network attacks), but mobile devices 
-are vulnerable to physical tampering, leading to a variety of previously unconsidered data risks 
-\cite{mobile}.  Most of the sensitive and private information hoarded on cell phones can be legally 
-or illegally breached by someone with the technical expertise and the required equipment.  However, 
-the tools needed to perform these attacks are often publicly available in the form of source 
-development tools \cite{forensics}.  Currently, mobile phone systems try to offer security and 
-privacy to users through user authentication, signal encryption and user anonymity. Nevertheless, 
-these techniques cannot completely guarantee user privacy in domains such mobile commerce, 
-particularly when they are in conflict with resources present on the device (e.g. power, cycles, 
-memory, and bandwidth) \cite{mobile}.  A single event of device theft could lead to financial and 
-information loss, a privacy breach, loss of intellectual property, or even more severe damage.  
-Information security is thus becoming increasingly important, given the ever increasing number of 
-new applications that make use of that data.
+Traditional desktops are assumed physically secure and need only be protected against software attack 
+vectors (e.g. a firewall for guarding against malicious network attacks), but mobile devices are vulnerable 
+to physical tampering, leading to a variety of previously unconsidered data risks \cite{mobile}.  Most of 
+the sensitive and private information hoarded on cell phones can be legally or illegally breached by 
+someone with the technical expertise and the required equipment.  However, the tools needed to perform 
+these attacks are often publicly available in the form of source development tools \cite{forensics}.  
+Currently, mobile phone systems try to offer security and privacy to users through user authentication, 
+signal encryption and user anonymity. Nevertheless, these techniques cannot completely guarantee user 
+privacy in domains such mobile commerce, particularly when they are in conflict with resources present on 
+the device (e.g. power, cycles, memory, and bandwidth) \cite{mobile}.  A single event of device theft could 
+lead to financial and information loss, a privacy breach, loss of intellectual property, or even more 
+severe damage.  Information security is thus becoming increasingly important, given the ever increasing 
+number of new applications that make use of that data.
 
-Existing disk encryption mechanisms typically deployed in laptops have been shown to be vulnerable 
-to methods that instead focus on obtaining sensitive data directly from memory, with one such method 
-being a cold boot attack \cite{coldboot}.  In a cold boot attack, an attacker gains physical access 
-to a computer and is able to obtain sensitive data either in plain text or indirectly by first 
-obtaining encryption keys from the memory of a running operating system.  In particular, if the 
-computer is forcefully powered off during operation (e.g. unplugging the power cord), the operating 
-system will not have a chance to scrub memory of sensitive information.  Subsequently, the DRAM 
-chips will retain the data in a readable form for a period of time even after the computer is 
-completely shut down.  This period can even be increased by lowering the temperature (temperatures 
-as low as $-50\,^{\circ}\mathrm{C}$ achieved using off-the-shelf air dusters have been shown to 
-preserve up to 99.9\% of memory for up to 1 minute).  The contents are then read on the same or 
-separate machine by booting the machine with the compromised RAM into a custom kernel that dumps the 
-contents into a separate storage medium.  This process thereby grants unauthorized access of a 
-computer's encryption keys when the computer is left physically unattended.  Therefore, the disk 
-encryption systems have virtually no safe place to safely store the cryptographic keys.  An attacker 
-can recover encryption keys using key harvesting algorithms outlined in \cite{coldboot} even in the 
-presence of 15\% decay for 128-bit AES keys.
+Existing disk encryption mechanisms typically deployed in laptops have been shown to be vulnerable to 
+methods that instead focus on obtaining sensitive data directly from memory, with one such method being a 
+cold boot attack \cite{coldboot}.  In a cold boot attack, an attacker gains physical access to a computer 
+and is able to obtain sensitive data either in plain text or indirectly by first obtaining encryption keys 
+from the memory of a running operating system.  In particular, if the computer is forcefully powered off 
+during operation (e.g. unplugging the power cord), the operating system will not have a chance to scrub 
+memory of sensitive information.  Subsequently, the DRAM chips will retain the data in a readable form for 
+a period of time even after the computer is completely shut down.  This period can even be increased by 
+lowering the temperature (temperatures as low as $-50\,^{\circ}\mathrm{C}$ achieved using off-the-shelf air 
+dusters have been shown to preserve up to 99.9\% of memory for up to 1 minute).  The contents are then read 
+on the same or separate machine by booting the machine with the compromised RAM into a custom kernel that 
+dumps the contents into a separate storage medium.  This process thereby grants unauthorized access of a 
+computer's encryption keys when the computer is left physically unattended.  Therefore, the disk encryption 
+systems have virtually no safe place to safely store the cryptographic keys.  An attacker can recover 
+encryption keys using key harvesting algorithms outlined in \cite{coldboot} even in the presence of 15\% 
+decay for 128-bit AES keys.
 
-Operating systems are still in the early stages of offering a completely secure environment to 
-protect against the breach of the secure information on phones in the absence of physical security.  
-With attacks like cold boot making foreign memory access easily achievable, some safeguards for 
-storing the encryption keys have been explored.  TRESOR \cite{tresor} is a Linux kernel patch for 
-the x86 architecture that runs the AES algorithm entirely on the microprocessor, storing the secret 
-key in CPU debug registers as a step to protect against key harvesting.  This provides the advantage 
-of preserving binary compatibility, preventing user-space applications from accessing them (by 
-patching system calls), and being large enough to store cryptographic keys.  This serves as good 
-motivation for the refinement of memory encryption techniques, and motivates the work herein.
+Operating systems are still in the early stages of offering a completely secure environment to protect 
+against the breach of the secure information on phones in the absence of physical security.  With attacks 
+like cold boot making foreign memory access easily achievable, some safeguards for storing the encryption 
+keys have been explored.  TRESOR \cite{tresor} is a Linux kernel patch for the x86 architecture that runs 
+the AES algorithm entirely on the microprocessor, storing the secret key in CPU debug registers as a step 
+to protect against key harvesting.  This provides the advantage of preserving binary compatibility, 
+preventing user-space applications from accessing them (by patching system calls), and being large enough 
+to store cryptographic keys.  This serves as good motivation for the refinement of memory encryption 
+techniques, and motivates the work herein.
 
 In this technical report, we propose the use of GPUs as a hardware accelerator for implementing the 
-Advanced Encryption Standard (AES) algorithm over a traditional CPU based implementation.  Modern 
-GPUs are attractive for parallel processing because these architectures have hundreds of processing 
-cores and high bandwidth, delivering up to a teraflop (1 trillion calculations per second) of 
-computing power from the same silicon area as a comparable microprocessor and using only a fraction 
-of the power per calculation \cite{myth}. These high-performance and low-energy advantages are a 
-result of the GPU's support for hiding latency in memory transactions through massive 
-multi-threading with low context switch overhead \cite{aes_gpu}.  Modern mobile devices have a 
-system-on-chip (SoC) architecture where the CPU, GPU, and other computing nodes share the same 
-system bus for accessing main memory. With the recent frameworks performing general-purpose parallel 
-programming on GPUs (GPGPU), OpenCL provides a model for programming whereby a host processor (in 
-this case, a CPU) can delegate work to be performed in parallel by computing nodes (GPUs).
+Advanced Encryption Standard (AES) algorithm over a traditional CPU based implementation.  Modern GPUs are 
+attractive for parallel processing because these architectures have hundreds of processing cores and high 
+bandwidth, delivering up to a teraflop (1 trillion calculations per second) of computing power from the 
+same silicon area as a comparable microprocessor and using only a fraction of the power per calculation 
+\cite{myth}. These high-performance and low-energy advantages are a result of the GPU's support for hiding 
+latency in memory transactions through massive multi-threading with low context switch overhead 
+\cite{aes_gpu}.  Modern mobile devices have a system-on-chip (SoC) architecture where the CPU, GPU, and 
+other computing nodes share the same system bus for accessing main memory. With the recent frameworks 
+performing general-purpose parallel programming on GPUs (GPGPU), OpenCL provides a model for programming 
+whereby a host processor (in this case, a CPU) can delegate work to be performed in parallel by computing 
+nodes (GPUs).
 
-Advanced Encryption Standard (AES) is a variant of the Rijndael cipher which acts on input blocks 
-of 128 bits and uses keys of size 128, 192 or 256 bits. The algorithm can work in parallel on each 
-individual block of the input plain text (each block being 128 bits). At a high level, the algorithm 
-does the following. It first goes through a key expansion stage, where the cipher key is used to 
-derive the round keys using a key scheduling algorithm. The plain text is XORed with one of the 
-derived keys (AddRoundKey) before being subjected to a series of rounds, the number of rounds being 
-decided by the size of the cipher key (10 in case of 128-bit keys). The input and output of each of 
-the rounds is modeled as 4 by 4 matrix, called a state, with each cell being a byte in size. In each of 
-the rounds the input goes through the following steps. First, each byte is replaced in a non-linear 
-manner with another using a lookup table (SubBytes). Then each of the rows of the input is 
-cyclically shifted to the left a certain number of steps (ShiftRows) . This is followed by a mixing 
-operation which operates on the columns of the state, combining the four bytes in each 
-column (MixColumns). The last round of the encryption algorithm omits this step. The final step in 
-the round is again AddRoundKey where the state is XORed with a derived key from the key expansion 
-step. The output of these rounds is the encrypted ciphertext \cite{aes1,aes2}.
+Advanced Encryption Standard (AES) is a variant of the Rijndael cipher which acts on input blocks of 128 
+bits and uses keys of size 128, 192 or 256 bits. The algorithm can work in parallel on each individual 
+block of the input plain text (each block being 128 bits). At a high level, the algorithm does the 
+following. It first goes through a key expansion stage, where the cipher key is used to derive the round 
+keys using a key scheduling algorithm. The plain text is XORed with one of the derived keys (AddRoundKey) 
+before being subjected to a series of rounds, the number of rounds being decided by the size of the cipher 
+key (10 in case of 128-bit keys). The input and output of each of the rounds is modeled as 4 by 4 matrix, 
+called a state, with each cell being a byte in size. In each of the rounds the input goes through the 
+following steps. First, each byte is replaced in a non-linear manner with another using a lookup table 
+known as the T-box (SubBytes). Then each of the rows of the input is cyclically shifted to the left a 
+certain number of steps (ShiftRows). This is followed by a mixing operation which operates on the columns 
+of the state, combining the four bytes in each column (MixColumns). The last round of the encryption 
+algorithm omits this step. The final step in the round is again AddRoundKey where the state is XORed with a 
+derived key from the key expansion step. The output of these rounds is the encrypted ciphertext 
+\cite{aes1,aes2}.
 
 \begin{figure}[!t]
 \centering
@@ -529,19 +527,18 @@ step. The output of these rounds is the encrypted ciphertext \cite{aes1,aes2}.
 \label{fig:opencl}
 \end{figure}
 
-In the OpenCL platform and execution model (figure \ref{fig:opencl}), the user creates a host (in 
-our case, the CPU) program that compiles and dispatches a GPGPU program to run on a particular 
-device (the GPU).  Upon executing the kernel, the user must specify the number of work groups to 
-execute as well as the size of each work group.  The execution model defines work items to be an 
-executing instance of an OpenCL kernel which are run on processing elements, and work groups to be 
-equally sized groups of work items. The OpenCL runtime ensures that work items within a work group 
-will execute concurrently on the same compute unit, but provides no guarantees whether work items 
-across work groups will execute concurrently or serially. All work items within a group are assigned 
-a local id that is unique within that group as well as a global id that is unique across all work 
-items in all work groups of the executing kernel.  The work items then make use of their local and 
-global ids to appropriately divide up the work, and can make use of synchronization constructs like 
-a work group barriers to synchronize their execution (but only for work items within the same group) 
-\cite{opencl_guide}.
+In the OpenCL platform and execution model (figure \ref{fig:opencl}), the user creates a host (in our case, 
+the CPU) program that compiles and dispatches a GPGPU program to run on a particular device (the GPU).  
+Upon executing the kernel, the user must specify the number of work groups to execute as well as the size 
+of each work group.  The execution model defines work items to be an executing instance of an OpenCL kernel 
+which are run on processing elements, and work groups to be equally sized groups of work items. The OpenCL 
+runtime ensures that work items within a work group will execute concurrently on the same compute unit, but 
+provides no guarantees whether work items across work groups will execute concurrently or serially. All 
+work items within a group are assigned a local id that is unique within that group as well as a global id 
+that is unique across all work items in all work groups of the executing kernel.  The work items then make 
+use of their local and global ids to appropriately divide up the work, and can make use of synchronization 
+constructs like a work group barriers to synchronize their execution (but only for work items within the 
+same group) \cite{opencl_guide}.
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -576,46 +573,44 @@ a work group barriers to synchronize their execution (but only for work items wi
 
 \section{Evaluation}
 
-An existing implementation of an OpenCL kernel implementing the AES encryption algorithm was 
-obtained from a public source code repository \cite{opencl_impl}.  The original implementation of 
-the OpenCL encrypt kernel is implemented using a data parallel programming model, whereby a program 
-is parallelized by performing the same computation on different pieces of data \cite{opencl_guide}.  
-In particular, it only makes use of the global id of a work group to index itself into the input 
-array at a particular position (e.g. index 0 of the input array), with one work group instance being 
-responsible for encrypting an entry of the input array. The kernel also makes use of the vector 
-instruction set of the GPU to increase the number of bytes that a single "entry" in the input array 
-corresponds to. In particular, in addition to traditional analogs to C data types like 
-$\mathtt{uint}$ (a 32-bit integer for a total of 4 bytes), there are vector data types like 
-$\mathtt{uint4}$ (4 32-bit integers, for total of 16 bytes). Using these vector types allows one to 
-execute native vector operations for the target platform \cite{opencl_guide}.  In particular, a 
-single work item can operate on 16 bytes at once, whereas a traditional CPU would operate on 4 bytes 
-at once. Thus, given an input array of $N$ bytes, we only need $N/16$ work groups of 1 work item 
-each to encrypt an input array. Hence, in this implementation, the local id is ignored, since a work 
-group only consists of a single work item.
+An existing implementation of an OpenCL kernel implementing the AES encryption algorithm was obtained from 
+a public source code repository \cite{opencl_impl}.  The original implementation of the OpenCL encrypt 
+kernel is implemented using a data parallel programming model, whereby a program is parallelized by 
+performing the same computation on different pieces of data \cite{opencl_guide}.  In particular, it only 
+makes use of the global id of a work group to index itself into the input array at a particular position 
+(e.g. index 0 of the input array), with one work group instance being responsible for encrypting an entry 
+of the input array. The kernel also makes use of the vector instruction set of the GPU to increase the 
+number of bytes that a single "entry" in the input array corresponds to. In particular, in addition to 
+traditional analogs to C data types like $\mathtt{uint}$ (a 32-bit integer for a total of 4 bytes), there 
+are vector data types like $\mathtt{uint4}$ (4 32-bit integers, for total of 16 bytes). Using these vector 
+types allows one to execute native vector operations for the target platform \cite{opencl_guide}.  In 
+particular, a single work item can operate on 16 bytes at once, whereas a traditional CPU would operate on 
+4 bytes at once. Thus, given an input array of $N$ bytes, we only need $N/16$ work groups of 1 work item 
+each to encrypt an input array. Hence, in this implementation, the local id is ignored, since a work group 
+only consists of a single work item.
 
-The target device used for conducting experiments was a MotoX phone \cite{specs} (table \ref{table:specs}).  We 
-initially intended to use the Nexus 4 phone, but this was abandoned due to apparent instabilities 
+The target device used for conducting experiments was a MotoX phone \cite{specs} (table \ref{table:specs}).  
+We initially intended to use the Nexus 4 phone, but this was abandoned due to apparent instabilities 
 triggered by the use of OpenCL on the device. 
 
-Preliminary experiments determined that the full parallelism offered by the GPU was not being 
-exploited using the original implementation.  Hence, modifications were made to the original 
-implementation in order to explore the different levels of parallelism offered by varying the input 
-parameters to the kernel such as the number of work groups and the work group size (which were 
-previously strictly $N/16$ and 1 respectively).  The following sections describe the modifications 
-that were performed to the original implementation and investigates their effect on the throughput 
-of encryption.
+Preliminary experiments determined that the full parallelism offered by the GPU was not being exploited 
+using the original implementation.  Hence, modifications were made to the original implementation in order 
+to explore the different levels of parallelism offered by varying the input parameters to the kernel such 
+as the number of work groups and the work group size (which were previously strictly $N/16$ and 1 
+respectively).  The following sections describe the modifications that were performed to the original 
+implementation and investigates their effect on the throughput of encryption.
 
 \subsubsection{Version 1 - even partitioning by work items}
 \label{subsec:impl_partition}
 
-We modified the OpenCL AES encrypt kernel such that the input array is split up evenly amongst the 
-work items across all work groups (whereas previously they only encrypted 16 bytes). In particular, 
-all OpenCL instances get some multiple of 16 bytes on which to operate, all of which are equally 
-sized except one OpenCL instance which will be allocated whatever remains of the input array (i.e.  
-given $N = 128$ bytes, and 3 work items, then 2 instances will operate on 48 bytes and 1 instance will 
-operate on 32 bytes). Timing experiments were performed on a 128 MB input array, with the total 
-number of work groups being varied from 1 up to 16, and the work group size being kept at 1 (refer 
-to figure \ref{fig:num_work_groups}).
+We modified the OpenCL AES encrypt kernel such that the input array is split up evenly amongst the work 
+items across all work groups (whereas previously they only encrypted 16 bytes). In particular, all OpenCL 
+instances get some multiple of 16 bytes on which to operate, all of which are equally sized except one 
+OpenCL instance which will be allocated whatever remains of the input array (i.e.  given $N = 128$ bytes, 
+and 3 work items, 2 instances will operate on 48 bytes and 1 instance will operate on 32 bytes). 
+Timing experiments were performed on a 128 MB input array, with the total number of work groups being 
+varied from 1 up to 16, and the work group size being kept at 1 (refer to figure 
+\ref{fig:num_work_groups}).
 
 \begin{figure}[!t]
 \centering
@@ -624,37 +619,36 @@ to figure \ref{fig:num_work_groups}).
 \label{fig:num_work_groups}
 \end{figure}
 
-Going from of 1 up to 4 work groups, we see a linear speedup in encryption throughput (going from 
-work groups of 1 to 2 we see a 2.37 MB/second speedup, 2 to 3 we see 2.36 MB/second, and 3 to 4 we 
-see 2.36 MB/second). These linear speedups going from 1 up to 4 work groups are consistent with the 
-device specifications in table \ref{table:specs} which state that the GPU has 4 computing units 
-(hence, it is using an additional computing unit for each additional work group).
+Going from of 1 up to 4 work groups, we see a linear speedup in encryption throughput (going from work 
+groups of 1 to 2 we see a 2.37 MB/second speedup, 2 to 3 we see 2.36 MB/second, and 3 to 4 we see 2.36 
+MB/second). These linear speedups going from 1 up to 4 work groups are consistent with the device 
+specifications in table \ref{table:specs} which state that the GPU has 4 computing units (hence, it is 
+using an additional computing unit for each additional work group).
 
-When we reach 5 work groups, we see the worst decrease in encryption throughput (3.54 MB/second).  
-This is most likely due to the OpenCL runtime scheduling 4 simultaneous OpenCL kernel instances (4 
-work groups each consisting of a single work item) that operate on $1/5$ of the input array, with a 
-single OpenCL instance running on the remaining $1/5$ only after the first 4 complete (thereby 
-underutilizing the parallelism of the GPU).
+When we reach 5 work groups, we see the worst decrease in encryption throughput (3.54 MB/second).  This is 
+most likely due to the OpenCL runtime scheduling 4 simultaneous OpenCL kernel instances (4 work groups each 
+consisting of a single work item) that operate on $1/5$ of the input array, with a single OpenCL instance 
+running on the remaining $1/5$ only after the first 4 complete (thereby underutilizing the parallelism of 
+the GPU).
 
-The throughput degrades the most for numbers of work groups that that are 1 modulo 4 since given 
-that instances will tend to complete in roughly the same time (since they have the same data size 
-and instructions executed), there will tend to be a point at which only one GPU core will be 
-utilized, thus reducing parallelism (similarly for 2 modulo 4, and 3 modulo 4). As we increase the 
-number of work groups, the degradation is less since the point at which we aren't maximally using 
-all 4 GPU cores operates over less of the input array.  This phenomenon has been described in 
-\cite{gpu_opt} as the tail effect.
+The throughput degrades the most for numbers of work groups that that are 1 modulo 4 since given that 
+instances will tend to complete in roughly the same time (since they have the same data size and 
+instructions executed), there will tend to be a point at which only one GPU core will be utilized, thus 
+reducing parallelism (similarly for 2 modulo 4, and 3 modulo 4). As we increase the number of work groups, 
+the degradation is less since the point at which we aren't maximally using all 4 GPU cores operates over 
+less of the input array.  This phenomenon has been described in \cite{gpu_opt} as the tail effect.
 
-Hence, from figure \ref{fig:num_work_groups}, the main conclusion to be drawn is that work groups 
-are being scheduled on compute devices, but only one work group at a time is being scheduled 
-(otherwise the peaks would reach above 10 MB/second as the number of work groups increases).
+Hence, from figure \ref{fig:num_work_groups}, the main conclusion to be drawn is that work groups are being 
+scheduled on compute devices, but only one work group at a time is being scheduled (otherwise the peaks 
+would reach above 10 MB/second as the number of work groups increases).
 
-Next, we investigated the affect of increasing the number of work items used on a single compute 
-device.  In particular, we began by querying the OpenCL runtime for the maximum available work group 
-size, which was found to be 256.  However, this is only a theoretical maximum, and the actual 
-maximum enforced by OpenCL is dependant on the kernel being executed and its resource requirements 
-\cite{opencl_guide}; in our case, the maximum available was 80.  Timing experiments were performed 
-on a 32 MB input array, with the total number of work items being varied from 1 up to 80, and the 
-number of work groups being kept at 1 (refer to figure \ref{fig:work_group_size}).
+Next, we investigated the affect of increasing the number of work items used on a single compute device.  
+In particular, we began by querying the OpenCL runtime for the maximum available work group size, which was 
+found to be 256.  However, this is only a theoretical maximum, and the actual maximum enforced by OpenCL is 
+dependant on the kernel being executed and its resource requirements \cite{opencl_guide}; in our case, the 
+maximum available was 80.  Timing experiments were performed on a 32 MB input array, with the total number 
+of work items being varied from 1 up to 80, and the number of work groups being kept at 1 (refer to 
+"constant T-box" in figure \ref{fig:work_group_size}).
 
 \begin{figure}[!t]
 \centering
@@ -663,62 +657,37 @@ number of work groups being kept at 1 (refer to figure \ref{fig:work_group_size}
 \label{fig:work_group_size}
 \end{figure}
 
-From the graph, we can see the encryption throughput gradually increases from 0 up to 20 work items, 
-doubling the maximum throughput observed when only considering a single work item (as in figure 
-\ref{fig:num_work_groups}).  However, after 20 work items, we observe some degradation, followed by 
-the throughput leveling off at around 18 MB/second.  This decrease in throughput for 
-an increase in parallelism is an unexpected result and warranted further investigation.  Previous 
-work has shown that the memory access patterns are important to consider when optimizing the 
-performance of a GPU program \cite{gpu_mem}. In particular, access to global memory is the slowest 
-memory operation, whereas access to local memory (shared within a work group) is more efficient 
-\cite{opencl_guide}.  The current implementation would not benefit from the use of local memory for 
-the input array since each work item reads global memory addresses once and encrypts it 
-independently.  However, another important factor to consider is whether accesses to global memory 
-within a warp \cite{gpu_mem} or team \cite{opencl_guide} (i.e. a hardware schedulable division of 
-the work group size) are coalesced.  Memory accesses are said to be coalesced within a team if each 
-work item in the team accesses global memory in an aligned, contiguous sequence of 32, 64, or 128 
-bytes \cite{nvidia_opencl}. Hence, in the modification of the implementation in section 
-\ref{subsec:impl_coalesce}, we investigate coalesced memory accesses.  
+From figure \ref{fig:work_group_size}, we can see the encryption throughput gradually increases from 0 up 
+to 20 work items, doubling the maximum throughput observed when only considering a single work item (as in 
+figure \ref{fig:num_work_groups}).  However, after 20 work items, we observe some degradation, followed by 
+the throughput leveling off at around 18 MB/second.  This decrease in throughput for an increase in 
+parallelism is an unexpected result and warranted further investigation.  Previous work has shown that the 
+memory access patterns are important to consider when optimizing the performance of a GPU program 
+\cite{gpu_mem}.  One important factor to consider is whether accesses to global memory within a warp 
+\cite{gpu_mem} or team \cite{opencl_guide} (i.e. a hardware schedulable division of the work group size) 
+are coalesced.  Memory accesses are said to be coalesced within a team if each work item in the team 
+accesses global memory in an aligned, contiguous sequence of 32, 64, or 128 bytes \cite{nvidia_opencl}.  
+Hence, in the modification of the implementation in section \ref{subsec:impl_coalesce}, we investigate 
+coalesced memory accesses.  
 
-\subsubsection{GPU vs CPU Performance}
-\label{subsec:gpu_vs_cpu}
-
-Next, we evaluate the performance of encryption of the GPU over the CPU using the implementation in 
-section \ref{subsec:impl_partition}.   Figure \ref{fig:num_work_groups} was used to guide selection 
-of an optimal number of work groups (4) and figure \ref{fig:work_group_size} was used in choosing an 
-optimal work group size (19).  The CPU implementation of AES encryption uses the OpenSSL crypto 
-library \cite{openssl}, using a 256 bit AES key and CBC encryption mode.  In both the GPU and CPU 
-implementations, timing measurements are restricted only to the encryption operation (i.e. not 
-including any input initialization operations).  Timing experiments were performed on input sizes 
-varying from 16 bytes up to 512 MB incrementing by powers of 2 (refer to figure 
-\ref{fig:opencl_vs_cpu}).
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=2.5in]{../final/motox/4.2/opencl_sizes_vs_cpu_sizes.shared_tbox_4G_80L.cpu_1thread.eps}
-\caption{OpenCL GPU vs OpenSSL performance in AES encryption}
-\label{fig:opencl_vs_cpu}
-\end{figure}
-
-From figure \ref{fig:opencl_vs_cpu}, we are able achieve a throughput of 55.68 MB/second at an input 
-size of 512 MB, whereas the CPU is able to achieve 51.87 MB/second at an input size of 8 MB (though 
-it quickly degrades to 46.25 MB/second for an input of 16 MB).  Hence, the GPU's overall increase in 
-throughput speed is 3.81 MB/second over the CPU.  This margin is rather small based on previously 
-published experiments investigating GPU encryption acceleration on the desktop using CUDA, which 
-have found up to a 28.39 fold speedup in encryption \cite{aes_cuda}.  Hence, this result warranted 
-further investigation into the implementation and potential optimizations.
+Another factor to consider is redundant access to global memory.  In particular, access to global memory is 
+the slowest memory operation, whereas access to local memory (shared within a work group) is more efficient 
+\cite{opencl_guide}.  The current implementation would not benefit from the use of local memory for the 
+input array since each work item reads global memory addresses once and encrypts it independently.  
+However, previous work has shown that loading the T-box into the local memory of a compute unit is 
+beneficial, since it is subject to random access \cite{shared_tbox}.  Thus, in section 
+\ref{subsec:impl_shared_tbox}, we explore adding this optimization to the current algorithm.
 
 \subsubsection{Version 2 - coalesced accesses within work groups}
 \label{subsec:impl_coalesce}
 
-We further modified the kernel (from section \ref{subsec:impl_partition}) such that in addition to 
-work items operating on equal sized input chunks, the work items within a work group access 
-contiguous sequences.  
+We further modified the kernel (from section \ref{subsec:impl_partition}) such that in addition to work 
+items operating on equal sized input chunks, the work items within a work group access contiguous 
+sequences.  
 
-That is, the kernel in section \ref{subsec:impl_partition} performed strided memory accesses 
-\cite{gpu_mem} within a work group.  For example, given a single work group of size 2 where each 
-work item is responsible for encrypting $\mathtt{E}$ entries, accesses to the input array 
-$\mathtt{A}$ were as follows:
+That is, the kernel in section \ref{subsec:impl_partition} performed strided memory accesses \cite{gpu_mem} 
+within a work group.  For example, given a single work group of size 2 where each work item is responsible 
+for encrypting $\mathtt{E}$ entries, accesses to the input array $\mathtt{A}$ were as follows:
 
 \begin{table}[h]
 \centering
@@ -731,9 +700,9 @@ $\mathtt{A}$ were as follows:
 \end{tabular}
 \end{table}
 
-In the following implementation, the memory accesses within such a work group have been modified 
-such that instead of concurrent memory accesses being $\mathtt{E}$ entries apart, they are 
-contiguous.  That is, if we have a total of $\mathtt{G}$ work groups, the accesses now look like:
+In the following implementation, the memory accesses within such a work group have been modified such that 
+instead of concurrent memory accesses being $\mathtt{E}$ entries apart, they are contiguous.  That is, if 
+we have a total of $\mathtt{G}$ work groups, the accesses now look like:
 
 \begin{table}[h]
 \centering
@@ -746,40 +715,80 @@ contiguous.  That is, if we have a total of $\mathtt{G}$ work groups, the access
 \end{tabular}
 \end{table}
 
-Timing experiments were performed on a 64 MB input array, with the total number of entries for a 
-work item to encrypt being varied from 1 (16 bytes) up to 5000 (78K).  In order to fully utilize all 
-potential processing power, the work group size was set to 80 and the number of work groups was set 
-such that all 4 compute units were used (refer to figure \ref{fig:coalesce}).
+Timing experiments were performed on a 64 MB input array, with the total number of entries for a work item 
+to encrypt being varied from 1 (16 bytes) up to 5000 (78K).  In order to fully utilize all potential 
+processing power, the work group size was set to 80 and the number of work groups was set such that all 4 
+compute units were used (refer to figure \ref{fig:coalesce}).
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=2.5in]{../final/motox/4.2/sample_opencl_aes_entries.64MB.4_work_groups.5000_max_entries.both.eps}
-\caption{OpenCL performance over for strided vs coalesced accesses within a work group}
+\caption{OpenCL performance for strided vs coalesced accesses within a work group}
 \label{fig:coalesce}
 \end{figure}
 
-From figure \ref{fig:coalesce}, we generally achieve the best encryption throughput for a small 
-number of entries ($< 500$), and it tends to get worse at the peaks for increasingly larger sizes 
-per work item.  These drops in the peaks could be caused by increasingly large stride distances 
-within a work group. 
+From figure \ref{fig:coalesce}, we generally achieve the best encryption throughput for a small number of 
+entries ($< 500$), and it tends to get worse at the peaks for increasingly larger sizes per work item.  
+These drops in the peaks could be caused by increasingly large stride distances within a work group. 
 
 The fluctuations observed in the graph are due to the GPU being underutilized near the end of the 
-computation.  In particular, in order to use a work group size of 80, the OpenCL runtime forces the 
-user to make each work group that size.  If the number of work items needed doesn't evenly divide 
-the input, this will cause the final scheduled work groups to underutilize the GPU (and it becomes 
-increasingly bad if a work item is responsible for a larger encryption size).
+computation.  In particular, in order to use a work group size of 80, the OpenCL runtime forces the user to 
+make each work group that size.  If the number of work items needed doesn't evenly divide the input, this 
+will cause the final scheduled work groups to underutilize the GPU (and it becomes increasingly bad if a 
+work item is responsible for a larger encryption size).
 
-Comparing the coalesced and strided implementations, we observe nearly identical throughput 
-behaviour.  However, we get slightly less throughput, which is likely due to the increased 
-operations being performed for entry index calculations \cite{opencl_guide}.  However, if memory 
-coalescing is in fact the reason for poor performance in the strided implementation, then the 
-coalesced graph indicates that memory accesses are still not coalesced.  
+Comparing the coalesced and strided implementations, we observe nearly identical throughput behaviour.  
+However, we get slightly less throughput for the coalesced implementation, which is likely due to the 
+increased operations being performed for entry index calculations \cite{opencl_guide}.  However, if memory 
+coalescing is in fact the reason for poor performance in the strided implementation, then the coalesced 
+graph indicates that memory accesses are still not coalesced.  Hence, subsequent experiments did not make 
+use of the strided implementation, and instead use the original implementation as described in 
+\ref{subsec:impl_partition}.
 
-This warrants further investigation into the memory access patterns for data other than the input 
-array, such as the T-box lookup table which is used during the encryption process (whose purpose is 
-analogous to the S-box in traditional AES implementations \cite{aes1,aes2}).  In current 
-implementations, this table is stored in constant memory (a constant region of global memory 
-\cite{opencl_guide}) and may be subject to random uncoalesced accesses.
+\subsubsection{Version 3 - storing the T-box in shared memory}
+\label{subsec:impl_shared_tbox}
+
+The original implementation of the kernel stored the 4 KB T-box in the constant memory region 
+\cite{opencl_impl}.  However, the constant memory region is simply a read-only section of global memory.  
+The MotoX compute units were found to have a local memory size of 8 KB, making this optimization possible.  
+The kernel in section \ref{subsec:impl_partition} was modified to have work items in a work group evenly 
+divide the task of copying the T-box into local memory (synchronized via a local memory barrier) prior to 
+performing encryption.  To measure the affects of this optimization, we reran the timing experiments for 
+investigating the affect of increasing the number of work items used on a single compute device (section 
+\ref{subsec:impl_partition}, refer to "shared T-box" in figure \ref{fig:work_group_size}). 
+
+From figure \ref{fig:work_group_size}, we see an increased maximum throughput (23.14 MB/second) over the 
+previous implementation.  Further, we observe a less pronounced leveling off in throughput, with the maximum 
+throughput achieved at the maximum work group size (80). Hence, this implementation was used in the 
+comparison against CPU performance.
+
+\subsubsection{GPU vs CPU Performance}
+\label{subsec:gpu_vs_cpu}
+
+Next, we evaluate the performance of encryption of the GPU over the CPU using the implementation in section 
+\ref{subsec:impl_shared_tbox}.   Figure \ref{fig:num_work_groups} was used to guide the selection of an optimal 
+number of work groups (4) and figure \ref{fig:work_group_size} was used in choosing an optimal work group 
+size (80).  The CPU implementation of AES encryption uses the OpenSSL crypto library \cite{openssl}, using 
+a 256-bit AES key and the CBC encryption mode.  In both the GPU and CPU implementations, timing measurements 
+are restricted only to the encryption operation (i.e. not including any input initialization operations).  
+Timing experiments were performed on input sizes varying from 16 bytes up to 512 MB incrementing by powers 
+of 2 (refer to figure \ref{fig:opencl_vs_cpu}).
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{../final/motox/4.2/opencl_sizes_vs_cpu_sizes.shared_tbox_4G_80L.cpu_1thread.eps}
+\caption{OpenCL GPU vs OpenSSL performance in AES encryption}
+\label{fig:opencl_vs_cpu}
+\end{figure}
+
+From figure \ref{fig:opencl_vs_cpu}, we are able achieve a maximum throughput of 91.82 MB/second at an input size 
+of 512 MB, whereas the CPU is able to achieve 51.87 MB/second at an input size of 8 MB (though it quickly 
+degrades to 46.25 MB/second for an input of 16 MB).  Hence, the GPU's increase in maximum throughput speed 
+is 39.95 MB/second over the CPU, with a speedup of 1.77.  While we have nearly doubled the CPU's 
+performance, this margin is still small based on previously published experiments investigating GPU 
+encryption acceleration on the desktop using CUDA, which have found up to a 28.39 fold speedup in 
+encryption \cite{aes_cuda}.  However, this may be partly explained by the abundance of cores available on 
+such GPUs in comparison to mobile GPUs.
 
 % Note that IEEE typically puts floats only at the top, even when this
 % results in a large percentage of a column being occupied by floats.
@@ -808,8 +817,8 @@ implementations, this table is stored in constant memory (a constant region of g
 % reference/describe all of them (a), (b), etc., within the main caption.
 
 
-% An example of a floating table. Note that, for IEEE style tables, the \caption command should come 
-% BEFORE the table. Table text will default to
+% An example of a floating table. Note that, for IEEE style tables, the \caption command should come BEFORE 
+% the table. Table text will default to
 % \footnotesize as IEEE normally uses this smaller font for tables.
 % The \label must come after \caption as always.
 %
@@ -849,73 +858,68 @@ implementations, this table is stored in constant memory (a constant region of g
 % command of the stfloats package.
 
 \section{Related work}
-CleanOS is a modification of Android that introduces an abstraction called Sensitive Data Objects 
-(SDOs) to track sensitive data in RAM, created and hoarded by apps that run on top of the Dalvik 
-Virtual Machine \cite{cleanos}. The system works by defining SDOs (either by the apps or by the default OS), 
-which are a logical collection of Java Objects that contain sensitive data. It introduces a modified 
-garbage collector known as EvictIdleGarbageCollector (eiGC) which walks through an idle SDO and 
-encrypts their data-bearing fields using a key which is then evicted to the cloud whereas the data 
-remains encrypted in memory.  This system, like ours, prevents the download delay of the encrypted 
-data from a remote host as the data is always present in the device itself. Moreover, the key is 
-inaccessible to a malicious user stealing the phone.
+CleanOS is a modification of Android that introduces an abstraction called Sensitive Data Objects (SDOs) to 
+track sensitive data in RAM, created and hoarded by apps that run on top of the Dalvik Virtual Machine 
+\cite{cleanos}. The system works by defining SDOs (either by the apps or by the default OS), which are a 
+logical collection of Java Objects that contain sensitive data. It introduces a modified garbage collector 
+known as EvictIdleGarbageCollector (eiGC) which walks through an idle SDO and encrypts their data-bearing 
+fields using a key which is then evicted to the cloud whereas the data remains encrypted in memory.  This 
+system, like ours, prevents the download delay of the encrypted data from a remote host as the data is 
+always present in the device itself. Moreover, the key is inaccessible to a malicious user stealing the 
+phone.
 
-However, CleanOS incurs the latency of a network requests in retrieving the key from cloud.  In 
-particular, CleanOS will incur unpredictable pauses during an otherwise inexpensive memory access on 
-an encrypted value when the application is running due to network requests for obtaining keys from 
-the cloud. Due to the implementation of encryption at the Davlik VM level, the application doesn't 
-even have a means for knowing when the pauses are going to happen to deal with them either by doing 
-something else in the meantime, or to avoid the request altogether.  In fact, evaluations show that 
-many operations (like loading of an email onto the screen) incurred overheads of more than 100\% 
-compared to a non-CleanOS implementation, especially over 3G networks \cite{cleanos}.
+However, CleanOS incurs the latency of a network requests in retrieving the key from cloud.  In particular, 
+CleanOS will incur unpredictable pauses during an otherwise inexpensive memory access on an encrypted value 
+when the application is running due to network requests for obtaining keys from the cloud. Due to the 
+implementation of encryption at the Davlik VM level, the application doesn't even have a means for knowing 
+when the pauses are going to happen to deal with them either by doing something else in the meantime, or to 
+avoid the request altogether.  In fact, evaluations show that many operations (like loading of an email 
+onto the screen) incurred overheads of more than 100\% compared to a non-CleanOS implementation, especially 
+over 3G networks \cite{cleanos}.
 
-In contrast, our system stores the key on the device in a special register accessed by the operating 
-system and not user level applications. We can use techniques like TRESOR \cite{tresor} for this, 
-which ensures that the key is only stored in CPU registers which are not accessible to user 
-applications (like debug registers) and that the key is only brought to RAM for a very short period 
-on reboot even before all other applications come to life. The key is cleared from RAM soon after 
-this.  Another major shortcoming of CleanOS is that it only encrypts data (memory) which is managed 
-by the Dalvik virtual machine, and does not account for data that is unencrypted in other parts of 
-the operating system \cite{cleanos}.  This includes OS data buffers (e.g. for writing to a file, 
-inside device drivers from reading from sensors such as a camera).
+In contrast, our system stores the key on the device in a special register accessed by the operating system 
+and not user level applications. We can use techniques like TRESOR \cite{tresor} for this, which ensures 
+that the key is only stored in CPU registers which are not accessible to user applications (like debug 
+registers) and that the key is only brought to RAM for a very short period on reboot even before all other 
+applications come to life. The key is cleared from RAM soon after this.  Another major shortcoming of 
+CleanOS is that it only encrypts data (memory) which is managed by the Dalvik virtual machine, and does not 
+account for data that is unencrypted in other parts of the operating system \cite{cleanos}.  This includes 
+OS data buffers (e.g. for writing to a file, inside device drivers from reading from sensors such as a 
+camera).
 
-XOM is a system to prevent software piracy, wherein the executing code of the software which is in 
-RAM is encrypted by marking it as "execute-only" and so is prevented from tampering \cite{xom}.  
-Cryptkeeper is a software-encrypted virtual memory manager that segments RAM into two segments, one 
-for running the decrypted programming instructions (small in size) and the other for keeping the 
-encrypted pages. The pages are swapped automatically between the segments and decrypted on demand 
-\cite{cryptkeeper}.  Encrypted Swap aims at encrypting pages before swapping them to swap memory so 
-that sensitive data related to swapped out processes are not available in backing storages 
-\cite{encryptedswap}. These systems all have the same disadvantage that, even though the data is 
-encrypted, the decryption key is still left in RAM and so can be recovered through memory-harvesting 
-techniques.
+XOM is a system to prevent software piracy, wherein the executing code of the software which is in RAM is 
+encrypted by marking it as "execute-only" and so is prevented from tampering \cite{xom}.  Cryptkeeper is a 
+software-encrypted virtual memory manager that segments RAM into two segments, one for running the 
+decrypted programming instructions (small in size) and the other for keeping the encrypted pages. The pages 
+are swapped automatically between the segments and decrypted on demand \cite{cryptkeeper}.  Encrypted Swap 
+aims at encrypting pages before swapping them to swap memory so that sensitive data related to swapped out 
+processes are not available in backing storages \cite{encryptedswap}. These systems all have the same 
+disadvantage that, even though the data is encrypted, the decryption key is still left in RAM and so can be 
+recovered through memory-harvesting techniques.
 
 \section{Conclusion}
 
 In this report, we have taken the first steps in investigating the feasibility of using the GPU as a 
 cryptographic accelerator for the AES algorithm on mobile devices.  In particular, our focus was on 
-exploring the use of OpenCL as a framework for implementing the algorithm.  Using modifications of 
-an existing implementation, we first showed that OpenCL schedules work groups to execute exclusively 
-on the compute units of the GPU, and that optimal throughput must be achieved through more than just 
-a simple data parallel implementation. Next, we investigated how performance varied with the 
+exploring the use of OpenCL as a framework for implementing the algorithm.  Using modifications of an 
+existing implementation \cite{opencl_impl}, we first showed that OpenCL schedules work groups to execute 
+exclusively on the compute units of the GPU, and that optimal throughput must be achieved through more than 
+just a simple data parallel implementation. Next, we investigated how performance varied with the 
 implementation as the number of active work items in a single compute unit was varied, discovering a 
-surprising level off in encryption throughput when using only $1/4$ of the available work 
-items.  Next, we determined that using optimal parameters for the number of work groups and work 
-group size, we are able to achieve on par performance with a single CPU using the OpenSSL 
-implementation.  Finally, we investigated uncoalesced memory accesses in the input data as a 
-potential reason for lower than expected performance, but determined this as not being the 
-underlying cause.  
+surprising level off in encryption throughput when using only $1/4$ of the available work items.  Next we 
+investigated two potential reasons for lower than expected performance: strided access to input data within 
+work groups, and redundant random accesses to the T-box lookup table that could be avoided using local memory.  
+We discovered the T-box lookup table optimization provided the best increase in throughput, whereas the 
+coalesced access implementation only added to the runtime.  Finally, we determined that using optimal 
+parameters for the number of work groups and work group size, we were able to achieve a 1.77 fold speedup in 
+maximum throughput over a single CPU using the OpenSSL implementation. 
 
 \section{Future work}
 
-Our next endeavour would be to further investigate causes for reduced throughput in GPU encryption.  
-In particular, we would investigate the affect of memory access patterns for data other than the 
-input array, such as the T-box lookup table (see section \ref{subsec:impl_coalesce}).  Further, we 
-would investigate the use of local memory regions shared between work items in a work group for 
-accelerating redundant accesses to T-box values.  After achieving sufficient performance in 
-encryption throughput, we would turn our focus to evaluating other characteristics relevant to 
-mobile devices, such as energy consumption during encryption.  Finally, we would investigate methods 
-for securely providing a privileged user-level process the permissions and capabilities needed to 
-encrypt memory on behalf of the Linux kernel.
+Our next endeavour would be to evaluate other characteristics of the GPU implementation of AES relevant to 
+mobile devices, such as energy consumption during encryption.  Finally, we would investigate methods for 
+securely providing a privileged user-level process the permissions and capabilities needed to encrypt 
+memory on behalf of the Linux kernel.
 
 % conference papers do not normally have an appendix
 
@@ -951,8 +955,10 @@ encrypt memory on behalf of the Linux kernel.
 % \end{thebibliography}
 
     % @online{specs,
-    %     title = {{PDAdb.net - Qualcomm Snapdragon S4 Pro MSM8960DT multi-core application processor with Modem Datasheet}},
-    %     url = {\url{http://www.pdadb.net/index.php?m=cpu&id=a8960dt&c=qualcomm_snapdragon_s4_pro_msm8960dt}},
+    %     title = {{PDAdb.net - Qualcomm Snapdragon S4 Pro MSM8960DT multi-core application processor with 
+%     Modem Datasheet}},
+    %     url = 
+%     {\url{http://www.pdadb.net/index.php?m=cpu&id=a8960dt&c=qualcomm_snapdragon_s4_pro_msm8960dt}},
     %     month = {12},
     %     year = {2013},
     % },
@@ -960,8 +966,8 @@ encrypt memory on behalf of the Linux kernel.
 \begin{filecontents*}{bibliography.bib}
 
     @misc{specs,
-        title = {{PDAdb.net -  Qualcomm Snapdragon S4 Pro MSM8960DT multi-core application processor 
-        with Modem Datasheet}},
+        title = {{PDAdb.net -  Qualcomm Snapdragon S4 Pro MSM8960DT multi-core application processor with 
+        Modem Datasheet}},
         howpublished = 
         {\url{http://www.pdadb.net/index.php?m=cpu&id=a8960dt&c=qualcomm_snapdragon_s4_pro_msm8960dt}},
         note = {Accessed: 2013-12-04}
@@ -1020,7 +1026,8 @@ encrypt memory on behalf of the Linux kernel.
 
     @article{coldboot,
         title={Lest we remember: cold-boot attacks on encryption keys},
-        author={Halderman, J Alex and Schoen, Seth D and Heninger, Nadia and Clarkson, William and Paul, William and Calandrino, Joseph A and Feldman, Ariel J and Appelbaum, Jacob and Felten, Edward W},
+        author={Halderman, J Alex and Schoen, Seth D and Heninger, Nadia and Clarkson, William and Paul, 
+        William and Calandrino, Joseph A and Feldman, Ariel J and Appelbaum, Jacob and Felten, Edward W},
         journal={Communications of the ACM},
         volume={52},
         number={5},
@@ -1038,9 +1045,9 @@ encrypt memory on behalf of the Linux kernel.
 
     @article{myth,
         title={{CPU and/or GPU: revisiting the GPU vs. CPU myth}},
-        author={Kothapalli, Kishore and Banerjee, Dip Sankar and Narayanan, PJ and Sood, Surinder and 
-            Bahl, Aman Kumar and Sharma, Shashank and Lad, Shrenik and Singh, Krishna Kumar and Matam, Kiran 
-        and Bharadwaj, Sivaramakrishna and others},
+        author={Kothapalli, Kishore and Banerjee, Dip Sankar and Narayanan, PJ and Sood, Surinder and Bahl, 
+        Aman Kumar and Sharma, Shashank and Lad, Shrenik and Singh, Krishna Kumar and Matam, Kiran and 
+    Bharadwaj, Sivaramakrishna and others},
         journal={arXiv preprint arXiv:1303.2171},
         year={2013}
     },
@@ -1054,6 +1061,16 @@ encrypt memory on behalf of the Linux kernel.
         organization={IEEE}
     },
 
+    @inproceedings{shared_tbox,
+        title={Implementation and Analysis of AES Encryption on GPU},
+        author={Li, Qinjian and Zhong, Chengwen and Zhao, Kaiyong and Mei, Xinxin and Chu, Xiaowen},
+        booktitle={High Performance Computing and Communication \& 2012 IEEE 9th International Conference 
+    on Embedded Software and Systems (HPCC-ICESS), 2012 IEEE 14th International Conference on},
+        pages={843--848},
+        year={2012},
+        organization={IEEE}
+    }
+
     @inproceedings{cleanos,
         title={{CleanOS: limiting mobile data exposure with idle eviction}},
         author={Tang, Yang and Ames, Phillip and Bhamidipati, Sravan and Bijlani, Ashish and Geambasu, 
@@ -1065,7 +1082,8 @@ encrypt memory on behalf of the Linux kernel.
 
     @article{xom,
         title={Architectural support for copy and tamper resistant software},
-        author={Lie, David and Thekkath, Chandramohan and Mitchell, Mark and Lincoln, Patrick and Boneh, Dan and Mitchell, John and Horowitz, Mark},
+        author={Lie, David and Thekkath, Chandramohan and Mitchell, Mark and Lincoln, Patrick and Boneh, 
+        Dan and Mitchell, John and Horowitz, Mark},
         journal={ACM SIGPLAN Notices},
         volume={35},
         number={11},

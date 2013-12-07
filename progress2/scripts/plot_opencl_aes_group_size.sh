@@ -53,8 +53,8 @@ title="OpenCL AES Encrypt - $subtitle ($(( (array_size/1024)/1024 ))MB)"
 xaxis="Group size" 
 line_label="OpenCL - work groups = 1"
 
-label1="strided constant T-box - work groups = 1"
-label2="strided shared T-box - work groups = 1"
+label1="constant T-box - work groups = 1"
+label2="shared T-box - work groups = 1"
 
 # plot_throughput_vs -x "$xaxis" "$@" "$file" "$title" "$extract_aes_local_worksize_points" "$line_label"
 # plot_throughput_vs_multiple -x "$xaxis" -s "$scale" -t "$time_scale" $extra_flags \
