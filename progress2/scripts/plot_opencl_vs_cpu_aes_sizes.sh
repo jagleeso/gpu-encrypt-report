@@ -9,13 +9,10 @@ output_graph="$5"
 subtitle="$6"
 
 NARGS=6
-if [ "$#" -lt $NARGS ]; then
-    echo 1>&2 "ERROR: too few arguments"
-    exit 1
-fi
-shift $NARGS
-
 set -e
+shift $NARGS ||
+    (echo 2>&1 "ERROR: opencl_file opencl_label cpu_file cpu_label output_graph subtitle" && exit 1)
+
 # set -x
 
 cd "$(dirname "$0")"
