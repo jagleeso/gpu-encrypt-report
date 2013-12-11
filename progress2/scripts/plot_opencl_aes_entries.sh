@@ -13,7 +13,7 @@ script_dir="$PWD"
 cd "$prev_dir"
 
 extract_aes_entries_points='
-if (/^profile time: ([^ ]+) ms/) { 
+if (/^profile time 2: ([^ ]+) ms/) { 
     $time = $1;
     $throughput = sprintf("%.2f", $bytes/$time);
     print "$entries $time $throughput";

@@ -27,7 +27,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 16
@@ -35,7 +35,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 1
 entries_to_encrypt == 1
@@ -44,10 +44,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 3.663086 ms
-profile time 2: 0.273926 ms
+profile time 1: 4.791992 ms
+profile time 2: 0.946045 ms
 -----------------------------------------------
-copy time: 0.28 ms
+copy time: 0.31 ms
 Computed '16/16' correct values!
 
 start of encrypt_cl
@@ -68,7 +68,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 32
@@ -76,7 +76,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 1
 entries_to_encrypt == 2
@@ -85,10 +85,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 5.097168 ms
-profile time 2: 0.946045 ms
+profile time 1: 5.067139 ms
+profile time 2: 0.915039 ms
 -----------------------------------------------
-copy time: 0.31 ms
+copy time: 0.28 ms
 Computed '32/32' correct values!
 
 start of encrypt_cl
@@ -109,7 +109,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 64
@@ -117,7 +117,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 1
 entries_to_encrypt == 4
@@ -126,10 +126,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 4.791016 ms
-profile time 2: 0.854980 ms
+profile time 1: 3.784912 ms
+profile time 2: 0.397217 ms
 -----------------------------------------------
-copy time: 0.28 ms
+copy time: 0.27 ms
 Computed '64/64' correct values!
 
 start of encrypt_cl
@@ -150,7 +150,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 128
@@ -158,7 +158,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 1
 entries_to_encrypt == 8
@@ -167,10 +167,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 5.036133 ms
-profile time 2: 1.036865 ms
+profile time 1: 4.914062 ms
+profile time 2: 0.854980 ms
 -----------------------------------------------
-copy time: 0.24 ms
+copy time: 0.34 ms
 Computed '128/128' correct values!
 
 start of encrypt_cl
@@ -191,7 +191,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 256
@@ -199,7 +199,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 1
 entries_to_encrypt == 16
@@ -208,10 +208,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 3.723877 ms
-profile time 2: 0.335938 ms
+profile time 1: 5.189209 ms
+profile time 2: 1.220947 ms
 -----------------------------------------------
-copy time: 0.31 ms
+copy time: 0.30 ms
 Computed '256/256' correct values!
 
 start of encrypt_cl
@@ -232,7 +232,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 512
@@ -240,7 +240,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 1
 entries_to_encrypt == 32
@@ -249,8 +249,8 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 3.844971 ms
-profile time 2: 0.306152 ms
+profile time 1: 5.341064 ms
+profile time 2: 0.854980 ms
 -----------------------------------------------
 copy time: 0.31 ms
 Computed '512/512' correct values!
@@ -273,7 +273,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 1024
@@ -281,7 +281,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 1
 entries_to_encrypt == 64
@@ -290,10 +290,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 4.913818 ms
-profile time 2: 1.038086 ms
+profile time 1: 4.914062 ms
+profile time 2: 0.854980 ms
 -----------------------------------------------
-copy time: 0.30 ms
+copy time: 0.27 ms
 Computed '1024/1024' correct values!
 
 start of encrypt_cl
@@ -314,7 +314,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 2048
@@ -322,7 +322,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 1
 entries_to_encrypt == 128
@@ -331,8 +331,8 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 4.029053 ms
-profile time 2: 0.365967 ms
+profile time 1: 4.974854 ms
+profile time 2: 0.854004 ms
 -----------------------------------------------
 copy time: 0.30 ms
 Computed '2048/2048' correct values!
@@ -355,7 +355,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 4096
@@ -363,7 +363,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 1
 entries_to_encrypt == 256
@@ -372,8 +372,8 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 4.944092 ms
-profile time 2: 0.854004 ms
+profile time 1: 4.975098 ms
+profile time 2: 1.129150 ms
 -----------------------------------------------
 copy time: 0.31 ms
 Computed '4096/4096' correct values!
@@ -396,7 +396,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 8192
@@ -404,7 +404,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 2
 entries_to_encrypt == 512
@@ -413,8 +413,8 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 4.974854 ms
-profile time 2: 1.159912 ms
+profile time 1: 5.187988 ms
+profile time 2: 1.007812 ms
 -----------------------------------------------
 copy time: 0.31 ms
 Computed '8192/8192' correct values!
@@ -437,7 +437,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 16384
@@ -445,7 +445,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 4
 entries_to_encrypt == 1024
@@ -454,8 +454,8 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 5.097168 ms
-profile time 2: 1.190186 ms
+profile time 1: 5.340820 ms
+profile time 2: 1.250977 ms
 -----------------------------------------------
 copy time: 0.31 ms
 Computed '16384/16384' correct values!
@@ -478,7 +478,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 32768
@@ -486,7 +486,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 7
 entries_to_encrypt == 2048
@@ -495,10 +495,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 5.738037 ms
-profile time 2: 1.373047 ms
+profile time 1: 4.241943 ms
+profile time 2: 0.916016 ms
 -----------------------------------------------
-copy time: 0.33 ms
+copy time: 0.21 ms
 Computed '32768/32768' correct values!
 
 start of encrypt_cl
@@ -519,7 +519,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 65536
@@ -527,7 +527,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 13
 entries_to_encrypt == 4096
@@ -536,8 +536,8 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 5.706787 ms
-profile time 2: 1.617920 ms
+profile time 1: 5.462891 ms
+profile time 2: 1.343018 ms
 -----------------------------------------------
 copy time: 0.37 ms
 Computed '65536/65536' correct values!
@@ -560,7 +560,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 131072
@@ -568,7 +568,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 26
 entries_to_encrypt == 8192
@@ -577,10 +577,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 6.256836 ms
-profile time 2: 2.166992 ms
+profile time 1: 6.562012 ms
+profile time 2: 2.532959 ms
 -----------------------------------------------
-copy time: 0.46 ms
+copy time: 0.64 ms
 Computed '131072/131072' correct values!
 
 start of encrypt_cl
@@ -601,7 +601,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 262144
@@ -609,7 +609,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 52
 entries_to_encrypt == 16384
@@ -618,8 +618,8 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 8.026855 ms
-profile time 2: 3.998047 ms
+profile time 1: 8.606934 ms
+profile time 2: 4.395020 ms
 -----------------------------------------------
 copy time: 0.61 ms
 Computed '262144/262144' correct values!
@@ -642,7 +642,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 524288
@@ -650,7 +650,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 103
 entries_to_encrypt == 32768
@@ -659,10 +659,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 11.566895 ms
-profile time 2: 7.447021 ms
+profile time 1: 11.719971 ms
+profile time 2: 7.660156 ms
 -----------------------------------------------
-copy time: 0.92 ms
+copy time: 0.98 ms
 Computed '524288/524288' correct values!
 
 start of encrypt_cl
@@ -683,7 +683,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 1048576
@@ -691,7 +691,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 205
 entries_to_encrypt == 65536
@@ -700,10 +700,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 19.228027 ms
-profile time 2: 14.679932 ms
+profile time 1: 18.587158 ms
+profile time 2: 14.650146 ms
 -----------------------------------------------
-copy time: 1.74 ms
+copy time: 1.65 ms
 Computed '1048576/1048576' correct values!
 
 start of encrypt_cl
@@ -724,7 +724,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 2097152
@@ -732,7 +732,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 410
 entries_to_encrypt == 131072
@@ -741,10 +741,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 31.405029 ms
-profile time 2: 27.437988 ms
+profile time 1: 32.565186 ms
+profile time 2: 28.170166 ms
 -----------------------------------------------
-copy time: 2.84 ms
+copy time: 3.11 ms
 Computed '2097152/2097152' correct values!
 
 start of encrypt_cl
@@ -765,7 +765,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 4194304
@@ -773,7 +773,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 820
 entries_to_encrypt == 262144
@@ -782,10 +782,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 57.927002 ms
-profile time 2: 53.867920 ms
+profile time 1: 59.697998 ms
+profile time 2: 55.638916 ms
 -----------------------------------------------
-copy time: 6.04 ms
+copy time: 5.62 ms
 Computed '4194304/4194304' correct values!
 
 start of encrypt_cl
@@ -806,7 +806,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 8388608
@@ -814,7 +814,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 1639
 entries_to_encrypt == 524288
@@ -823,10 +823,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 111.765869 ms
-profile time 2: 105.875000 ms
+profile time 1: 112.895020 ms
+profile time 2: 89.486084 ms
 -----------------------------------------------
-copy time: 12.58 ms
+copy time: 12.21 ms
 Computed '8388608/8388608' correct values!
 
 start of encrypt_cl
@@ -847,7 +847,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 16777216
@@ -855,7 +855,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 3277
 entries_to_encrypt == 1048576
@@ -864,10 +864,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 203.480225 ms
-profile time 2: 171.921875 ms
+profile time 1: 201.617920 ms
+profile time 2: 178.940918 ms
 -----------------------------------------------
-copy time: 25.94 ms
+copy time: 26.06 ms
 Computed '16777216/16777216' correct values!
 
 start of encrypt_cl
@@ -888,7 +888,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 33554432
@@ -896,7 +896,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 6554
 entries_to_encrypt == 2097152
@@ -905,10 +905,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 366.916016 ms
-profile time 2: 345.825928 ms
+profile time 1: 378.239014 ms
+profile time 2: 355.927979 ms
 -----------------------------------------------
-copy time: 60.00 ms
+copy time: 61.13 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -929,7 +929,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 67108864
@@ -937,7 +937,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 13108
 entries_to_encrypt == 4194304
@@ -946,10 +946,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 727.513916 ms
-profile time 2: 695.924805 ms
+profile time 1: 742.194092 ms
+profile time 2: 710.666992 ms
 -----------------------------------------------
-copy time: 174.55 ms
+copy time: 217.58 ms
 Computed '67108864/67108864' correct values!
 
 start of encrypt_cl
@@ -970,7 +970,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 134217728
@@ -978,7 +978,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 26215
 entries_to_encrypt == 8388608
@@ -987,10 +987,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 1405.554932 ms
-profile time 2: 1382.541992 ms
+profile time 1: 1441.935059 ms
+profile time 2: 1419.686035 ms
 -----------------------------------------------
-copy time: 565.63 ms
+copy time: 565.02 ms
 Computed '134217728/134217728' correct values!
 
 start of encrypt_cl
@@ -1011,7 +1011,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 268435456
@@ -1019,7 +1019,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 52429
 entries_to_encrypt == 16777216
@@ -1028,10 +1028,10 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 2795.818848 ms
-profile time 2: 2765.298096 ms
+profile time 1: 2865.648926 ms
+profile time 2: 2841.569092 ms
 -----------------------------------------------
-copy time: 2025.09 ms
+copy time: 2026.52 ms
 Computed '268435456/268435456' correct values!
 
 start of encrypt_cl
@@ -1052,7 +1052,7 @@ file size is 34648 byte
 read in size is: 34648
 Build the program executable
 Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_strided_local_tbox
+> kernel_name = AES_encrypt_coalesced_local_tbox
 Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 encrypt_cl: count = 536870912
@@ -1060,7 +1060,7 @@ rd_key 3"
 > max dimensions: 3
 > max_work_items_dim1: 256
 > max_kernel_work_group_size: 80
-> mode = MODE_STRIDED_TBOX_LOCAL_MEMORY
+> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
 num_work_groups is 4
 entries == 104858
 entries_to_encrypt == 33554432
@@ -1069,9 +1069,8 @@ num_processing_elements == 320
 > LOCAL = 80
 starting run 0...
 starting run 1...
-profile time 1: 5590.812988 ms
-profile time 2: 5573.813965 ms
+profile time 1: 5731.634033 ms
+profile time 2: 5689.637939 ms
 -----------------------------------------------
-copy time: 7391.36 ms
+copy time: 7304.32 ms
 Computed '536870912/536870912' correct values!
-

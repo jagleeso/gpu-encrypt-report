@@ -1,3 +1,5 @@
+declare -a gnuplot_colors=(red blue orange)
+
 plot_throughput_vs() {
     # rewrite in terms of plot_throughput_vs_multiple
     parse_plot_throughput_vs_args "$@"
@@ -23,6 +25,7 @@ parse_plot_throughput_vs_args() {
     width=1
     height=1
     xaxis_label=""
+    yaxis_label="Throughput"
     scale="bytes"
     time_scale="ms"
     extra_flags=""
@@ -30,7 +33,7 @@ parse_plot_throughput_vs_args() {
     # getopts
     # http://wiki.bash-hackers.org/howto/getopts_tutorial
     OPTIND=1
-    while getopts l:rx:s:t: flag; do
+    while getopts l:rx:s:t:y: flag; do
         case $flag in
         l)
             labels=("${labels[@]}" "$OPTARG")
@@ -49,6 +52,9 @@ parse_plot_throughput_vs_args() {
             ;;
         x)
             xaxis_label="$OPTARG"
+            ;;
+        y)
+            yaxis_label="$OPTARG"
             ;;
         ?)
             echo 2>&1 "ERROR: bad arguments";
@@ -90,7 +96,8 @@ plot_throughput_vs_multiple() {
     local num_lines=$(($# / 3))
     declare -a line_titles=()
     declare -a extractors=()
-    declare -a colors=(red blue violet)
+    declare -a colors=()
+    colors=("${gnuplot_colors[@]}")
     declare -a files=()
     while [ "$#" -gt 0 ]; do
         extractors=("${extractors[@]}" "$1")
@@ -169,7 +176,7 @@ plot_throughput_vs_multiple() {
 # set size 0.45, 0.35
     gnuplot <<EOF
 set title "$title"
-set ylabel "Throughput ($scale/$time_scale)"
+set ylabel "$yaxis_label ($scale/$time_scale)"
 set xlabel "$xaxis_label"
 set ytics border in scale 1,0.5 nomirror norotate  offset character 0, 0, 0
 set term postscript eps 10 solid
@@ -234,7 +241,8 @@ plot_throughput_vs() {
     local num_lines=$(($# / 2))
     declare -a line_titles=()
     declare -a extractors=()
-    declare -a colors=(red blue violet)
+    declare -a colors=()
+    colors=("${gnuplot_colors[@]}")
     while [ "$#" -gt 0 ]; do
         extractors=("${extractors[@]}" "$1")
         line_titles=("${line_titles[@]}" "$2")
@@ -346,7 +354,8 @@ plot_throughput_vs_bytes_multiple() {
     local height=1
     local scale="bytes"
     local time_scale="ms"
-    while getopts l:rs:t:w:h: flag; do
+    local yaxis_label="Throughput"
+    while getopts l:rs:t:w:h:y: flag; do
         case $flag in
         l)
             labels=("${labels[@]}" "$OPTARG")
@@ -368,6 +377,9 @@ plot_throughput_vs_bytes_multiple() {
         t)
             time_scale="$OPTARG"
             ;;
+        y)
+            yaxis_label="$OPTARG"
+            ;;
         ?)
             echo 2>&1 "ERROR: bad arguments";
             exit 1;
@@ -382,7 +394,8 @@ plot_throughput_vs_bytes_multiple() {
     local num_lines=$(($# / 3))
     declare -a line_titles=()
     declare -a extractors=()
-    declare -a colors=(red blue violet)
+    declare -a colors=()
+    colors=("${gnuplot_colors[@]}")
     declare -a files=()
     while [ "$#" -gt 0 ]; do
         extractors=("${extractors[@]}" "$1")
@@ -459,7 +472,7 @@ plot_throughput_vs_bytes_multiple() {
 # set size 0.45, 0.35
     gnuplot <<EOF
 set title "$title"
-set ylabel "Throughput ($scale/$time_scale)"
+set ylabel "$yaxis_label ($scale/$time_scale)"
 set xlabel "Input size ($scale)"
 set ytics border in scale 1,0.5 nomirror norotate  offset character 0, 0, 0
 set term postscript eps 10 solid
@@ -505,7 +518,8 @@ plot_throughput_vs_bytes() {
     local num_lines=$(($# / 2))
     declare -a line_titles=()
     declare -a extractors=()
-    declare -a colors=(red blue violet)
+    declare -a colors=()
+    colors=("${gnuplot_colors[@]}")
     while [ "$#" -gt 0 ]; do
         extractors=("${extractors[@]}" "$1")
         line_titles=("${line_titles[@]}" "$2")
@@ -599,7 +613,8 @@ plot_time_vs_bytes() {
     local num_lines=$(($# / 2))
     declare -a line_titles=()
     declare -a extractors=()
-    declare -a colors=(red blue violet)
+    declare -a colors=()
+    colors=("${gnuplot_colors[@]}")
     while [ "$#" -gt 0 ]; do
         extractors=("${extractors[@]}" "$1")
         line_titles=("${line_titles[@]}" "$2")
@@ -686,7 +701,7 @@ if (/^The time to complete GPU-to-CPU output array copy was ([^ ]+) ms/) {
 '
 
 extract_aes_points='
-if (/^profile time: ([^ ]+) ms/) { 
+if (/^profile time 2: ([^ ]+) ms/) { 
     $time = $1;
     print "$bytes $time";
 } elsif (/^encrypt_cl: count = (\d+)/) {
@@ -695,7 +710,17 @@ if (/^profile time: ([^ ]+) ms/) {
 '
 
 extract_opencl_aes_sizes_points='
-if (/^profile time: ([^ ]+) ms/) { 
+if (/^profile time 2: ([^ ]+) ms/) { 
+    $time = $1;
+    $throughput = sprintf("%.2f", $bytes/$time);
+    print "$bytes $time $throughput";
+} elsif (/^encrypt_cl: count = (\d+)/) {
+    $bytes = $1;
+}
+'
+
+extract_opencl_copy_time_points='
+if (/^copy time: ([^ ]+) ms/) { 
     $time = $1;
     $throughput = sprintf("%.2f", $bytes/$time);
     print "$bytes $time $throughput";
@@ -714,7 +739,7 @@ if (/^The time to complete kernel execution was ([^ ]+) ms/) {
 '
 
 extract_aes_global_worksize_points='
-if (/^profile time: ([^ ]+) ms/) { 
+if (/^profile time 2: ([^ ]+) ms/) { 
     $time = $1;
     print "$global_worksize $bytes $time";
 } elsif (/^global is (\d+)/) {
@@ -741,7 +766,7 @@ if (/^> Encryption time \(ms\): ([^\s]+)/) {
 # plot_aes_work_group_size / plot_aes_entries
 
 extract_aes_work_group_size_points='
-if (/^profile time: ([^ ]+) ms/) { 
+if (/^profile time 2: ([^ ]+) ms/) { 
     $time = $1;
     $throughput = sprintf("%.2f", $bytes/$time);
     print "$work_group_size $time $throughput";

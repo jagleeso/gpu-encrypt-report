@@ -2,10 +2,11 @@
 graph="$1"
 file1="$2"
 file2="$3"
-subtitle="$4"
+file3="$4"
+subtitle="$5"
 set -e
-shift 4 || 
-    (echo 2>&1 "ERROR: $0 graph file1 file2 subtitle" && exit 1)
+shift 5 || 
+    (echo 2>&1 "ERROR: $0 graph file1 file2 file3 subtitle" && exit 1)
 
 prev_dir="$PWD"
 cd "$(dirname "$0")"
@@ -14,7 +15,7 @@ script_dir="$PWD"
 cd "$prev_dir"
 
 extract_aes_local_worksize_points='
-if (/^profile time: ([^ ]+) ms/) { 
+if (/^profile time 2: ([^ ]+) ms/) { 
     $time = $1;
     $throughput = sprintf("%.2f", $bytes/$time);
     print "$global_worksize $time $throughput";
@@ -47,18 +48,22 @@ max_global_worksize=$(read_params "$extract_params" | nth_line 2)
 cat "$file1" | perl -lne "$extract_aes_local_worksize_points"
 echo "--------"
 cat "$file2" | perl -lne "$extract_aes_local_worksize_points"
+echo "--------"
+cat "$file3" | perl -lne "$extract_aes_local_worksize_points"
 # exit 1
 
 title="OpenCL AES Encrypt - $subtitle ($(( (array_size/1024)/1024 ))MB)" 
 xaxis="Group size" 
 line_label="OpenCL - work groups = 1"
 
-label1="constant T-box - work groups = 1"
-label2="shared T-box - work groups = 1"
+label1="constant T-box, strided - work groups = 1"
+label2="shared T-box, strided - work groups = 1"
+label3="shared T-box, coalesced - work groups = 1"
 
 # plot_throughput_vs -x "$xaxis" "$@" "$file" "$title" "$extract_aes_local_worksize_points" "$line_label"
 # plot_throughput_vs_multiple -x "$xaxis" -s "$scale" -t "$time_scale" $extra_flags \
 #     "$graph" "$title" "${args[@]}"
 plot_throughput_vs_multiple -x "$xaxis" "$@" "$graph" "$title" \
     "$extract_aes_local_worksize_points" "$label1" "$file1" \
-    "$extract_aes_local_worksize_points" "$label2" "$file2"
+    "$extract_aes_local_worksize_points" "$label2" "$file2" \
+    "$extract_aes_local_worksize_points" "$label3" "$file3"

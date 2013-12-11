@@ -7,7 +7,7 @@ Gdbsetup       : libs/armeabi-v7a/gdb.setup
 Install        : opencl_aes => libs/armeabi-v7a/opencl_aes
 > Array size (bytes): 33554432
 > Number of work groups: 1
-> Max work group size: 96
+> Max work group size: 80
 start of encrypt_cl
 data, keydata, results
 initFns
@@ -41,14 +41,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 1
 > GLOBAL = 1
 > LOCAL = 1
-profile time: 17668.517578 ms
+starting run 0...
+starting run 1...
+profile time 1: 17663.635010 ms
+profile time 2: 17639.859131 ms
 -----------------------------------------------
-encrypt_cl Time taken: 18.12s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 17.67s
-cl read memory taken: 0.38s
+copy time: 56.22 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -84,14 +82,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 2
 > GLOBAL = 2
 > LOCAL = 2
-profile time: 9455.057617 ms
+starting run 0...
+starting run 1...
+profile time 1: 9488.722900 ms
+profile time 2: 9436.074951 ms
 -----------------------------------------------
-encrypt_cl Time taken: 9.93s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 9.46s
-cl read memory taken: 0.41s
+copy time: 62.51 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -127,14 +123,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 3
 > GLOBAL = 3
 > LOCAL = 3
-profile time: 6721.226562 ms
+starting run 0...
+starting run 1...
+profile time 1: 6727.666992 ms
+profile time 2: 6703.769043 ms
 -----------------------------------------------
-encrypt_cl Time taken: 7.24s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 6.73s
-cl read memory taken: 0.46s
+copy time: 56.74 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -170,14 +164,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 4
 > GLOBAL = 4
 > LOCAL = 4
-profile time: 5366.641113 ms
+starting run 0...
+starting run 1...
+profile time 1: 5371.800049 ms
+profile time 2: 5338.409912 ms
 -----------------------------------------------
-encrypt_cl Time taken: 5.81s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 5.37s
-cl read memory taken: 0.38s
+copy time: 60.89 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -213,14 +205,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 5
 > GLOBAL = 5
 > LOCAL = 5
-profile time: 5724.187988 ms
+starting run 0...
+starting run 1...
+profile time 1: 5729.131836 ms
+profile time 2: 5696.627930 ms
 -----------------------------------------------
-encrypt_cl Time taken: 6.24s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 5.73s
-cl read memory taken: 0.45s
+copy time: 61.44 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -256,14 +246,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 6
 > GLOBAL = 6
 > LOCAL = 6
-profile time: 4930.841309 ms
+starting run 0...
+starting run 1...
+profile time 1: 4927.666992 ms
+profile time 2: 4904.318115 ms
 -----------------------------------------------
-encrypt_cl Time taken: 5.41s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 4.94s
-cl read memory taken: 0.41s
+copy time: 61.59 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -299,14 +287,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 7
 > GLOBAL = 7
 > LOCAL = 7
-profile time: 4384.557129 ms
+starting run 0...
+starting run 1...
+profile time 1: 4359.713135 ms
+profile time 2: 4336.975830 ms
 -----------------------------------------------
-encrypt_cl Time taken: 4.85s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 4.39s
-cl read memory taken: 0.40s
+copy time: 61.31 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -342,14 +328,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 8
 > GLOBAL = 8
 > LOCAL = 8
-profile time: 3939.294922 ms
+starting run 0...
+starting run 1...
+profile time 1: 3964.810059 ms
+profile time 2: 3912.009033 ms
 -----------------------------------------------
-encrypt_cl Time taken: 4.41s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 3.94s
-cl read memory taken: 0.40s
+copy time: 61.56 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -385,14 +369,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 9
 > GLOBAL = 9
 > LOCAL = 9
-profile time: 3543.292969 ms
+starting run 0...
+starting run 1...
+profile time 1: 3529.651123 ms
+profile time 2: 3505.875977 ms
 -----------------------------------------------
-encrypt_cl Time taken: 3.99s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 3.55s
-cl read memory taken: 0.38s
+copy time: 56.92 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -428,14 +410,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 10
 > GLOBAL = 10
 > LOCAL = 10
-profile time: 3164.229980 ms
+starting run 0...
+starting run 1...
+profile time 1: 3166.580078 ms
+profile time 2: 3147.444092 ms
 -----------------------------------------------
-encrypt_cl Time taken: 3.61s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 3.17s
-cl read memory taken: 0.38s
+copy time: 60.86 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -471,14 +451,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 11
 > GLOBAL = 11
 > LOCAL = 11
-profile time: 2914.970215 ms
+starting run 0...
+starting run 1...
+profile time 1: 2921.929199 ms
+profile time 2: 2890.249023 ms
 -----------------------------------------------
-encrypt_cl Time taken: 3.42s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.92s
-cl read memory taken: 0.44s
+copy time: 57.90 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -514,14 +492,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 12
 > GLOBAL = 12
 > LOCAL = 12
-profile time: 2662.048096 ms
+starting run 0...
+starting run 1...
+profile time 1: 2665.466064 ms
+profile time 2: 2643.430908 ms
 -----------------------------------------------
-encrypt_cl Time taken: 3.11s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.67s
-cl read memory taken: 0.38s
+copy time: 56.10 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -557,14 +533,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 13
 > GLOBAL = 13
 > LOCAL = 13
-profile time: 2440.103027 ms
+starting run 0...
+starting run 1...
+profile time 1: 2446.817871 ms
+profile time 2: 2423.226074 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.89s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.44s
-cl read memory taken: 0.38s
+copy time: 60.86 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -600,14 +574,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 14
 > GLOBAL = 14
 > LOCAL = 14
-profile time: 2274.958008 ms
+starting run 0...
+starting run 1...
+profile time 1: 2279.169922 ms
+profile time 2: 2256.523926 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.72s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.28s
-cl read memory taken: 0.38s
+copy time: 61.41 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -643,14 +615,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 15
 > GLOBAL = 15
 > LOCAL = 15
-profile time: 2135.663086 ms
+starting run 0...
+starting run 1...
+profile time 1: 2140.760010 ms
+profile time 2: 2097.817871 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.66s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.14s
-cl read memory taken: 0.46s
+copy time: 60.86 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -686,14 +656,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 16
 > GLOBAL = 16
 > LOCAL = 16
-profile time: 1997.130981 ms
+starting run 0...
+starting run 1...
+profile time 1: 2010.957031 ms
+profile time 2: 1978.726807 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.51s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.00s
-cl read memory taken: 0.45s
+copy time: 60.98 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -729,14 +697,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 17
 > GLOBAL = 17
 > LOCAL = 17
-profile time: 2018.983032 ms
+starting run 0...
+starting run 1...
+profile time 1: 1971.433105 ms
+profile time 2: 1941.248047 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.47s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.02s
-cl read memory taken: 0.39s
+copy time: 56.46 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -772,14 +738,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 18
 > GLOBAL = 18
 > LOCAL = 18
-profile time: 2014.925049 ms
+starting run 0...
+starting run 1...
+profile time 1: 2001.464844 ms
+profile time 2: 1970.730957 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.53s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.02s
-cl read memory taken: 0.45s
+copy time: 61.13 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -815,14 +779,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 19
 > GLOBAL = 19
 > LOCAL = 19
-profile time: 1944.482910 ms
+starting run 0...
+starting run 1...
+profile time 1: 1943.232178 ms
+profile time 2: 1921.958984 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.47s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.95s
-cl read memory taken: 0.46s
+copy time: 60.73 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -858,14 +820,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 20
 > GLOBAL = 20
 > LOCAL = 20
-profile time: 1950.130005 ms
+starting run 0...
+starting run 1...
+profile time 1: 1937.035889 ms
+profile time 2: 1905.843994 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.46s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.96s
-cl read memory taken: 0.44s
+copy time: 56.80 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -901,14 +861,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 21
 > GLOBAL = 21
 > LOCAL = 21
-profile time: 2256.280029 ms
+starting run 0...
+starting run 1...
+profile time 1: 2261.010986 ms
+profile time 2: 2238.515869 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.71s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.26s
-cl read memory taken: 0.39s
+copy time: 61.56 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -944,14 +902,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 22
 > GLOBAL = 22
 > LOCAL = 22
-profile time: 2187.699951 ms
+starting run 0...
+starting run 1...
+profile time 1: 2191.760010 ms
+profile time 2: 2169.448975 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.66s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.19s
-cl read memory taken: 0.40s
+copy time: 56.52 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -987,14 +943,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 23
 > GLOBAL = 23
 > LOCAL = 23
-profile time: 2138.836914 ms
+starting run 0...
+starting run 1...
+profile time 1: 2152.357910 ms
+profile time 2: 2121.683838 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.66s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.14s
-cl read memory taken: 0.45s
+copy time: 61.56 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1030,14 +984,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 24
 > GLOBAL = 24
 > LOCAL = 24
-profile time: 2096.048096 ms
+starting run 0...
+starting run 1...
+profile time 1: 2078.345947 ms
+profile time 2: 2057.714111 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.54s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.10s
-cl read memory taken: 0.38s
+copy time: 65.71 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1073,14 +1025,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 25
 > GLOBAL = 25
 > LOCAL = 25
-profile time: 2007.019043 ms
+starting run 0...
+starting run 1...
+profile time 1: 1990.202881 ms
+profile time 2: 1969.327148 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.46s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 2.01s
-cl read memory taken: 0.38s
+copy time: 60.95 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1116,14 +1066,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 26
 > GLOBAL = 26
 > LOCAL = 26
-profile time: 1919.059937 ms
+starting run 0...
+starting run 1...
+profile time 1: 1913.841064 ms
+profile time 2: 1892.323975 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.39s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.92s
-cl read memory taken: 0.41s
+copy time: 55.46 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1159,14 +1107,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 27
 > GLOBAL = 27
 > LOCAL = 27
-profile time: 1844.345947 ms
+starting run 0...
+starting run 1...
+profile time 1: 1849.260010 ms
+profile time 2: 1826.339111 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.36s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.85s
-cl read memory taken: 0.45s
+copy time: 56.16 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1202,14 +1148,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 28
 > GLOBAL = 28
 > LOCAL = 28
-profile time: 1778.727051 ms
+starting run 0...
+starting run 1...
+profile time 1: 1801.893066 ms
+profile time 2: 1760.873047 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.23s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.79s
-cl read memory taken: 0.38s
+copy time: 80.36 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1245,14 +1189,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 29
 > GLOBAL = 29
 > LOCAL = 29
-profile time: 1726.781982 ms
+starting run 0...
+starting run 1...
+profile time 1: 1749.549805 ms
+profile time 2: 1698.367188 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.17s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.73s
-cl read memory taken: 0.38s
+copy time: 61.13 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1288,14 +1230,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 30
 > GLOBAL = 30
 > LOCAL = 30
-profile time: 1667.786011 ms
+starting run 0...
+starting run 1...
+profile time 1: 1698.673096 ms
+profile time 2: 1644.284912 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.11s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.67s
-cl read memory taken: 0.38s
+copy time: 60.71 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1331,14 +1271,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 31
 > GLOBAL = 31
 > LOCAL = 31
-profile time: 1615.169067 ms
+starting run 0...
+starting run 1...
+profile time 1: 1631.405029 ms
+profile time 2: 1594.323975 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.08s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.62s
-cl read memory taken: 0.40s
+copy time: 57.07 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1374,14 +1312,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 32
 > GLOBAL = 32
 > LOCAL = 32
-profile time: 1577.048950 ms
+starting run 0...
+starting run 1...
+profile time 1: 1578.117188 ms
+profile time 2: 1558.980957 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.03s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.58s
-cl read memory taken: 0.38s
+copy time: 61.07 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1417,14 +1353,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 33
 > GLOBAL = 33
 > LOCAL = 33
-profile time: 1697.817993 ms
+starting run 0...
+starting run 1...
+profile time 1: 1704.716064 ms
+profile time 2: 1681.520020 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.14s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.70s
-cl read memory taken: 0.38s
+copy time: 61.22 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1460,14 +1394,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 34
 > GLOBAL = 34
 > LOCAL = 34
-profile time: 1688.814941 ms
+starting run 0...
+starting run 1...
+profile time 1: 1704.531982 ms
+profile time 2: 1661.802979 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.14s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.69s
-cl read memory taken: 0.38s
+copy time: 61.62 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1503,14 +1435,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 35
 > GLOBAL = 35
 > LOCAL = 35
-profile time: 1657.133911 ms
+starting run 0...
+starting run 1...
+profile time 1: 1663.421143 ms
+profile time 2: 1640.835938 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.19s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.66s
-cl read memory taken: 0.47s
+copy time: 56.07 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1546,14 +1476,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 36
 > GLOBAL = 36
 > LOCAL = 36
-profile time: 1655.302979 ms
+starting run 0...
+starting run 1...
+profile time 1: 1648.526855 ms
+profile time 2: 1628.018066 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.09s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.66s
-cl read memory taken: 0.38s
+copy time: 57.35 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1589,14 +1517,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 37
 > GLOBAL = 37
 > LOCAL = 37
-profile time: 1837.112915 ms
+starting run 0...
+starting run 1...
+profile time 1: 1841.843018 ms
+profile time 2: 1818.556152 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.35s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.84s
-cl read memory taken: 0.45s
+copy time: 56.19 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1632,14 +1558,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 38
 > GLOBAL = 38
 > LOCAL = 38
-profile time: 1810.651001 ms
+starting run 0...
+starting run 1...
+profile time 1: 1814.007812 ms
+profile time 2: 1792.676025 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.33s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.82s
-cl read memory taken: 0.45s
+copy time: 61.19 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1675,14 +1599,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 39
 > GLOBAL = 39
 > LOCAL = 39
-profile time: 1789.897949 ms
+starting run 0...
+starting run 1...
+profile time 1: 1805.218994 ms
+profile time 2: 1773.051025 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.31s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.79s
-cl read memory taken: 0.46s
+copy time: 56.92 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1718,14 +1640,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 40
 > GLOBAL = 40
 > LOCAL = 40
-profile time: 1764.443970 ms
+starting run 0...
+starting run 1...
+profile time 1: 1769.327148 ms
+profile time 2: 1746.283936 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.21s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.77s
-cl read memory taken: 0.38s
+copy time: 61.19 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1761,14 +1681,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 41
 > GLOBAL = 41
 > LOCAL = 41
-profile time: 1725.133057 ms
+starting run 0...
+starting run 1...
+profile time 1: 1738.380127 ms
+profile time 2: 1707.126953 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.17s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.73s
-cl read memory taken: 0.38s
+copy time: 56.52 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1804,14 +1722,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 42
 > GLOBAL = 42
 > LOCAL = 42
-profile time: 1701.847046 ms
+starting run 0...
+starting run 1...
+profile time 1: 1697.604004 ms
+profile time 2: 1666.503906 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.23s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.71s
-cl read memory taken: 0.46s
+copy time: 61.16 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1847,14 +1763,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 43
 > GLOBAL = 43
 > LOCAL = 43
-profile time: 1647.825073 ms
+starting run 0...
+starting run 1...
+profile time 1: 1651.091064 ms
+profile time 2: 1630.612061 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.18s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.65s
-cl read memory taken: 0.46s
+copy time: 60.95 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1890,14 +1804,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 44
 > GLOBAL = 44
 > LOCAL = 44
-profile time: 1628.658936 ms
+starting run 0...
+starting run 1...
+profile time 1: 1625.057129 ms
+profile time 2: 1592.369873 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.08s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.63s
-cl read memory taken: 0.38s
+copy time: 60.52 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1933,14 +1845,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 45
 > GLOBAL = 45
 > LOCAL = 45
-profile time: 1581.107910 ms
+starting run 0...
+starting run 1...
+profile time 1: 1590.508057 ms
+profile time 2: 1564.595947 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.05s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.59s
-cl read memory taken: 0.40s
+copy time: 61.32 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -1976,14 +1886,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 46
 > GLOBAL = 46
 > LOCAL = 46
-profile time: 1560.812012 ms
+starting run 0...
+starting run 1...
+profile time 1: 1575.643799 ms
+profile time 2: 1533.618164 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.09s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.57s
-cl read memory taken: 0.46s
+copy time: 60.83 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2019,14 +1927,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 47
 > GLOBAL = 47
 > LOCAL = 47
-profile time: 1520.432983 ms
+starting run 0...
+starting run 1...
+profile time 1: 1525.714111 ms
+profile time 2: 1504.623047 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.04s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.53s
-cl read memory taken: 0.45s
+copy time: 60.98 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2062,14 +1968,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 48
 > GLOBAL = 48
 > LOCAL = 48
-profile time: 1506.302002 ms
+starting run 0...
+starting run 1...
+profile time 1: 1512.100830 ms
+profile time 2: 1478.437988 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.99s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.51s
-cl read memory taken: 0.42s
+copy time: 61.71 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2105,14 +2009,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 49
 > GLOBAL = 49
 > LOCAL = 49
-profile time: 1586.877075 ms
+starting run 0...
+starting run 1...
+profile time 1: 1600.213867 ms
+profile time 2: 1559.742920 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.05s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.59s
-cl read memory taken: 0.39s
+copy time: 61.01 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2148,14 +2050,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 50
 > GLOBAL = 50
 > LOCAL = 50
-profile time: 1563.986084 ms
+starting run 0...
+starting run 1...
+profile time 1: 1598.077881 ms
+profile time 2: 1546.590088 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.08s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.57s
-cl read memory taken: 0.46s
+copy time: 61.31 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2191,14 +2091,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 51
 > GLOBAL = 51
 > LOCAL = 51
-profile time: 1542.347046 ms
+starting run 0...
+starting run 1...
+profile time 1: 1554.707031 ms
+profile time 2: 1533.343994 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.07s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.55s
-cl read memory taken: 0.46s
+copy time: 56.58 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2234,14 +2132,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 52
 > GLOBAL = 52
 > LOCAL = 52
-profile time: 1544.147949 ms
+starting run 0...
+starting run 1...
+profile time 1: 1550.251953 ms
+profile time 2: 1527.910889 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.98s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.55s
-cl read memory taken: 0.38s
+copy time: 60.92 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2277,14 +2173,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 53
 > GLOBAL = 53
 > LOCAL = 53
-profile time: 1682.893066 ms
+starting run 0...
+starting run 1...
+profile time 1: 1688.782959 ms
+profile time 2: 1664.978027 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.18s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.69s
-cl read memory taken: 0.42s
+copy time: 60.80 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2320,14 +2214,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 54
 > GLOBAL = 54
 > LOCAL = 54
-profile time: 1675.965088 ms
+starting run 0...
+starting run 1...
+profile time 1: 1690.614990 ms
+profile time 2: 1648.833008 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.18s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.68s
-cl read memory taken: 0.44s
+copy time: 61.07 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2363,14 +2255,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 55
 > GLOBAL = 55
 > LOCAL = 55
-profile time: 1655.302979 ms
+starting run 0...
+starting run 1...
+profile time 1: 1660.460938 ms
+profile time 2: 1637.722900 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.10s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.66s
-cl read memory taken: 0.38s
+copy time: 61.32 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2406,14 +2296,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 56
 > GLOBAL = 56
 > LOCAL = 56
-profile time: 1647.336914 ms
+starting run 0...
+starting run 1...
+profile time 1: 1642.545898 ms
+profile time 2: 1620.967041 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.09s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.65s
-cl read memory taken: 0.38s
+copy time: 57.99 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2449,14 +2337,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 57
 > GLOBAL = 57
 > LOCAL = 57
-profile time: 1612.177002 ms
+starting run 0...
+starting run 1...
+profile time 1: 1626.187012 ms
+profile time 2: 1594.109863 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.06s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.62s
-cl read memory taken: 0.38s
+copy time: 60.71 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2492,14 +2378,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 58
 > GLOBAL = 58
 > LOCAL = 58
-profile time: 1593.530029 ms
+starting run 0...
+starting run 1...
+profile time 1: 1589.500977 ms
+profile time 2: 1565.449951 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.12s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.60s
-cl read memory taken: 0.46s
+copy time: 60.95 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2535,14 +2419,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 59
 > GLOBAL = 59
 > LOCAL = 59
-profile time: 1560.079956 ms
+starting run 0...
+starting run 1...
+profile time 1: 1573.875000 ms
+profile time 2: 1541.919922 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.07s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.57s
-cl read memory taken: 0.45s
+copy time: 56.25 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2578,14 +2460,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 60
 > GLOBAL = 60
 > LOCAL = 60
-profile time: 1542.804932 ms
+starting run 0...
+starting run 1...
+profile time 1: 1548.145996 ms
+profile time 2: 1514.756836 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.05s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.55s
-cl read memory taken: 0.44s
+copy time: 60.67 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2621,14 +2501,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 61
 > GLOBAL = 61
 > LOCAL = 61
-profile time: 1519.609985 ms
+starting run 0...
+starting run 1...
+profile time 1: 1524.308838 ms
+profile time 2: 1502.426025 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.98s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.53s
-cl read memory taken: 0.40s
+copy time: 56.49 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2664,14 +2542,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 62
 > GLOBAL = 62
 > LOCAL = 62
-profile time: 1506.119873 ms
+starting run 0...
+starting run 1...
+profile time 1: 1502.426025 ms
+profile time 2: 1478.253906 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.96s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.51s
-cl read memory taken: 0.39s
+copy time: 61.41 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2707,14 +2583,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 63
 > GLOBAL = 63
 > LOCAL = 63
-profile time: 1473.828003 ms
+starting run 0...
+starting run 1...
+profile time 1: 1482.588135 ms
+profile time 2: 1456.432861 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.93s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.48s
-cl read memory taken: 0.40s
+copy time: 56.68 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2750,14 +2624,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 64
 > GLOBAL = 64
 > LOCAL = 64
-profile time: 1464.123047 ms
+starting run 0...
+starting run 1...
+profile time 1: 1462.383057 ms
+profile time 2: 1437.541016 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.93s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.47s
-cl read memory taken: 0.40s
+copy time: 61.10 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2793,14 +2665,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 65
 > GLOBAL = 65
 > LOCAL = 65
-profile time: 1499.373901 ms
+starting run 0...
+starting run 1...
+profile time 1: 1511.369141 ms
+profile time 2: 1490.371094 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.02s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.50s
-cl read memory taken: 0.45s
+copy time: 61.04 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2836,14 +2706,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 66
 > GLOBAL = 66
 > LOCAL = 66
-profile time: 1509.538086 ms
+starting run 0...
+starting run 1...
+profile time 1: 1506.302979 ms
+profile time 2: 1482.405029 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.96s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.51s
-cl read memory taken: 0.38s
+copy time: 61.25 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2879,14 +2747,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 67
 > GLOBAL = 67
 > LOCAL = 67
-profile time: 1502.151978 ms
+starting run 0...
+starting run 1...
+profile time 1: 1527.605957 ms
+profile time 2: 1475.874023 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.95s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.51s
-cl read memory taken: 0.38s
+copy time: 61.13 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2922,14 +2788,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 68
 > GLOBAL = 68
 > LOCAL = 68
-profile time: 1508.713013 ms
+starting run 0...
+starting run 1...
+profile time 1: 1505.326172 ms
+profile time 2: 1472.272949 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.96s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.51s
-cl read memory taken: 0.38s
+copy time: 61.44 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -2965,14 +2829,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 69
 > GLOBAL = 69
 > LOCAL = 69
-profile time: 1607.630005 ms
+starting run 0...
+starting run 1...
+profile time 1: 1621.638916 ms
+profile time 2: 1578.818848 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.11s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.61s
-cl read memory taken: 0.44s
+copy time: 60.92 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3008,14 +2870,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 70
 > GLOBAL = 70
 > LOCAL = 70
-profile time: 1586.509888 ms
+starting run 0...
+starting run 1...
+profile time 1: 1600.000000 ms
+profile time 2: 1568.015137 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.10s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.59s
-cl read memory taken: 0.45s
+copy time: 61.59 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3051,14 +2911,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 71
 > GLOBAL = 71
 > LOCAL = 71
-profile time: 1598.473999 ms
+starting run 0...
+starting run 1...
+profile time 1: 1583.305908 ms
+profile time 2: 1560.108887 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.13s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.60s
-cl read memory taken: 0.47s
+copy time: 56.55 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3094,14 +2952,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 72
 > GLOBAL = 72
 > LOCAL = 72
-profile time: 1593.346924 ms
+starting run 0...
+starting run 1...
+profile time 1: 1581.840088 ms
+profile time 2: 1547.565918 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.12s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.60s
-cl read memory taken: 0.45s
+copy time: 60.61 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3137,14 +2993,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 73
 > GLOBAL = 73
 > LOCAL = 73
-profile time: 1545.826904 ms
+starting run 0...
+starting run 1...
+profile time 1: 1578.238770 ms
+profile time 2: 1527.484131 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.07s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.55s
-cl read memory taken: 0.46s
+copy time: 56.86 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3180,14 +3034,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 74
 > GLOBAL = 74
 > LOCAL = 74
-profile time: 1522.966064 ms
+starting run 0...
+starting run 1...
+profile time 1: 1527.055908 ms
+profile time 2: 1505.296143 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.97s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.53s
-cl read memory taken: 0.38s
+copy time: 61.28 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3223,14 +3075,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 75
 > GLOBAL = 75
 > LOCAL = 75
-profile time: 1505.997070 ms
+starting run 0...
+starting run 1...
+profile time 1: 1510.910889 ms
+profile time 2: 1488.142090 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.95s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.51s
-cl read memory taken: 0.38s
+copy time: 61.32 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3266,14 +3116,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 76
 > GLOBAL = 76
 > LOCAL = 76
-profile time: 1493.820068 ms
+starting run 0...
+starting run 1...
+profile time 1: 1499.739990 ms
+profile time 2: 1466.321045 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.94s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.50s
-cl read memory taken: 0.39s
+copy time: 56.80 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3309,14 +3157,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 77
 > GLOBAL = 77
 > LOCAL = 77
-profile time: 1498.366943 ms
+starting run 0...
+starting run 1...
+profile time 1: 1484.815918 ms
+profile time 2: 1461.864990 ms
 -----------------------------------------------
-encrypt_cl Time taken: 2.00s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.50s
-cl read memory taken: 0.44s
+copy time: 56.22 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3352,14 +3198,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 78
 > GLOBAL = 78
 > LOCAL = 78
-profile time: 1463.665039 ms
+starting run 0...
+starting run 1...
+profile time 1: 1497.818115 ms
+profile time 2: 1444.193848 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.91s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.47s
-cl read memory taken: 0.38s
+copy time: 61.25 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3395,14 +3239,12 @@ entries_to_encrypt == 2097152
 num_processing_elements == 79
 > GLOBAL = 79
 > LOCAL = 79
-profile time: 1446.848999 ms
+starting run 0...
+starting run 1...
+profile time 1: 1471.570068 ms
+profile time 2: 1429.483154 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.89s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.45s
-cl read memory taken: 0.38s
+copy time: 61.01 ms
 Computed '33554432/33554432' correct values!
 
 start of encrypt_cl
@@ -3438,573 +3280,11 @@ entries_to_encrypt == 2097152
 num_processing_elements == 80
 > GLOBAL = 80
 > LOCAL = 80
-profile time: 1440.226074 ms
+starting run 0...
+starting run 1...
+profile time 1: 1447.276855 ms
+profile time 2: 1415.595947 ms
 -----------------------------------------------
-encrypt_cl Time taken: 1.89s
-cl Fill data Time taken: 0.00s
-cl memory copy Time taken: 0.06s
-cl set Argument Time taken: 0.00s
-cl Execute kernel time taken: 1.44s
-cl read memory taken: 0.38s
+copy time: 58.26 ms
 Computed '33554432/33554432' correct values!
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 25891
-entries_to_encrypt == 2097152
-num_processing_elements == 81
-> GLOBAL = 81
-> LOCAL = 81
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 25576
-entries_to_encrypt == 2097152
-num_processing_elements == 82
-> GLOBAL = 82
-> LOCAL = 82
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 25267
-entries_to_encrypt == 2097152
-num_processing_elements == 83
-> GLOBAL = 83
-> LOCAL = 83
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 24967
-entries_to_encrypt == 2097152
-num_processing_elements == 84
-> GLOBAL = 84
-> LOCAL = 84
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 24673
-entries_to_encrypt == 2097152
-num_processing_elements == 85
-> GLOBAL = 85
-> LOCAL = 85
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 24386
-entries_to_encrypt == 2097152
-num_processing_elements == 86
-> GLOBAL = 86
-> LOCAL = 86
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 24106
-entries_to_encrypt == 2097152
-num_processing_elements == 87
-> GLOBAL = 87
-> LOCAL = 87
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 23832
-entries_to_encrypt == 2097152
-num_processing_elements == 88
-> GLOBAL = 88
-> LOCAL = 88
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 23564
-entries_to_encrypt == 2097152
-num_processing_elements == 89
-> GLOBAL = 89
-> LOCAL = 89
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 23302
-entries_to_encrypt == 2097152
-num_processing_elements == 90
-> GLOBAL = 90
-> LOCAL = 90
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 23046
-entries_to_encrypt == 2097152
-num_processing_elements == 91
-> GLOBAL = 91
-> LOCAL = 91
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 22796
-entries_to_encrypt == 2097152
-num_processing_elements == 92
-> GLOBAL = 92
-> LOCAL = 92
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 22551
-entries_to_encrypt == 2097152
-num_processing_elements == 93
-> GLOBAL = 93
-> LOCAL = 93
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 22311
-entries_to_encrypt == 2097152
-num_processing_elements == 94
-> GLOBAL = 94
-> LOCAL = 94
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 22076
-entries_to_encrypt == 2097152
-num_processing_elements == 95
-> GLOBAL = 95
-> LOCAL = 95
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
-
-start of encrypt_cl
-data, keydata, results
-initFns
-Loaded library name:/system/lib/libllvm-a3xx.so
-Connect to a compute device
-has 2 devices
-Device name is QUALCOMM Adreno(TM)
-Device name is QUALCOMM Krait(TM)
-Create a compute context
-Create a command commands
-Create the compute program from the source buffer
-file len is: 34
-full path is: /data/local/tmp/eng_opencl_aes.cl
-file opened, fd is 4
-file size is 34648 byte
-read in size is: 34648
-Build the program executable
-Create the compute kernel in the program we wish to run
-> kernel_name = AES_encrypt_coalesced_local_tbox
-Create the input and output arrays in device memory for our calculation
-Get the maximum work group size for executing the kernel on the device
-encrypt_cl: count = 33554432
-rd_key 3"
-> max dimensions: 3
-> max_work_items_dim1: 256
-> max_kernel_work_group_size: 80
-> mode = MODE_COALESCED_TBOX_LOCAL_MEMORY
-num_work_groups is 1
-entries == 21846
-entries_to_encrypt == 2097152
-num_processing_elements == 96
-> GLOBAL = 96
-> LOCAL = 96
-Error: jni/opencl_aes.c line 729, Failed to clEnqueueNDRangeKernel: errcode_ret=-54
 
