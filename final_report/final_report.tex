@@ -608,9 +608,11 @@ items across all work groups (whereas previously they only encrypted 16 bytes). 
 instances get some multiple of 16 bytes on which to operate, all of which are equally sized except one 
 OpenCL instance which will be allocated whatever remains of the input array (i.e.  given $N = 128$ bytes, 
 and 3 work items, 2 instances will operate on 48 bytes and 1 instance will operate on 32 bytes). 
+
 Timing experiments were performed on a 128 MB input array, with the total number of work groups being 
 varied from 1 up to 16, and the work group size being kept at 1 (refer to figure 
-\ref{fig:num_work_groups}).
+\ref{fig:num_work_groups}).  Note that all timing measurements throughout this report are restricted only 
+to the encryption operation and do not not include any input initialization operations.
 
 \begin{figure}[!t]
 \centering
@@ -639,20 +641,20 @@ the degradation is less since the point at which we aren't maximally using all 4
 less of the input array.  This phenomenon has been described in \cite{gpu_opt} as the tail effect.
 
 Hence, from figure \ref{fig:num_work_groups}, the main conclusion to be drawn is that work groups are being 
-scheduled on compute devices, but only one work group at a time is being scheduled (otherwise the peaks 
+scheduled on compute units, but only one work group at a time is being scheduled (otherwise the peaks 
 would reach above 10 MB/second as the number of work groups increases).
 
-Next, we investigated the affect of increasing the number of work items used on a single compute device.  
+Next, we investigated the affect of increasing the number of work items used on a single compute unit.  
 In particular, we began by querying the OpenCL runtime for the maximum available work group size, which was 
 found to be 256.  However, this is only a theoretical maximum, and the actual maximum enforced by OpenCL is 
 dependant on the kernel being executed and its resource requirements \cite{opencl_guide}; in our case, the 
 maximum available was 80.  Timing experiments were performed on a 32 MB input array, with the total number 
 of work items being varied from 1 up to 80, and the number of work groups being kept at 1 (refer to 
-"constant T-box" in figure \ref{fig:work_group_size}).
+"constant T-box, strided" in figure \ref{fig:work_group_size}).
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{../final/motox/4.2/opencl_aes_group_size.constant_tbox.shared_tbox.eps}
+\includegraphics[width=2.5in]{../final/motox/4.2/opencl_aes_group_size.constant_tbox.shared_tbox.shared_coalesced_tbox.eps}
 \caption{OpenCL performance over varying work group size}
 \label{fig:work_group_size}
 \end{figure}
@@ -741,11 +743,20 @@ Comparing the coalesced and strided implementations, we observe nearly identical
 However, we get slightly less throughput for the coalesced implementation, which is likely due to the 
 increased operations being performed for entry index calculations \cite{opencl_guide}.  However, if memory 
 coalescing is in fact the reason for poor performance in the strided implementation, then the coalesced 
-graph indicates that memory accesses are still not coalesced.  Hence, subsequent experiments did not make 
-use of the strided implementation, and instead use the original implementation as described in 
-\ref{subsec:impl_partition}.
+graph indicates that memory accesses are still not coalesced.  Alternatively, the memory access are already 
+coalesced in the original implementation (i.e. it may be the case that reading 16 bytes from global memory 
+at a time is the maximum), in which case increasing the length of contiguous accesses will result in no 
+increase in throughput.
 
-\subsubsection{Version 3 - storing the T-box in shared memory}
+To rule out the possibility that any benefit from coalesced memory access was not being realized due to 
+interference from not using the shared T-box optimization of section \ref{subsec:impl_shared_tbox}, we 
+implemented both optimizations (see "shared T-box, coalesced" in figure \ref{fig:work_group_size}).  
+However, we again observed a constant decrease in performance.  
+
+Hence, subsequent experiments did not make use of the coalesced optimization, and instead use the original 
+implementation as described in section \ref{subsec:impl_partition}.
+
+\subsubsection{Version 3 - storing the T-box in local memory}
 \label{subsec:impl_shared_tbox}
 
 The original implementation of the kernel stored the 4 KB T-box in the constant memory region 
@@ -754,8 +765,8 @@ The MotoX compute units were found to have a local memory size of 8 KB, making t
 The kernel in section \ref{subsec:impl_partition} was modified to have work items in a work group evenly 
 divide the task of copying the T-box into local memory (synchronized via a local memory barrier) prior to 
 performing encryption.  To measure the affects of this optimization, we reran the timing experiments for 
-investigating the affect of increasing the number of work items used on a single compute device (section 
-\ref{subsec:impl_partition}, refer to "shared T-box" in figure \ref{fig:work_group_size}). 
+investigating the affect of increasing the number of work items used on a single compute unit (section 
+\ref{subsec:impl_partition}, refer to "shared T-box, strided" in figure \ref{fig:work_group_size}). 
 
 From figure \ref{fig:work_group_size}, we see an increased maximum throughput (23.14 MB/second) over the 
 previous implementation.  Further, we observe a less pronounced leveling off in throughput, with the maximum 
@@ -766,13 +777,13 @@ comparison against CPU performance.
 \label{subsec:gpu_vs_cpu}
 
 Next, we evaluate the performance of encryption of the GPU over the CPU using the implementation in section 
-\ref{subsec:impl_shared_tbox}.   Figure \ref{fig:num_work_groups} was used to guide the selection of an optimal 
-number of work groups (4) and figure \ref{fig:work_group_size} was used in choosing an optimal work group 
-size (80).  The CPU implementation of AES encryption uses the OpenSSL crypto library \cite{openssl}, using 
-a 256-bit AES key and the CBC encryption mode.  In both the GPU and CPU implementations, timing measurements 
-are restricted only to the encryption operation (i.e. not including any input initialization operations).  
-Timing experiments were performed on input sizes varying from 16 bytes up to 512 MB incrementing by powers 
-of 2 (refer to figure \ref{fig:opencl_vs_cpu}).
+\ref{subsec:impl_shared_tbox}.   Figure \ref{fig:num_work_groups} was used to guide the selection of an 
+optimal number of work groups (4) and figure \ref{fig:work_group_size} was used in choosing an optimal work 
+group size (80).  The CPU implementation of AES encryption uses the OpenSSL crypto library \cite{openssl}, 
+using a 256-bit AES key and the CBC encryption mode.  As was done the GPU timing measurements, the CPU 
+timing measurements are restricted only to the encryption operation.  Timing experiments were performed on 
+input sizes varying from 16 bytes up to 512 MB incrementing by powers of 2 (refer to figure 
+\ref{fig:opencl_vs_cpu}).
 
 \begin{figure}[!t]
 \centering
@@ -781,11 +792,11 @@ of 2 (refer to figure \ref{fig:opencl_vs_cpu}).
 \label{fig:opencl_vs_cpu}
 \end{figure}
 
-From figure \ref{fig:opencl_vs_cpu}, we are able achieve a maximum throughput of 91.82 MB/second at an input size 
-of 512 MB, whereas the CPU is able to achieve 51.87 MB/second at an input size of 8 MB (though it quickly 
-degrades to 46.25 MB/second for an input of 16 MB).  Hence, the GPU's increase in maximum throughput speed 
-is 39.95 MB/second over the CPU, with a speedup of 1.77.  While we have nearly doubled the CPU's 
-performance, this margin is still small based on previously published experiments investigating GPU 
+From figure \ref{fig:opencl_vs_cpu}, we are able achieve a maximum throughput of 93.07 MB/second at an 
+input size of 16 MB, whereas the CPU is able to achieve 51.87 MB/second at an input size of 8 MB (though it 
+quickly degrades to 46.25 MB/second for an input of 16 MB).  Hence, the GPU's increase in maximum 
+throughput speed is 46.82 MB/second over the CPU, with a speedup of 1.79.  While we have nearly doubled the 
+CPU's performance, this margin is still small based on previously published experiments investigating GPU 
 encryption acceleration on the desktop using CUDA, which have found up to a 28.39 fold speedup in 
 encryption \cite{aes_cuda}.  However, this may be partly explained by the abundance of cores available on 
 such GPUs in comparison to mobile GPUs.
@@ -911,7 +922,7 @@ investigated two potential reasons for lower than expected performance: strided 
 work groups, and redundant random accesses to the T-box lookup table that could be avoided using local memory.  
 We discovered the T-box lookup table optimization provided the best increase in throughput, whereas the 
 coalesced access implementation only added to the runtime.  Finally, we determined that using optimal 
-parameters for the number of work groups and work group size, we were able to achieve a 1.77 fold speedup in 
+parameters for the number of work groups and work group size, we were able to achieve a 1.79 fold speedup in 
 maximum throughput over a single CPU using the OpenSSL implementation. 
 
 \section{Future work}
