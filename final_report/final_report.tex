@@ -440,15 +440,14 @@ Toronto, ON\\
 
 \section{Introduction}
 Cell phones have evolved into a ubiquitous and essential method of communication across the world.  
-Smartphones and mobile devices have significantly increased the productivity of users through the 
-accessibility to important services and have thus become critically integrated with both their work and 
-personal lives \cite{mobile}.   A side effect of this integration is that our phones contain a large volume 
-of probative information linked to an individual.  The scope of information sensitivity ranges anywhere 
-from low severity (call history, contact information, and text message data, etc.) to more valuable 
-information (such as e-mail, browser history, and chat logs, and even passwords) \cite{lost_phone}.  The 
-ever increasing number of phones available and in use by the public will continue to enhance the 
-convenience of users, but simultaneously brings along an increased potential for criminals to misuse this 
-technology.
+Smartphones and mobile devices have significantly increased the productivity of users through accessibility 
+to important services and have thus become critically integrated into both their work and personal lives 
+\cite{mobile}.   A side effect of this integration is that phones contain a large volume of probative 
+information linked to an individual.  The scope of information sensitivity ranges anywhere from low 
+severity (call history, contact information, and text message data) to more valuable information (e-mail, 
+browser history, chat logs, and even passwords) \cite{lost_phone}.  The ever increasing number of phones 
+available and in use by the public will continue to enhance the convenience of day-to-day life, but 
+simultaneously brings along an increased potential for criminals to misuse this technology.
 
 Traditional desktops are assumed physically secure and need only be protected against software attack 
 vectors (e.g. a firewall for guarding against malicious network attacks), but mobile devices are vulnerable 
@@ -457,7 +456,7 @@ the sensitive and private information hoarded on cell phones can be legally or i
 someone with the technical expertise and the required equipment.  However, the tools needed to perform 
 these attacks are often publicly available in the form of source development tools \cite{forensics}.  
 Currently, mobile phone systems try to offer security and privacy to users through user authentication, 
-signal encryption and user anonymity. Nevertheless, these techniques cannot completely guarantee user 
+signal encryption, and user anonymity. Nevertheless, these techniques cannot completely guarantee user 
 privacy in domains such mobile commerce, particularly when they are in conflict with resources present on 
 the device (e.g. power, cycles, memory, and bandwidth) \cite{mobile}.  A single event of device theft could 
 lead to financial and information loss, a privacy breach, loss of intellectual property, or even more 
@@ -465,31 +464,31 @@ severe damage.  Information security is thus becoming increasingly important, gi
 number of new applications that make use of that data.
 
 Existing disk encryption mechanisms typically deployed in laptops have been shown to be vulnerable to 
-methods that instead focus on obtaining sensitive data directly from memory, with one such method being a 
-cold boot attack \cite{coldboot}.  In a cold boot attack, an attacker gains physical access to a computer 
-and is able to obtain sensitive data either in plain text or indirectly by first obtaining encryption keys 
-from the memory of a running operating system.  In particular, if the computer is forcefully powered off 
-during operation (e.g. unplugging the power cord), the operating system will not have a chance to scrub 
-memory of sensitive information.  Subsequently, the DRAM chips will retain the data in a readable form for 
-a period of time even after the computer is completely shut down.  This period can even be increased by 
-lowering the temperature (temperatures as low as $-50\,^{\circ}\mathrm{C}$ achieved using off-the-shelf air 
-dusters have been shown to preserve up to 99.9\% of memory for up to 1 minute).  The contents are then read 
-on the same or separate machine by booting the machine with the compromised RAM into a custom kernel that 
-dumps the contents into a separate storage medium.  This process thereby grants unauthorized access of a 
-computer's encryption keys when the computer is left physically unattended.  Therefore, the disk encryption 
-systems have virtually no safe place to safely store the cryptographic keys.  An attacker can recover 
-encryption keys using key harvesting algorithms outlined in \cite{coldboot} even in the presence of 15\% 
-decay for 128-bit AES keys.
+methods that instead focus on obtaining sensitive data directly from memory.  One such method is a cold 
+boot attack \cite{coldboot}, whereby an attacker gains physical access to a computer and is able to obtain 
+sensitive data either in plain text or indirectly by first obtaining encryption keys from the memory of a 
+running operating system.  In particular, if the computer is forcefully powered off during operation (e.g. 
+unplugging the power cord), the operating system will not have a chance to scrub memory of sensitive 
+information.  Subsequently, the DRAM chips will retain the data in a readable form for a period of time 
+even after the computer is completely shut down.  This period can even be increased by lowering the 
+temperature (temperatures as low as $-50\,^{\circ}\mathrm{C}$ achieved using off-the-shelf air dusters have 
+been shown to preserve up to 99.9\% of memory for up to 1 minute \cite{coldboot}).  The contents are then 
+read on the same or separate machine by booting the machine with the compromised RAM into a custom kernel 
+that dumps the contents into a separate storage medium.  This process thereby grants unauthorized access of 
+a computer's encryption keys when the computer is left physically unattended.  Therefore, the disk 
+encryption systems have virtually no safe place to store the cryptographic keys.  An attacker can 
+recover encryption keys using key harvesting algorithms even in the presence of 
+15\% bit decay for 128-bit AES keys \cite{coldboot}.
 
 Operating systems are still in the early stages of offering a completely secure environment to protect 
-against the breach of the secure information on phones in the absence of physical security.  With attacks 
-like cold boot making foreign memory access easily achievable, some safeguards for storing the encryption 
-keys have been explored.  TRESOR \cite{tresor} is a Linux kernel patch for the x86 architecture that runs 
-the AES algorithm entirely on the microprocessor, storing the secret key in CPU debug registers as a step 
-to protect against key harvesting.  This provides the advantage of preserving binary compatibility, 
-preventing user-space applications from accessing them (by patching system calls), and being large enough 
-to store cryptographic keys.  This serves as good motivation for the refinement of memory encryption 
-techniques, and motivates the work herein.
+against breaches to secure information in the absence of physical security, as is typical for phones.  With 
+attacks like cold boot making foreign memory access easily achievable, some safeguards for storing the 
+encryption keys have been explored.  TRESOR \cite{tresor} is a Linux kernel patch for the x86 architecture 
+that runs the AES algorithm entirely on the microprocessor, storing the secret key in CPU debug registers 
+as a step to protect against key harvesting.  This provides the advantage of preserving binary 
+compatibility, preventing user-space applications from accessing them (by patching system calls), and being 
+large enough to store cryptographic keys.  This serves as good motivation for the refinement of memory 
+encryption techniques, and motivates the work herein.
 
 In this technical report, we propose the use of GPUs as a hardware accelerator for implementing the 
 Advanced Encryption Standard (AES) algorithm over a traditional CPU based implementation.  Modern GPUs are 
@@ -499,26 +498,26 @@ same silicon area as a comparable microprocessor and using only a fraction of th
 \cite{myth}. These high-performance and low-energy advantages are a result of the GPU's support for hiding 
 latency in memory transactions through massive multi-threading with low context switch overhead 
 \cite{aes_gpu}.  Modern mobile devices have a system-on-chip (SoC) architecture where the CPU, GPU, and 
-other computing nodes share the same system bus for accessing main memory. With the recent frameworks 
-performing general-purpose parallel programming on GPUs (GPGPU), OpenCL provides a model for programming 
-whereby a host processor (in this case, a CPU) can delegate work to be performed in parallel by computing 
-nodes (GPUs).
+other computing nodes share the same system bus for accessing main memory. Furthermore, there is active 
+work in providing frameworks for performing general-purpose parallel programming on GPUs (GPGPU).  One such 
+framework is OpenCL, whereby a host processor (in this case, a CPU) can delegate work to be performed in 
+parallel by computing nodes (GPUs).  We chose the OpenCL framework for implementing the AES algorithm due 
+to its availability on Android phones.
 
-Advanced Encryption Standard (AES) is a variant of the Rijndael cipher which acts on input blocks of 128 
-bits and uses keys of size 128, 192 or 256 bits. The algorithm can work in parallel on each individual 
-block of the input plain text (each block being 128 bits). At a high level, the algorithm does the 
-following. It first goes through a key expansion stage, where the cipher key is used to derive the round 
-keys using a key scheduling algorithm. The plain text is XORed with one of the derived keys (AddRoundKey) 
-before being subjected to a series of rounds, the number of rounds being decided by the size of the cipher 
-key (10 in case of 128-bit keys). The input and output of each of the rounds is modeled as 4 by 4 matrix, 
-called a state, with each cell being a byte in size. In each of the rounds the input goes through the 
-following steps. First, each byte is replaced in a non-linear manner with another using a lookup table 
-known as the T-box (SubBytes). Then each of the rows of the input is cyclically shifted to the left a 
-certain number of steps (ShiftRows). This is followed by a mixing operation which operates on the columns 
-of the state, combining the four bytes in each column (MixColumns). The last round of the encryption 
-algorithm omits this step. The final step in the round is again AddRoundKey where the state is XORed with a 
-derived key from the key expansion step. The output of these rounds is the encrypted ciphertext 
-\cite{aes1,aes2}.
+AES is a variant of the Rijndael cipher which acts on input blocks of 128 bits and uses keys of size 128, 
+192 or 256 bits. The algorithm can work in parallel on each individual block of the input plain text (each 
+block being 128 bits). At a high level, the algorithm does the following. It first goes through a key 
+expansion stage, where the cipher key is used to derive the round keys using a key scheduling algorithm. 
+The plain text is XORed with one of the derived keys (AddRoundKey) before being subjected to a series of 
+rounds, the number of rounds being decided by the size of the cipher key (10 in case of 128-bit keys). The 
+input and output of each of the rounds is modeled as 4 by 4 matrix, called a state, with each cell being a 
+byte in size. In each of the rounds the input goes through the following steps. First, each byte is 
+replaced in a non-linear manner with another using a lookup table known as the T-box (SubBytes). Then each 
+of the rows of the input is cyclically shifted to the left a certain number of steps (ShiftRows). This is 
+followed by a mixing operation which operates on the columns of the state, combining the four bytes in each 
+column (MixColumns). The last round of the encryption algorithm omits this step. The final step in the 
+round is again AddRoundKey where the state is XORed with a derived key from the key expansion step. The 
+output of these rounds is the encrypted ciphertext \cite{aes1,aes2}.
 
 \begin{figure}[!t]
 \centering
@@ -606,7 +605,7 @@ implementation and investigates their effect on the throughput of encryption.
 We modified the OpenCL AES encrypt kernel such that the input array is split up evenly amongst the work 
 items across all work groups (whereas previously they only encrypted 16 bytes). In particular, all OpenCL 
 instances get some multiple of 16 bytes on which to operate, all of which are equally sized except one 
-OpenCL instance which will be allocated whatever remains of the input array (i.e.  given $N = 128$ bytes, 
+OpenCL instance which will be allocated whatever remains of the input array (e.g.  given $N = 128$ bytes, 
 and 3 work items, 2 instances will operate on 48 bytes and 1 instance will operate on 32 bytes). 
 
 Timing experiments were performed on a 128 MB input array, with the total number of work groups being 
@@ -663,7 +662,7 @@ From figure \ref{fig:work_group_size}, we can see the encryption throughput grad
 to 20 work items, doubling the maximum throughput observed when only considering a single work item (as in 
 figure \ref{fig:num_work_groups}).  However, after 20 work items, we observe some degradation, followed by 
 the throughput leveling off at around 18 MB/second.  This decrease in throughput for an increase in 
-parallelism is an unexpected result and warranted further investigation.  Previous work has shown that the 
+parallelism is an unexpected result and warranted further investigation.  Previous work has shown that 
 memory access patterns are important to consider when optimizing the performance of a GPU program 
 \cite{gpu_mem}.  One important factor to consider is whether accesses to global memory within a warp 
 \cite{gpu_mem} or team \cite{opencl_guide} (i.e. a hardware schedulable division of the work group size) 
@@ -705,6 +704,8 @@ for encrypting $\mathtt{E}$ entries, accesses to the input array $\mathtt{A}$ we
 In the following implementation, the memory accesses within such a work group have been modified such that 
 instead of concurrent memory accesses being $\mathtt{E}$ entries apart, they are contiguous.  That is, if 
 we have a total of $\mathtt{G}$ work groups, the accesses now look like:
+
+\newpage
 
 \begin{table}[h]
 \centering
@@ -753,7 +754,7 @@ interference from not using the shared T-box optimization of section \ref{subsec
 implemented both optimizations (see "shared T-box, coalesced" in figure \ref{fig:work_group_size}).  
 However, we again observed a constant decrease in performance.  
 
-Hence, subsequent experiments did not make use of the coalesced optimization, and instead use the original 
+Hence, subsequent modifications did not build on the coalesced optimization, and instead use the original 
 implementation as described in section \ref{subsec:impl_partition}.
 
 \subsubsection{Version 3 - storing the T-box in local memory}
@@ -870,7 +871,7 @@ such GPUs in comparison to mobile GPUs.
 
 \section{Related work}
 CleanOS is a modification of Android that introduces an abstraction called Sensitive Data Objects (SDOs) to 
-track sensitive data in RAM, created and hoarded by apps that run on top of the Dalvik Virtual Machine 
+track sensitive data in RAM, created and hoarded by apps that run on top of the Dalvik VM 
 \cite{cleanos}. The system works by defining SDOs (either by the apps or by the default OS), which are a 
 logical collection of Java Objects that contain sensitive data. It introduces a modified garbage collector 
 known as EvictIdleGarbageCollector (eiGC) which walks through an idle SDO and encrypts their data-bearing 
@@ -879,29 +880,27 @@ system, like ours, prevents the download delay of the encrypted data from a remo
 always present in the device itself. Moreover, the key is inaccessible to a malicious user stealing the 
 phone.
 
-However, CleanOS incurs the latency of a network requests in retrieving the key from cloud.  In particular, 
-CleanOS will incur unpredictable pauses during an otherwise inexpensive memory access on an encrypted value 
-when the application is running due to network requests for obtaining keys from the cloud. Due to the 
-implementation of encryption at the Davlik VM level, the application doesn't even have a means for knowing 
-when the pauses are going to happen to deal with them either by doing something else in the meantime, or to 
-avoid the request altogether.  In fact, evaluations show that many operations (like loading of an email 
-onto the screen) incurred overheads of more than 100\% compared to a non-CleanOS implementation, especially 
-over 3G networks \cite{cleanos}.
+However, CleanOS incurs the latency of a network request when retrieving the key from cloud.  In 
+particular, CleanOS will incur unpredictable pauses in the application during an otherwise inexpensive 
+memory access on an encrypted value. Due to the implementation of encryption at the Davlik VM level, the 
+application doesn't have a means for knowing when the pauses are going to happen, and hence cannot deal 
+with them by computing something else in the meantime, or avoiding the request altogether.  In fact, 
+evaluations show that many operations (like loading of an email onto the screen) incurred overheads of more 
+than 100\% compared to a non-CleanOS implementation, especially over 3G networks \cite{cleanos}.
 
-In contrast, our system stores the key on the device in a special register accessed by the operating system 
-and not user level applications. We can use techniques like TRESOR \cite{tresor} for this, which ensures 
-that the key is only stored in CPU registers which are not accessible to user applications (like debug 
-registers) and that the key is only brought to RAM for a very short period on reboot even before all other 
-applications come to life. The key is cleared from RAM soon after this.  Another major shortcoming of 
-CleanOS is that it only encrypts data (memory) which is managed by the Dalvik virtual machine, and does not 
-account for data that is unencrypted in other parts of the operating system \cite{cleanos}.  This includes 
-OS data buffers (e.g. for writing to a file, inside device drivers from reading from sensors such as a 
-camera).
+In contrast, our system intends to store the key on the device in a special register accessed by the 
+operating system and not user-level applications. We can use techniques like TRESOR \cite{tresor} for this, 
+which ensures that the key is only stored in CPU registers which are not accessible to user applications 
+(like debug registers) and that the key is only brought into RAM for a very short period on reboot even 
+before all other applications come to life. The key is cleared from RAM soon after this.  Another major 
+shortcoming of CleanOS is that it only encrypts data (memory) which is managed by the Dalvik VM, and does not account for data that is unencrypted in other parts of the operating system 
+\cite{cleanos}.  This includes OS data buffers (e.g. for writing to a file, inside device drivers from 
+reading from sensors such as a camera).
 
 XOM is a system to prevent software piracy, wherein the executing code of the software which is in RAM is 
 encrypted by marking it as "execute-only" and so is prevented from tampering \cite{xom}.  Cryptkeeper is a 
 software-encrypted virtual memory manager that segments RAM into two segments, one for running the 
-decrypted programming instructions (small in size) and the other for keeping the encrypted pages. The pages 
+decrypted program instructions (small in size) and the other for keeping the encrypted pages. The pages 
 are swapped automatically between the segments and decrypted on demand \cite{cryptkeeper}.  Encrypted Swap 
 aims at encrypting pages before swapping them to swap memory so that sensitive data related to swapped out 
 processes are not available in backing storages \cite{encryptedswap}. These systems all have the same 
