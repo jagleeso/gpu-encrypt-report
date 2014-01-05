@@ -793,6 +793,16 @@ END {
 }
 '
 
+extract_coalesce_sizes_points='
+if (/^average profile time: ([^ ]+) ms/) { 
+    $time = $1;
+    $throughput = sprintf("%.2f", $bytes/$time);
+    print "$bytes $time $throughput";
+} elsif (/^> array size in bytes: (\d+)/) {
+    $bytes = $1;
+}
+'
+
 read_params() {
     local extract_params="$1"
     shift 1
