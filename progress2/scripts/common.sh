@@ -1,4 +1,18 @@
-declare -a gnuplot_colors=(red blue orange)
+declare -a gnuplot_colors=( \
+        red 
+        blue 
+        orange 
+        violet 
+        "#9400D3" # darkviolet
+        "#B22222" # firebrick
+        "#00CED1" # darkturquoise
+        "#6495ED" # cornflowerblue
+        "#00008B" # darkblue
+        "#FF7F50" # coral
+        "#FF00FF" # fuchsia
+        "#F08080" # lightcoral
+        "#90EE90" # lightgreen
+    )
 
 plot_throughput_vs() {
     # rewrite in terms of plot_throughput_vs_multiple

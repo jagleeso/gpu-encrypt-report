@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 prefix="$1"
-max_spacing="$2"
-subtitle="$3"
-label_prefix="$4"
+min_spacing="$2"
+max_spacing="$3"
+subtitle="$4"
+label_prefix="$5"
 set -e
-shift 4 || 
-    (echo 2>&1 "ERROR: prefix max_spacing subtitle label_prefix" && exit 1)
+shift 5 || 
+    (echo 2>&1 "ERROR: prefix min_spacing max_spacing subtitle label_prefix" && exit 1)
 
 # set -x
 
@@ -21,7 +22,7 @@ title="Coalesce - $subtitle"
 # plot_throughput_vs_bytes "$@" $file "$extract_coalesce_sizes_points" "AES_encrypt" 
 graph="$prefix.eps"
 declare -a args=()
-for spacing in $(seq 0 $max_spacing); do
+for spacing in $(seq $min_spacing $max_spacing); do
     file="$prefix.${spacing}_spacing.txt"
     cat "$file" | perl -lne "$extract_coalesce_sizes_points"
     echo '---------------------------'
@@ -31,5 +32,5 @@ for spacing in $(seq 0 $max_spacing); do
             "$file")
 done
 
-echo plot_throughput_vs_bytes_multiple "$@" "$graph" "$title" \
+plot_throughput_vs_bytes_multiple "$@" "$graph" "$title" \
     "${args[@]}" \
