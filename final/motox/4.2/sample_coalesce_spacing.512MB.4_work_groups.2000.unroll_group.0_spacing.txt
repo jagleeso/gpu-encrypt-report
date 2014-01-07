@@ -2,8 +2,8 @@
 > Sample input size increment (bytes): powers of two starting at 4, ending at 134217728
 > Samples: 26
 TA176069YT	device
-make: Nothing to be done for `templates'.
-/home/james/android/opencl_aes
+src/python/render.py jni/coalesce.cl.jinja
+/home/jgleeson/workspace/android/jiawen/opencl-aes.git
 Android NDK: WARNING:jni/Android.mk:coalesce: non-system libraries in linker flags: -lcrypto    
 Android NDK:     This is likely to result in incorrect builds. Try using LOCAL_STATIC_LIBRARIES    
 Android NDK:     or LOCAL_SHARED_LIBRARIES instead to list the library dependencies of the    
@@ -22,8 +22,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -32,14 +32,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 4096
+> array size in bytes: 16384 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -80,8 +80,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.937607 ms
-copy time: 1.44 ms
+average profile time: 0.938256 ms
+copy time: 0.79 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -94,8 +94,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -104,14 +104,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 4096
+> array size in bytes: 16384 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -152,8 +152,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.930290 ms
-copy time: 1.50 ms
+average profile time: 0.952078 ms
+copy time: 1.01 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -166,8 +166,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -176,14 +176,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 4096
+> array size in bytes: 16384 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -224,8 +224,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.934984 ms
-copy time: 1.40 ms
+average profile time: 0.755379 ms
+copy time: 0.79 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -238,8 +238,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -248,14 +248,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 4096
+> array size in bytes: 16384 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -296,8 +296,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.940334 ms
-copy time: 1.47 ms
+average profile time: 0.969402 ms
+copy time: 0.15 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -310,8 +310,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -320,14 +320,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 4096
+> array size in bytes: 16384 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -368,8 +368,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.944626 ms
-copy time: 1.65 ms
+average profile time: 0.964171 ms
+copy time: 0.79 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -382,8 +382,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -392,14 +392,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 4096
+> array size in bytes: 16384 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -440,8 +440,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.703891 ms
-copy time: 1.34 ms
+average profile time: 0.706737 ms
+copy time: 0.79 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -454,8 +454,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -464,14 +464,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 4096
+> array size in bytes: 16384 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -512,8 +512,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.701454 ms
-copy time: 1.86 ms
+average profile time: 0.966220 ms
+copy time: 0.34 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -526,8 +526,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -536,14 +536,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 4096
+> array size in bytes: 16384 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -584,8 +584,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.924105 ms
-copy time: 1.47 ms
+average profile time: 0.959231 ms
+copy time: 0.79 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -598,8 +598,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -608,14 +608,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 4096
+> array size in bytes: 16384 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -656,8 +656,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.937734 ms
-copy time: 1.40 ms
+average profile time: 0.606391 ms
+copy time: 0.76 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -670,8 +670,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -680,14 +680,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 4096
+> array size in bytes: 16384 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -728,8 +728,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.913748 ms
-copy time: 1.50 ms
+average profile time: 0.964581 ms
+copy time: 0.33 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -742,8 +742,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -752,14 +752,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 4096
+> array size in bytes: 16384 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -800,8 +800,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.930901 ms
-copy time: 1.44 ms
+average profile time: 0.745536 ms
+copy time: 0.76 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -814,8 +814,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -824,14 +824,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 8192
+> array size in bytes: 32768 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -872,8 +872,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.942309 ms
-copy time: 1.37 ms
+average profile time: 0.542512 ms
+copy time: 0.15 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -886,8 +886,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -896,14 +896,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 16384
+> array size in bytes: 65536 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -944,8 +944,8 @@ trying 4096 runs...
 run once to handle cache effects...
 start real runs...
 -----------------------------------------------
-average profile time: 0.934739 ms
-copy time: 1.44 ms
+average profile time: 0.955475 ms
+copy time: 0.18 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -958,8 +958,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -968,14 +968,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 32768
+> array size in bytes: 131072 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1012,12 +1012,9 @@ start real runs...
 trying 2048 runs...
 run once to handle cache effects...
 start real runs...
-trying 4096 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 0.920581 ms
-copy time: 2.75 ms
+average profile time: 1.011390 ms
+copy time: 0.24 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -1030,8 +1027,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -1040,14 +1037,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 65536
+> array size in bytes: 262144 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1084,12 +1081,9 @@ start real runs...
 trying 2048 runs...
 run once to handle cache effects...
 start real runs...
-trying 4096 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 0.677357 ms
-copy time: 1.40 ms
+average profile time: 1.077945 ms
+copy time: 0.61 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -1102,8 +1096,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -1112,14 +1106,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
-> array_size: 262144
-> array size in bytes: 1048576 bytes
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
+> array_size: 131072
+> array size in bytes: 524288 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1156,12 +1150,9 @@ start real runs...
 trying 2048 runs...
 run once to handle cache effects...
 start real runs...
-trying 4096 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 0.770416 ms
-copy time: 1.47 ms
+average profile time: 1.148895 ms
+copy time: 2.38 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -1174,8 +1165,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -1184,14 +1175,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
 > array_size: 262144
 > array size in bytes: 1048576 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1228,12 +1219,9 @@ start real runs...
 trying 2048 runs...
 run once to handle cache effects...
 start real runs...
-trying 4096 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 0.931564 ms
-copy time: 1.40 ms
+average profile time: 1.098853 ms
+copy time: 4.06 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -1246,8 +1234,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -1256,14 +1244,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
 > array_size: 524288
 > array size in bytes: 2097152 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1300,12 +1288,9 @@ start real runs...
 trying 2048 runs...
 run once to handle cache effects...
 start real runs...
-trying 4096 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 0.916029 ms
-copy time: 2.87 ms
+average profile time: 1.462861 ms
+copy time: 2.96 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -1318,8 +1303,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -1328,14 +1313,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
 > array_size: 1048576
 > array size in bytes: 4194304 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1369,15 +1354,9 @@ start real runs...
 trying 1024 runs...
 run once to handle cache effects...
 start real runs...
-trying 2048 runs...
-run once to handle cache effects...
-start real runs...
-trying 4096 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 0.903689 ms
-copy time: 5.58 ms
+average profile time: 2.151448 ms
+copy time: 7.81 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -1390,8 +1369,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -1400,14 +1379,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
 > array_size: 2097152
 > array size in bytes: 8388608 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1441,15 +1420,9 @@ start real runs...
 trying 1024 runs...
 run once to handle cache effects...
 start real runs...
-trying 2048 runs...
-run once to handle cache effects...
-start real runs...
-trying 4096 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 0.938561 ms
-copy time: 11.57 ms
+average profile time: 3.369521 ms
+copy time: 12.30 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -1462,8 +1435,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -1472,14 +1445,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
 > array_size: 4194304
 > array size in bytes: 16777216 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1510,15 +1483,9 @@ start real runs...
 trying 512 runs...
 run once to handle cache effects...
 start real runs...
-trying 1024 runs...
-run once to handle cache effects...
-start real runs...
-trying 2048 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 1.045978 ms
-copy time: 25.15 ms
+average profile time: 5.947537 ms
+copy time: 25.48 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -1531,8 +1498,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -1541,14 +1508,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
 > array_size: 8388608
 > array size in bytes: 33554432 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1576,21 +1543,9 @@ start real runs...
 trying 256 runs...
 run once to handle cache effects...
 start real runs...
-trying 512 runs...
-run once to handle cache effects...
-start real runs...
-trying 1024 runs...
-run once to handle cache effects...
-start real runs...
-trying 2048 runs...
-run once to handle cache effects...
-start real runs...
-trying 4096 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 1.191524 ms
-copy time: 60.25 ms
+average profile time: 11.499145 ms
+copy time: 57.01 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -1603,8 +1558,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -1613,14 +1568,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
 > array_size: 16777216
 > array size in bytes: 67108864 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1645,21 +1600,9 @@ start real runs...
 trying 128 runs...
 run once to handle cache effects...
 start real runs...
-trying 256 runs...
-run once to handle cache effects...
-start real runs...
-trying 512 runs...
-run once to handle cache effects...
-start real runs...
-trying 1024 runs...
-run once to handle cache effects...
-start real runs...
-trying 2048 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 1.423921 ms
-copy time: 174.70 ms
+average profile time: 22.419601 ms
+copy time: 167.68 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -1672,8 +1615,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -1682,14 +1625,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
 > array_size: 33554432
 > array size in bytes: 134217728 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1711,21 +1654,9 @@ start real runs...
 trying 64 runs...
 run once to handle cache effects...
 start real runs...
-trying 128 runs...
-run once to handle cache effects...
-start real runs...
-trying 256 runs...
-run once to handle cache effects...
-start real runs...
-trying 512 runs...
-run once to handle cache effects...
-start real runs...
-trying 1024 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 2.258149 ms
-copy time: 573.57 ms
+average profile time: 44.744297 ms
+copy time: 590.11 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -1738,8 +1669,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -1748,14 +1679,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
 > array_size: 67108864
 > array size in bytes: 268435456 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1774,24 +1705,9 @@ start real runs...
 trying 32 runs...
 run once to handle cache effects...
 start real runs...
-trying 64 runs...
-run once to handle cache effects...
-start real runs...
-trying 128 runs...
-run once to handle cache effects...
-start real runs...
-trying 256 runs...
-run once to handle cache effects...
-start real runs...
-trying 512 runs...
-run once to handle cache effects...
-start real runs...
-trying 1024 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 3.563521 ms
-copy time: 2000.79 ms
+average profile time: 84.547150 ms
+copy time: 1997.83 ms
 
 start of coalesce
 Loaded library name:/system/lib/libllvm-a3xx.so
@@ -1804,8 +1720,8 @@ Create the compute program from the source buffer
 file len is: 28
 full path is: /data/local/tmp/coalesce.cl
 file opened, fd is 4
-file size is 511586 byte
-read in size is: 511586
+file size is 71564 byte
+read in size is: 71564
 Build the program executable
 
 Create the compute kernel in the program we wish to run
@@ -1814,14 +1730,14 @@ Create the input and output arrays in device memory for our calculation
 Get the maximum work group size for executing the kernel on the device
 > max dimensions: 3
 > max_work_items_dim1: 256
-> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 128
+> CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE: 16
 > array_size: 134217728
 > array size in bytes: 536870912 bytes
 > mode = MODE_COALESCE_SPACING_UNROLL_GROUP
 > spacing: 0
 num_work_groups is 4
-> GLOBAL = 512
-> LOCAL = 128
+> GLOBAL = 64
+> LOCAL = 16
 trying 1 runs...
 run once to handle cache effects...
 start real runs...
@@ -1837,22 +1753,7 @@ start real runs...
 trying 16 runs...
 run once to handle cache effects...
 start real runs...
-trying 32 runs...
-run once to handle cache effects...
-start real runs...
-trying 64 runs...
-run once to handle cache effects...
-start real runs...
-trying 128 runs...
-run once to handle cache effects...
-start real runs...
-trying 256 runs...
-run once to handle cache effects...
-start real runs...
-trying 512 runs...
-run once to handle cache effects...
-start real runs...
 -----------------------------------------------
-average profile time: 6.296078 ms
-copy time: 7352.14 ms
+average profile time: 177.914688 ms
+copy time: 7378.27 ms
 
