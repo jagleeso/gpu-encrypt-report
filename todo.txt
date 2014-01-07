@@ -1,3 +1,10 @@
+- measure copy time (CPU to GPU)
+- how can we figure out if the CPU and GPU are sharing memory?
+  - can we email qualcomm for more information on GPU specifications?
+    - SIMD width
+    - shared memory or not (i.e. can we encrypt memory in place...?)
+      - check OpenCL specification
+- IF they share memory, can we avoid a CPU to GPU copy (GPU has it's own MMU...? Can we map addresses manually?) ?
 - email eyal about next steps (am i on the right track?)
 - ask about things to read / upcoming long term goals
 - print slides for 2502
