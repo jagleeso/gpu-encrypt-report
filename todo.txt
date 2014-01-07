@@ -1,20 +1,4 @@
-- measure throughput of (multithreaded?) software AES implementation
-  - graph against OpenCL implementation
-- measure energy usage of software AES implementation
-
-- compile methodology / experimental results for report
-  - gather clinfo data (make a table of important bits)
-    - max work group size
-    - AES kernel max work group size
-    - device memory
-  - gather other device info
-    - Motox model name
-    - chipset
-    - GPU, speed, cores
-    - CPU, speed, cores
-
-  - explain graphs (use reports)
-  - expand on encryption throughput graph
-
-  - just do it in word, compile into report later
-  - convert to slides
+- email eyal about next steps (am i on the right track?)
+- ask about things to read / upcoming long term goals
+- print slides for 2502
+- review things in text mentioned in lecture notes / review notes
