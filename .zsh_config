@@ -1,0 +1,2 @@
+path=($PWD/final_report/scripts $PWD/progress2/scripts $path)
+export $PATH
