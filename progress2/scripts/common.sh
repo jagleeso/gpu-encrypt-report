@@ -853,3 +853,7 @@ plot_all_with_extractor() {
     plot_throughput_vs_multiple -x "$xaxis" -s "$scale" -t "$time_scale" $extra_flags \
         "$graph" "$title" "${args[@]}"
 }
+
+spacer() {
+    echo '--------------------------------------------------------------------------------'
+}
