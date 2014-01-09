@@ -1,5 +1,8 @@
 - measure copy time (CPU to GPU)
+  - explain difference when reusing buffer
+- see if we can find SSLShader CUDA code for AES encryption/decryption
 - how can we figure out if the CPU and GPU are sharing memory?
+  - READ DOCS I FOUND
   - can we email qualcomm for more information on GPU specifications?
     - SIMD width
     - shared memory or not (i.e. can we encrypt memory in place...?)
