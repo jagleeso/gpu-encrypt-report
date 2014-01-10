@@ -1,5 +1,9 @@
 - measure copy time (CPU to GPU)
   - explain difference when reusing buffer
+  - cross-compile install lmbench
+    - use it to determine gettimeofday clock resolution
+    - maybe use it for timing measurements
+    - http://stackoverflow.com/questions/11852187/how-to-compile-gcc-for-android
 - see if we can find SSLShader CUDA code for AES encryption/decryption
 - how can we figure out if the CPU and GPU are sharing memory?
   - READ DOCS I FOUND
@@ -12,3 +16,6 @@
 - ask about things to read / upcoming long term goals
 - print slides for 2502
 - review things in text mentioned in lecture notes / review notes
+
+- me:
+  - cross-compile gdb for android for less insanity 
