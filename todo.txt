@@ -5,6 +5,10 @@
     - maybe use it for timing measurements
     - http://stackoverflow.com/questions/11852187/how-to-compile-gcc-for-android
 - see if we can find SSLShader CUDA code for AES encryption/decryption
+  - doesn't look like it; can we find any code in the papers it cites?
+  - list of:
+    - things they do we don't
+    - where to get it
 - how can we figure out if the CPU and GPU are sharing memory?
   - READ DOCS I FOUND
   - can we email qualcomm for more information on GPU specifications?
