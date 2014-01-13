@@ -366,10 +366,13 @@ plot_throughput_vs_bytes_multiple() {
     declare -a labels=()
     local width=1
     local height=1
+    local plot_latency=0
     local scale="bytes"
     local time_scale="ms"
+    local latency_time_scale="ms"
     local yaxis_label="Throughput"
-    while getopts l:rs:t:w:h:y: flag; do
+    local y2axis_label="Latency"
+    while getopts l:rs:t:w:h:y:a flag; do
         case $flag in
         l)
             labels=("${labels[@]}" "$OPTARG")
@@ -393,6 +396,15 @@ plot_throughput_vs_bytes_multiple() {
             ;;
         y)
             yaxis_label="$OPTARG"
+            ;;
+        z)
+            yaxis2_label="$OPTARG"
+            ;;
+        a)
+            plot_latency=1
+            ;;
+        b)
+            latency_time_scale="$OPTARG"
             ;;
         ?)
             echo 2>&1 "ERROR: bad arguments";
@@ -442,16 +454,21 @@ plot_throughput_vs_bytes_multiple() {
             die "bad scale: '$scale'";
         }
 
-        if ("'$time_scale'" eq "ms") {
-            $time = $ms;
-        } elsif ("'$time_scale'" eq "second") {
-            $time = $ms / 1000;
-        } else {
-            die "bad time_scale: '$time_scale'";
+        sub gettime {
+            ($t, $time_scale) = @_;
+            if ($time_scale eq "ms") {
+                return $t;
+            } elsif ($time_scale eq "second") {
+                return ($t / 1000);
+            } else {
+                die "bad time_scale: $time_scale";
+            }
         }
+        $time = gettime($ms, "'$time_scale'");
+        $latency_time = gettime($ms, "'$latency_time_scale'");
 
         $throughput = sprintf("%.2f", $size/$time);
-        print "$size $time $throughput";
+        print "$size $latency_time $throughput";
     '
 
     # local graph="${file%.*}.eps"
@@ -467,10 +484,21 @@ plot_throughput_vs_bytes_multiple() {
         # 1 == bytes
         # 2 == profile time
         # 3 == throughput
-        plot_str="'${tmpfiles[i]}' using 1:3 title '${line_titles[i]}' with linespoints pointtype 31 lt rgb '${colors[i]}'"
+        plot_str=""
+        if [ $plot_latency -eq 1 ]; then
+            plot_str="'${tmpfiles[i]}' using 1:3 axes x1y1  title '${line_titles[i]}' with linespoints pointtype 31 lt rgb '${colors[i]}'"
+            # plot_str="'${tmpfiles[i]}' using 1:3 title '${line_titles[i]}' with linespoints pointtype 31 lt rgb '${colors[i]}'"
+            # http://stelweb.asu.cas.cz/~nemeth/work/stuff/gnuplot/gnuplot-line-and-point-types-bw.png
+            plot_str="$plot_str, '${tmpfiles[i]}' using 1:2 axes x1y2 notitle with linespoints pointtype 66 lt rgb '${colors[i]}'"
+            # plot_str="$plot_str, '${tmpfiles[i]}' axes x1y1 using 1:2 title '${line_titles[i]} (latency)' with linespoints pointtype 10 lt rgb '${colors[i]}'"
+        else
+            plot_str="'${tmpfiles[i]}' using 1:3 title '${line_titles[i]}' with linespoints pointtype 31 lt rgb '${colors[i]}'"
+        fi
+
         if [ ${#labels[@]} != 0 ]; then
             plot_str="$plot_str, '${tmpfiles[i]}' u 1:3:${labels[i]} with labels offset 3,1 notitle"
         fi
+        
         echo "$plot_str"
     }
     to_plot=$(plotit 0)
@@ -483,12 +511,30 @@ plot_throughput_vs_bytes_multiple() {
     # > Sample input/ouput size increment (bytes): powers of two starting at 128, ending at 8192
     # > Samples: 7
 
-# set size 0.45, 0.35
-    gnuplot <<EOF
+    # set size 0.45, 0.35
+    plot_latency_range_str=""
+    plot_latency_label_str=""
+    if [ $plot_latency -eq 1 ]; then
+        plot_latency_range_str=$(cat <<EOF
+            set y2range [GPVAL_DATA_Y2_MIN:GPVAL_DATA_Y2_MAX]
+EOF
+)
+        plot_latency_label_str=$(cat <<EOF
+            set y2label "$y2axis_label ($latency_time_scale)"
+            set y2tics border
+EOF
+)
+    fi
+    plot() {
+        plot_cmd="$1"
+        shift 1
+# set y2label "$y2axis_label ($time_scale)"
+        $plot_cmd <<EOF
 set title "$title"
 set ylabel "$yaxis_label ($scale/$time_scale)"
 set xlabel "Input size ($scale)"
 set ytics border in scale 1,0.5 nomirror norotate  offset character 0, 0, 0
+$plot_latency_label_str
 set term postscript eps 10 solid
 set size $width, $height
 set output "$graph"
@@ -501,8 +547,14 @@ set pointsize 0.5
 
 plot $to_plot
 set yrange [GPVAL_DATA_Y_MIN:GPVAL_DATA_Y_MAX]
+$plot_latency_range_str
 
 EOF
+# set y2range [GPVAL_DATA_Y2_MIN:GPVAL_DATA_Y2_MAX]
+}
+    plot cat
+    plot gnuplot
+    # exit 1
 }
 
 plot_throughput_vs_bytes() {
@@ -715,7 +767,7 @@ if (/^The time to complete GPU-to-CPU output array copy was ([^ ]+) ms/) {
 '
 
 extract_aes_points='
-if (/^profile time 2: ([^ ]+) ms/) { 
+if (/^average profile time: ([^ ]+) ms/) { 
     $time = $1;
     print "$bytes $time";
 } elsif (/^encrypt_cl: count = (\d+)/) {
@@ -724,7 +776,7 @@ if (/^profile time 2: ([^ ]+) ms/) {
 '
 
 extract_opencl_aes_sizes_points='
-if (/^profile time 2: ([^ ]+) ms/) { 
+if (/^average profile time: ([^ ]+) ms/) { 
     $time = $1;
     $throughput = sprintf("%.2f", $bytes/$time);
     print "$bytes $time $throughput";
@@ -753,7 +805,7 @@ if (/^The time to complete kernel execution was ([^ ]+) ms/) {
 '
 
 extract_aes_global_worksize_points='
-if (/^profile time 2: ([^ ]+) ms/) { 
+if (/^average profile time: ([^ ]+) ms/) { 
     $time = $1;
     print "$global_worksize $bytes $time";
 } elsif (/^global is (\d+)/) {
@@ -780,7 +832,7 @@ if (/^> Encryption time \(ms\): ([^\s]+)/) {
 # plot_aes_work_group_size / plot_aes_entries
 
 extract_aes_work_group_size_points='
-if (/^profile time 2: ([^ ]+) ms/) { 
+if (/^average profile time: ([^ ]+) ms/) { 
     $time = $1;
     $throughput = sprintf("%.2f", $bytes/$time);
     print "$work_group_size $time $throughput";
