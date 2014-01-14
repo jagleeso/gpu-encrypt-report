@@ -1,0 +1,55 @@
+for meeting:
+
+- coalescing; confirming that comparison operations are the most likely culprit for 0
+  spacing not being optimal at 512 MB
+- checked coalescing of ECB implementation; it's coalesced (no change)
+- encryption throughput measurements 
+  - copy overheads are costly
+  - see summary.odt
+- cpu-gpu communication measurements
+  - see summary.odt
+- TODO: does the GPU memory reside in the CPU?
+  - found documentation for Qualcomm's Adreno platform, which includes an OpenCL software
+    development guide with some OpenCL performance tips
+    - It suggests using clEnqueueMapBuffer (similar to mmap-ing files) as opposed to using the
+      buffer reading/writing functions. It goes on to say:
+      - "On Qualcomm platforms (and platforms that support unified host and device memory),
+        it is efficient to directly load buffer and images into device memory using the
+        device pointer obtained by clEnqueueMapBuffer"
+      - hence, it is possible that the CPU and GPU share memory
+        - TODO: redo memcopy / encryption throughput experiments using clEnqueueMapBuffer
+  x lock the input buffer pages into the TLB / GPU MMU...? Can't really do that?
+  x TODO: try emptying the CPU cache (hypothesis: if GPU memory is on the CPU, then emptying the
+    cache will reduce performance to using a new buffer)
+
+- SSLShader paper:
+  - one optimization they use to reducing copy costs between CPU/GPU is to launch multiple
+    kernels such that the GPU's DMA copy operations can occur concurrently with the
+    execution of another kernel.
+    - TODO: try batching kernel launches and seeing if there's any effect (NOTE: if CPU /
+      GPU memory is shared, I expect there to be a sligth negative effect on performance if
+      anything for the extra kernel launches)
+  - AES modes
+    - I'm currently using ECB encryption mode, but it's insecure so I ought to use another
+      mode
+    - SSLShader used CBC in their paper and made note of that fact that CBC is "hard to
+      parallelize" (but from what I've read you can't parallelize it since each subsequent
+      block to encrypt depends on the encrypted block of the last step). I believe they may be
+      focussed on using CBC in their paper since their focus is on the SSL protocol used in
+      web servers, where many web servers and clients only support AES CBC (this is not a
+      limitation in our case).
+      - SSLShader hasn't made their code publicly available since they're intending on
+        commercializing it
+    - we mentioned we want to use CBC, but I continously read that CBC is difficult to
+      parallelize for encryption (though it can be parallelized for decryption).  Are we still
+      going with CBC?
+    - there is another mode of encryption (AES GCM / galois counter mode) that can be
+      parallelized for encryption and decryption.  Have we given any thought to this, or is
+      there any reason we might not use it?
+
+- GPU GCM paper:
+  - TODO MEETING: is there anything useful from this paper...?
+- Assuming we're doing CBC:
+  - for decryption, we need to keep track of the 128-bit IV (to XOR with the first
+    decrypted block, but subsequent decrypted blocks XOR with the previous ciphertext block) 
+  - TODO: find GPU code that does CBC, or just do it myself
